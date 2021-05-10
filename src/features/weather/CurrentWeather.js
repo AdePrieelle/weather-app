@@ -1,43 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { ConvertTemperature } from '../../common/helpers'
+import { convertTemperatureUnits, formatLocalDate, formatLocalTime, convertWindSpeed, convertWindDegrees, rotateWindArrow } from '../../common/helpers'
 
 const CurrentWeather = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
   const weatherStatus = useSelector(state => state.weather.statusFetchCityAndLatitudeLongitude);
   const weatherError = useSelector(state => state.weather.errorFetchCityAndLatitudeLongitude);
   const weatherCity = useSelector(state => state.weather.city);
-
-  const formatTime = (timezoneOffset) => {
-      const timeNow = new Date().getTime();
-      console.log(timeNow);
-      console.log(timezoneOffset);
-      const timeCity = timeNow + timezoneOffset*1000;
-      const currentTime = new Date(timeCity);
-      const day = currentTime.getUTCDay();
-      const date = currentTime.getUTCDate();
-      const month = currentTime.getUTCMonth();
-      const year = currentTime.getUTCFullYear();
-      const hours = currentTime.getUTCHours();
-      // Minutes part from the timestamp
-      const minutes = "0" + currentTime.getUTCMinutes();
-      // Seconds part from the timestamp
-      // const seconds = "0" + currentTime.getSeconds();
-      // Will display time in 10:30:23 format
-      // return (hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2));
-
-      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      // format in Sunday 9 may 2021 17:12
-      return `${days[day]} ${date} ${months[month]} ${year} ${hours < 10 ? "0" : ""}${hours}:${minutes.substr(-2)}`;
-
-
-      // var options = {  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-      // var prnDt = 'Printed on ' + new Date().toLocaleTimeString('en-us', options);
-
-      // console.log(prnDt);
-
-  }
+  const weatherTemperatureUnits = useSelector(state => state.weather.temperatureUnits);
 
   let content
 
@@ -46,11 +16,32 @@ const CurrentWeather = () => {
     // content = <div className="loader"></div>
   } else if (weatherStatus === 'succeeded') {
     content = 
-    <div className="current-weahter-content">
+    <div className="current-weather-content">
       <div>If you can't find your city then try: <code>city, countryCode</code></div>
       <div>Example: <code>London,uk</code></div>
-      <div>Temperature in {weatherCity} in celcius: <ConvertTemperature kelvin={weatherData.current.temp} /></div>
-      <div>current time: {formatTime(weatherData.timezone_offset)}</div>
+      {/* <div>Temperature in {weatherCity} in celcius: <ConvertTemperature kelvin={weatherData.current.temp} /></div> */}
+      <div>Temperature in {weatherCity} in celcius: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
+
+      <div>current time: {formatLocalDate(weatherData.timezone_offset)}</div>
+      <div>
+        weather icon: 
+        <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>
+      </div>
+      <div>Weather description: {weatherData.current.weather[0].description}</div>
+      <div>Feels like: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.feels_like)}</div>
+      <div>Pressure: {weatherData.current.pressure} hPa</div>
+      <div>Humidity: {weatherData.current.humidity}%</div>
+      <div>Dew point: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.dew_point)}</div>
+      <div>Clouds: {weatherData.current.clouds}%</div>
+      <div>Uv index: {weatherData.current.uvi}</div>
+      <div>Visibility: {weatherData.current.visibility} metres</div>
+      <div>Windspeed: {weatherData.current.wind_speed} metre/sec</div>
+      <div>Windspeed Beaufort: {convertWindSpeed(weatherData.current.wind_speed)}</div>
+      <div>Wind degrees: {weatherData.current.wind_deg}</div>
+      <div>Wind degrees direction origin: {convertWindDegrees(weatherData.current.wind_deg)}</div>
+      <div>Wind degrees arrow pointer: {rotateWindArrow(weatherData.current.wind_deg)}</div>
+      <div>Sunrise: {formatLocalTime(weatherData.current.sunrise, weatherData.timezone_offset)}</div>
+      <div>Sunset: {formatLocalTime(weatherData.current.sunset, weatherData.timezone_offset)}</div>
     </div>
   } else if (weatherStatus === 'failed') {
     content = <div>{weatherError}</div>
