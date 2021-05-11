@@ -5,11 +5,15 @@
   background-color: white;
   top: 0;
   z-index: 999;
-  display: flex;
+  // display: flex;
   // justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   width: 100%;
   height: $nav-height;
-  // border: 2px solid red;
+  border: 2px solid red;
   // padding: 0 30px;
+  .weather-navbar-content {
+    display: flex;
+    align-items: center;
+  }
 }

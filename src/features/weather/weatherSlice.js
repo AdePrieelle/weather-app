@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  city: 'London',
+  city: null,
+  country: null,
   temperatureUnits: 'Celcius',
   latitude: null,
   longitude: null,
@@ -71,6 +72,7 @@ const weatherSlice = createSlice({
       state.latitude = action.payload.coord.lat;
       state.longitude = action.payload.coord.lon;
       state.city = action.payload.name;
+      state.country = action.payload.sys.country;
       state.errorFetchCity = null;
 
     },

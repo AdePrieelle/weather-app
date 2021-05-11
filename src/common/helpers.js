@@ -44,6 +44,16 @@ export const formatLocalTime = (time, timezoneOffset) => {
   return(`${hours < 10 ? "0" : ""}${hours}:${minutes < 10 ? "0" : ""}${minutes}`);
 }
 
+export const secondsToGmtHoursAndMinutes = (seconds) => {
+  const secondsNumber = seconds < 0 ? -Number(seconds): Number(seconds);
+  const h = Math.floor(secondsNumber / 3600);
+  const m = Math.floor(secondsNumber % 3600 / 60);
+
+  const hoursDisplay = h < 10 ? `${h}` : h;
+  const minutesDisplay = m === 0 ? "" : m < 10 ? `:0${m}`: `:${m}`;
+  return `GMT${seconds < 0 ? "-" : "+"}${hoursDisplay}${minutesDisplay}`; 
+}
+
 export const convertWindSpeed = (windSpeed) => {
   if (windSpeed < 0.2) {
     return 0;

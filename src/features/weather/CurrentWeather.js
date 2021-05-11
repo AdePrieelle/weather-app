@@ -1,12 +1,21 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { convertTemperatureUnits, formatLocalDate, formatLocalTime, convertWindSpeed, convertWindDegrees, rotateWindArrow } from '../../common/helpers'
+import { 
+  convertTemperatureUnits, 
+  formatLocalDate, 
+  formatLocalTime, 
+  secondsToGmtHoursAndMinutes,
+  convertWindSpeed, 
+  convertWindDegrees, 
+  rotateWindArrow 
+} from '../../common/helpers'
 
 const CurrentWeather = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
   const weatherStatus = useSelector(state => state.weather.statusFetchCityAndLatitudeLongitude);
   const weatherError = useSelector(state => state.weather.errorFetchCityAndLatitudeLongitude);
   const weatherCity = useSelector(state => state.weather.city);
+  const weatherCountry = useSelector(state => state.weather.country);
   const weatherTemperatureUnits = useSelector(state => state.weather.temperatureUnits);
 
   let content
@@ -17,12 +26,11 @@ const CurrentWeather = () => {
   } else if (weatherStatus === 'succeeded') {
     content = 
     <div className="current-weather-content">
-      <div>If you can't find your city then try: <code>city, countryCode</code></div>
-      <div>Example: <code>London,uk</code></div>
       {/* <div>Temperature in {weatherCity} in celcius: <ConvertTemperature kelvin={weatherData.current.temp} /></div> */}
-      <div>Temperature in {weatherCity} in celcius: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
+      <div>Temperature in {weatherCity}, {weatherCountry} in celcius: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
 
       <div>current time: {formatLocalDate(weatherData.timezone_offset)}</div>
+      <div>GMT difference: ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
       <div>
         weather icon: 
         <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>

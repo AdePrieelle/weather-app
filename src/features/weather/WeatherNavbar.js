@@ -12,16 +12,28 @@ const WeatherNavbar = () => {
     setCity(e.target.value);
   }
 
+  const handleCitySearch = () => {
+    dispatch(fetchCityAndLatitudeLongitude(city));
+    setCity("");
+  }
+
   return (
     <nav className="weather-navbar">
-      <div className="navbar-logo">Logo</div>
-      <input className="navbar-input" type="text" placeholder="Search location..." onChange={updateFormCity} onKeyUp={e => {
-        if (e.keyCode === 13) {
-          dispatch(fetchCityAndLatitudeLongitude(city));
-        }
-      }}/>
-      <button className="navbar-search-button" onClick={() => {dispatch(fetchCityAndLatitudeLongitude(city))}}>Search</button>
-      <button className="navbar-temp-button" onClick={() => {dispatch(switchTemperatureUnits())}}>{weatherTemperatureUnits === 'Celcius' ? 'display °F' : 'display °C'}</button>
+      <div className="weather-navbar-content">
+        <div className="navbar-logo">Logo</div>
+        <input className="navbar-input" value={city} type="text" placeholder="Search location..." onChange={updateFormCity} onKeyUp={e => {
+          if (e.keyCode === 13) {
+            handleCitySearch();
+          }
+        }}/>
+        <button className="navbar-search-button" onClick={() => {handleCitySearch()}}>Search</button>
+        <button className="navbar-temp-button" onClick={() => {dispatch(switchTemperatureUnits())}}>{weatherTemperatureUnits === 'Celcius' ? 'display °F' : 'display °C'}</button>
+      </div>
+      <div className="weather-navbar-tooltip">
+        <div>Hint: if you can't find your city try to add the countrycode (and statecode) in ISO3166 format.</div> 
+        <div>Example format: <code>city, countrycode</code> or <code>city, statecode, countrycode</code></div>
+        <div>Example city: <code>London,uk</code> or <code>London,GB-LND,uk</code></div>
+      </div>
     </nav>
   )
 }
