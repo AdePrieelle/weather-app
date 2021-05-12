@@ -23,7 +23,7 @@ const CurrentWeather = () => {
   if (weatherStatus === 'loading') {
     content = <div className="loading">Loading...</div>
     // content = <div className="loader"></div>
-  } else if (weatherStatus === 'succeeded') {
+  } else if (weatherStatus === 'succeeded' || (weatherStatus === "failed" && weatherData !== null)) {
     content = 
     <div className="current-weather-content">
       {/* <div>Temperature in {weatherCity} in celcius: <ConvertTemperature kelvin={weatherData.current.temp} /></div> */}

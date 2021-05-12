@@ -6,7 +6,7 @@ const initialState = {
   temperatureUnits: 'Celcius',
   latitude: null,
   longitude: null,
-  weatherData: {},
+  weatherData: null,
   statusFetchCity: 'idle',
   statusLatitudeLongitude: 'idle',
   statusFetchCityAndLatitudeLongitude: 'idle',
@@ -66,6 +66,7 @@ const weatherSlice = createSlice({
   extraReducers: {
     [fetchCity.pending]: (state, action) => {
       state.statusFetchCity = 'loading'
+      state.errorFetchCity = null;
     },
     [fetchCity.fulfilled]: (state, action) => {
       state.statusFetchCity = 'succeeded';
@@ -73,7 +74,6 @@ const weatherSlice = createSlice({
       state.longitude = action.payload.coord.lon;
       state.city = action.payload.name;
       state.country = action.payload.sys.country;
-      state.errorFetchCity = null;
 
     },
     [fetchCity.rejected]: (state, action) => {
@@ -84,12 +84,11 @@ const weatherSlice = createSlice({
 
     [fetchLatitudeLongitude.pending]: (state, action) => {
       state.statusLatitudeLongitude = 'loading'
+      state.errorFetchLatitudeLongitude = null;
     },
     [fetchLatitudeLongitude.fulfilled]: (state, action) => {
       state.statusLatitudeLongitude = 'succeeded';
       state.weatherData = action.payload;
-      state.errorFetchLatitudeLongitude = null;
-
     },
     [fetchLatitudeLongitude.rejected]: (state, action) => {
       state.statusLatitudeLongitude = 'failed'
@@ -98,11 +97,10 @@ const weatherSlice = createSlice({
 
     [fetchCityAndLatitudeLongitude.pending]: (state, action) => {
       state.statusFetchCityAndLatitudeLongitude = 'loading'
+      state.errorFetchCityAndLatitudeLongitude = null;
     },
     [fetchCityAndLatitudeLongitude.fulfilled]: (state, action) => {
       state.statusFetchCityAndLatitudeLongitude = 'succeeded';
-      state.errorFetchCityAndLatitudeLongitude = null;
-
     },
     [fetchCityAndLatitudeLongitude.rejected]: (state, action) => {
       state.statusFetchCityAndLatitudeLongitude = 'failed'

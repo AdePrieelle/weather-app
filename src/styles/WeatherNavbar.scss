@@ -15,5 +15,25 @@
   .weather-navbar-content {
     display: flex;
     align-items: center;
+    .navbar-input-error-wrapper {
+      position: relative;
+      .navbar-input {
+        padding: 5px;
+        border-radius: 4px;
+        border: 2px solid grey;
+        &:focus {
+          outline: none;
+        }
+      }
+      .weather-navbar-error {
+        position: absolute;
+        top: 36px;
+        color: red;
+        font-size: 12px;
+      }
+    }
+  }
+  .weather-navbar-tooltip {
+    margin-top: 30px;
   }
 }
