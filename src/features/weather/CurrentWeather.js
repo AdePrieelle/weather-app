@@ -26,9 +26,13 @@ const CurrentWeather = () => {
   } else if (weatherStatus === 'succeeded' || (weatherStatus === "failed" && weatherData !== null)) {
     content = 
     <div className="current-weather-content">
-      {/* <div>Temperature in {weatherCity} in celcius: <ConvertTemperature kelvin={weatherData.current.temp} /></div> */}
-      <div>Temperature in {weatherCity}, {weatherCountry} in celcius: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
-
+      <div className="weather-navbar-tooltip">
+        <div>Hint: if you can't find your city try to add the countrycode (and statecode) in the ISO3166 format.</div> 
+        <div>Format: <code>city, countrycode</code> or <code>city, statecode, countrycode</code></div>
+        <div>Example: <code>London,uk</code> or <code>London,GB-LND,uk</code></div>
+      </div>
+      <div>Temperature: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
+      <div>City and country: {weatherCity}, {weatherCountry}</div>
       <div>current time: {formatLocalDate(weatherData.timezone_offset)}</div>
       <div>GMT difference: ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
       <div>
