@@ -36,7 +36,7 @@ const CurrentWeather = () => {
   if (weatherStatus === 'loading') {
     content = <div className="loading">Loading...</div>
     // content = <div className="loader"></div>
-  } else if (weatherStatus === 'succeeded' || (weatherStatus === "failed" && weatherData !== null)) {
+  } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
     <div className="current-weather-content">
       <div className={

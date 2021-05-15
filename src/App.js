@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCityAndLatitudeLongitude } from './features/weather/weatherSlice'
 import WeatherNavbar from './features/weather/WeatherNavbar';
 import CurrentWeather from './features/weather/CurrentWeather';
+import MinuteForecastWeather from './features/weather/MinuteForecastWeather';
 import './App.scss';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <WeatherNavbar />
       <div className="weather-contents">
         <CurrentWeather />
+        <MinuteForecastWeather />
       </div>
     </div>
   );

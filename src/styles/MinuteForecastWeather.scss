@@ -1,0 +1,16 @@
+.minute-forecast-weather {
+  .minute-forecast-content {
+    margin-top: 20px;
+    .minute-forecast-title {
+      margin-bottom: 10px;
+    }
+    .minute-forecast-data {
+      .minute-forecast-data-item {
+        display: flex;
+        .minute-forecast-time {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
