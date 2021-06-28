@@ -35,7 +35,8 @@ const WeatherNavbar = () => {
         <input 
           className="navbar-input" 
           style={{borderColor: (showErrorMessage === 0) ? "grey" : (weatherError === null && showInputError === 0) ? "grey" : "red"}}
-          value={city} type="text" 
+          value={city} 
+          type="text" 
           placeholder="Search location..." 
           onFocus={() => {setShowErrorMessage(0)}}
           onChange={updateFormCity} 

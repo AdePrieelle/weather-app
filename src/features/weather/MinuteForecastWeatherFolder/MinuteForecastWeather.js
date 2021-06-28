@@ -1,9 +1,9 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { formatLocalTime } from '../../common/helpers';
-import '../../styles/MinuteForecastWeather.scss';
+import { useSelector } from 'react-redux';
+import '../../../styles/MinuteForecastWeather.scss';
+import { WeatherRainGraphScaleLog } from './WeatherRainGraphScaleLogFolder/WeatherRainGraphScaleLog';
 
-const MinuteForecastWeather = () => {
+export const MinuteForecastWeather = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
   const weatherStatus = useSelector(state => state.weather.statusFetchCityAndLatitudeLongitude);
   const weatherError = useSelector(state => state.weather.errorFetchCityAndLatitudeLongitude);
@@ -16,14 +16,8 @@ const MinuteForecastWeather = () => {
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
     <div className="minute-forecast-content">
-      <div className="minute-forecast-title">minute forecast</div>
-      <div className="minute-forecast-data">
-        {weatherData.minutely.map((minute, id) => (
-          <div key={id} className="minute-forecast-data-item">
-            <div className="minute-forecast-time">{formatLocalTime(minute.dt, weatherData.timezone_offset)}</div>
-            <div className="minute-forecast-precipitation">{minute.precipitation}</div>
-          </div>
-        ))}
+      <div className="minute-forecast-graph">
+        <WeatherRainGraphScaleLog />
       </div>
     </div>
   } else if (weatherStatus === 'failed') {
@@ -36,5 +30,3 @@ const MinuteForecastWeather = () => {
     </section>
   )
 }
-
-export default MinuteForecastWeather;
