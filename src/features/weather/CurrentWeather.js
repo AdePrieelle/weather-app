@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { 
   convertTemperatureUnits, 
-  formatLocalDate, 
+  formatLocalDateNow, 
   formatLocalTime, 
   secondsToGmtHoursAndMinutes,
   convertWindSpeedToBeaufort, 
@@ -66,7 +66,7 @@ const CurrentWeather = () => {
       <div>City and country: {weatherCity}, {weatherCountry} <span className="wrong-location-text" onClick={() => {
         displayWrongLocationTooltip();
       }}>Wrong location?</span></div>  
-      <div>current time: {formatLocalDate(weatherData.timezone_offset)}</div>
+      <div>current time: {formatLocalDateNow(weatherData.timezone_offset)}</div>
       <div>GMT difference: ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
       <div>
         weather icon: 

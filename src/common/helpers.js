@@ -22,7 +22,7 @@ export const convertTemperatureUnits = (temperatureUnit, kelvin) => {
   }
 };
 
-export const formatLocalDate = (timezoneOffset) => {
+export const formatLocalDateNow = (timezoneOffset) => {
   const timeNow = new Date().getTime();
   const timeCity = timeNow + timezoneOffset*1000;
   const currentTime = new Date(timeCity);
@@ -35,6 +35,23 @@ export const formatLocalDate = (timezoneOffset) => {
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   return `${days[day]} ${date} ${months[month]} ${year} ${hours < 10 ? "0" : ""}${hours}:${minutes < 10 ? "0" : ""}${minutes}`;
+}
+
+export const formatLocalDateDay = (timestamp, timezoneOffset) => {
+  const timeNow = new Date(timestamp*1000).getTime();
+  const timeCity = timeNow + timezoneOffset*1000;
+  const currentTime = new Date(timeCity);
+  const day = currentTime.getUTCDay();
+  const date = currentTime.getUTCDate();
+  const month = currentTime.getUTCMonth();
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  // return `${days[day]} ${date} ${months[month]}`;
+  return ({
+    weekday: days[day],
+    day: date,
+    month: months[month]
+  })
 }
 
 export const formatLocalTime = (time, timezoneOffset) => {
