@@ -54,7 +54,7 @@ export const secondsToGmtHoursAndMinutes = (seconds) => {
   return `GMT${seconds < 0 ? "-" : "+"}${hoursDisplay}${minutesDisplay}`; 
 }
 
-export const convertWindSpeed = (windSpeed) => {
+export const convertWindSpeedToBeaufort = (windSpeed) => {
   if (windSpeed < 0.2) {
     return 0;
   } else if (windSpeed < 1.6) {

@@ -4,6 +4,7 @@ import { fetchCityAndLatitudeLongitude } from './features/weather/weatherSlice'
 import WeatherNavbar from './features/weather/WeatherNavbar';
 import CurrentWeather from './features/weather/CurrentWeather';
 import { MinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/MinuteForecastWeather';
+import { TwoDaysForecastWeather } from './features/weather/TwoDaysForecastWeather';
 import './App.scss';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <div className="App">
       <WeatherNavbar />
       <div className="weather-contents">
+        <TwoDaysForecastWeather />
         <CurrentWeather />
         <MinuteForecastWeather />
       </div>

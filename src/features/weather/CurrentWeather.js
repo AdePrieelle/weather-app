@@ -5,7 +5,7 @@ import {
   formatLocalDate, 
   formatLocalTime, 
   secondsToGmtHoursAndMinutes,
-  convertWindSpeed, 
+  convertWindSpeedToBeaufort, 
   convertWindDegrees, 
   rotateWindArrow 
 } from '../../common/helpers'
@@ -83,7 +83,7 @@ const CurrentWeather = () => {
       <div>Uv index: {weatherData.current.uvi}</div>
       <div>Visibility: {weatherData.current.visibility} metres</div>
       <div>Windspeed: {weatherData.current.wind_speed} metre/sec</div>
-      <div>Windspeed Beaufort: {convertWindSpeed(weatherData.current.wind_speed)}</div>
+      <div>Windspeed Beaufort: {convertWindSpeedToBeaufort(weatherData.current.wind_speed)}</div>
       <div>Wind degrees: {weatherData.current.wind_deg}</div>
       <div>Wind degrees direction origin: {convertWindDegrees(weatherData.current.wind_deg)}</div>
       <div>Wind degrees arrow pointer: {rotateWindArrow(weatherData.current.wind_deg)}</div>

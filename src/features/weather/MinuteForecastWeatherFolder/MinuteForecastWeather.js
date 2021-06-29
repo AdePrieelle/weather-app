@@ -15,8 +15,8 @@ export const MinuteForecastWeather = () => {
     // content = <div className="loader"></div>
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
-    <div className="minute-forecast-content">
-      <div className="minute-forecast-graph">
+    <div className="minute-forecast-weather-content">
+      <div className="minute-forecast-weather-graph">
         <WeatherRainGraphScaleLog />
       </div>
     </div>
