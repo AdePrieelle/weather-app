@@ -1,10 +1,10 @@
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import { 
   convertTemperatureUnits,
   convertWindSpeedToBeaufort,
   rotateWindArrow,
   formatLocalDateDay
-} from '../../common/helpers'
+} from '../../common/helpers';
 import '../../styles/WeekForecastWeather.scss';
 
 export const WeekForecastWeather = () => {
