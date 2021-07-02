@@ -24,10 +24,10 @@ function App() {
       <WeatherNavbar />
       <div className="weather-contents">
         <AlertsWeather />
-        <WeekForecastWeather />
-        <TwoDaysForecastWeather />
         <CurrentWeather />
         <MinuteForecastWeather />
+        <TwoDaysForecastWeather />
+        <WeekForecastWeather />
       </div>
     </div>
   );

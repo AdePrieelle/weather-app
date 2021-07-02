@@ -7,7 +7,8 @@ import {
   secondsToGmtHoursAndMinutes,
   convertWindSpeedToBeaufort, 
   convertWindDegrees, 
-  rotateWindArrow 
+  rotateWindArrow ,
+  rotateWindArrowBeaufort
 } from '../../common/helpers'
 import '../../styles/CurrentWeather.scss';
 
@@ -87,6 +88,7 @@ const CurrentWeather = () => {
       <div>Wind degrees: {weatherData.current.wind_deg}</div>
       <div>Wind degrees direction origin: {convertWindDegrees(weatherData.current.wind_deg)}</div>
       <div>Wind degrees arrow pointer: {rotateWindArrow(weatherData.current.wind_deg)}</div>
+      <div>Wind degrees arrow pointer Beaufort: {rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}</div>
       <div>Sunrise: {formatLocalTime(weatherData.current.sunrise, weatherData.timezone_offset)}</div>
       <div>Sunset: {formatLocalTime(weatherData.current.sunset, weatherData.timezone_offset)}</div>
     </div>
