@@ -22,8 +22,8 @@ export const convertTemperatureUnits = (temperatureUnit, kelvin) => {
   }
 };
 
-export const formatLocalDateNow = (timezoneOffset) => {
-  const timeNow = new Date().getTime();
+export const formatLocalDateNow = (timestamp, timezoneOffset) => {
+  const timeNow = new Date(timestamp*1000).getTime();
   const timeCity = timeNow + timezoneOffset*1000;
   const currentTime = new Date(timeCity);
   const day = currentTime.getUTCDay();

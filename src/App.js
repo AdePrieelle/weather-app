@@ -3,11 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCityAndLatitudeLongitude } from './features/weather/weatherSlice'
 import WeatherNavbar from './features/weather/WeatherNavbar';
 import CurrentWeather from './features/weather/CurrentWeather';
-import { MinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/MinuteForecastWeather';
-import { TwoDaysForecastWeather } from './features/weather/TwoDaysForecastWeather';
-import { WeekForecastWeather } from './features/weather/WeekForecastWeather';
-import { AlertsWeather } from './features/weather/AlertsWeather';
+import { PreviewCurrentWeather } from './features/weather/PreviewCurrentWeather'
+// import { MinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/MinuteForecastWeather';
+// import { TwoDaysForecastWeather } from './features/weather/TwoDaysForecastWeather';
+// import { WeekForecastWeather } from './features/weather/WeekForecastWeather';
+// import { AlertsWeather } from './features/weather/AlertsWeather';
+import { Switch, Route } from 'react-router-dom';
 import './App.scss';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -23,11 +26,18 @@ function App() {
     <div className="App">
       <WeatherNavbar />
       <div className="weather-contents">
-        <AlertsWeather />
-        <CurrentWeather />
-        <MinuteForecastWeather />
-        <TwoDaysForecastWeather />
-        <WeekForecastWeather />
+        <Switch>
+          <Route exact path="/">
+            <PreviewCurrentWeather />
+          </Route>
+          <Route exact path="/current-weather">
+            <CurrentWeather />
+          </Route>
+          {/* <AlertsWeather />
+          <MinuteForecastWeather />
+          <TwoDaysForecastWeather />
+          <WeekForecastWeather /> */}
+        </Switch>
       </div>
     </div>
   );

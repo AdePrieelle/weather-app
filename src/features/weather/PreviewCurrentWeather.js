@@ -11,9 +11,9 @@ import {
   rotateWindArrowBeaufort
 } from '../../common/helpers'
 import { Link } from 'react-router-dom';
-import '../../styles/CurrentWeather.scss';
+import '../../styles/PreviewCurrentWeather.scss';
 
-const CurrentWeather = () => {
+export const PreviewCurrentWeather = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
   const weatherStatus = useSelector(state => state.weather.statusFetchCityAndLatitudeLongitude);
   const weatherError = useSelector(state => state.weather.errorFetchCityAndLatitudeLongitude);
@@ -40,7 +40,7 @@ const CurrentWeather = () => {
     // content = <div className="loader"></div>
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
-    <div className="current-weather-content">
+    <div className="preview-current-weather-content">
       <div className={
           showWrongLocationTooltip 
         ? "wrong-location-tooltip wrong-location-tooltip-active"
@@ -64,11 +64,6 @@ const CurrentWeather = () => {
         </div>
       : null
       } */}
-      <div className="go-back">
-        <Link to="/">
-          {`<< Go back`}
-        </Link>
-      </div>
       <div>Temperature: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
       <div>City and country: {weatherCity}, {weatherCountry} <span className="wrong-location-text" onClick={() => {
         displayWrongLocationTooltip();
@@ -81,32 +76,22 @@ const CurrentWeather = () => {
       </div>
       <div>Weather description: {weatherData.current.weather[0].description}</div>
       <div>Feels like: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.feels_like)}</div>
-      <div>Latitude: {weatherLatitude}</div>
-      <div>Longitude: {weatherLongitude}</div>
-      <div>Pressure: {weatherData.current.pressure} hPa</div>
       <div>Humidity: {weatherData.current.humidity}%</div>
-      <div>Dew point: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.dew_point)}</div>
       <div>Cloudiness: {weatherData.current.clouds}%</div>
-      <div>Uv index: {weatherData.current.uvi}</div>
-      <div>Visibility: {weatherData.current.visibility} metres</div>
-      <div>Windspeed: {weatherData.current.wind_speed} metre/sec</div>
-      <div>Windspeed Beaufort: {convertWindSpeedToBeaufort(weatherData.current.wind_speed)}</div>
-      <div>Wind degrees: {weatherData.current.wind_deg}</div>
-      <div>Wind degrees direction origin: {convertWindDegrees(weatherData.current.wind_deg)}</div>
-      <div>Wind degrees arrow pointer: {rotateWindArrow(weatherData.current.wind_deg)}</div>
       <div>Wind degrees arrow pointer Beaufort: {rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}</div>
-      <div>Sunrise: {formatLocalTime(weatherData.current.sunrise, weatherData.timezone_offset)}</div>
-      <div>Sunset: {formatLocalTime(weatherData.current.sunset, weatherData.timezone_offset)}</div>
+      <div className="display-current-weather">
+        <Link to="/current-weather">
+          Show details
+        </Link>
+      </div>
     </div>
   } else if (weatherStatus === 'failed') {
     content = <div>{weatherError}</div>
   }
 
   return (
-    <section className="current-weather">
+    <section className="preview-current-weather">
       {content}
     </section>
   )
 }
-
-export default CurrentWeather;
