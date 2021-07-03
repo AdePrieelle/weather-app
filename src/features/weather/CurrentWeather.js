@@ -7,7 +7,7 @@ import {
   secondsToGmtHoursAndMinutes,
   convertWindSpeedToBeaufort, 
   convertWindDegrees, 
-  rotateWindArrow ,
+  rotateWindArrow,
   rotateWindArrowBeaufort
 } from '../../common/helpers'
 import { Link } from 'react-router-dom';

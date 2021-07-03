@@ -5,7 +5,8 @@ import WeatherNavbar from './features/weather/WeatherNavbar';
 import CurrentWeather from './features/weather/CurrentWeather';
 import { PreviewCurrentWeather } from './features/weather/PreviewCurrentWeather'
 // import { MinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/MinuteForecastWeather';
-// import { TwoDaysForecastWeather } from './features/weather/TwoDaysForecastWeather';
+import { TwoDaysForecastWeather } from './features/weather/TwoDaysForecastWeather';
+import { PreviewTwoDaysForecastWeather } from './features/weather/PreviewTwoDaysForecastWeather';
 // import { WeekForecastWeather } from './features/weather/WeekForecastWeather';
 // import { AlertsWeather } from './features/weather/AlertsWeather';
 import { Switch, Route } from 'react-router-dom';
@@ -29,14 +30,17 @@ function App() {
         <Switch>
           <Route exact path="/">
             <PreviewCurrentWeather />
+            <PreviewTwoDaysForecastWeather />
           </Route>
           <Route exact path="/current-weather">
             <CurrentWeather />
           </Route>
-          {/* <AlertsWeather />
-          <MinuteForecastWeather />
-          <TwoDaysForecastWeather />
-          <WeekForecastWeather /> */}
+          <Route exact path="/two-days-forecast-weather">
+            <TwoDaysForecastWeather />
+          </Route>
+          {/* <AlertsWeather /> */}
+          {/* <MinuteForecastWeather /> */}
+          {/* <WeekForecastWeather /> */}
         </Switch>
       </div>
     </div>

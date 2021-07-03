@@ -3,11 +3,8 @@ import { useSelector } from 'react-redux'
 import { 
   convertTemperatureUnits, 
   formatLocalDateNow, 
-  formatLocalTime, 
   secondsToGmtHoursAndMinutes,
   convertWindSpeedToBeaufort, 
-  convertWindDegrees, 
-  rotateWindArrow ,
   rotateWindArrowBeaufort
 } from '../../common/helpers'
 import { Link } from 'react-router-dom';
@@ -20,8 +17,6 @@ export const PreviewCurrentWeather = () => {
   const weatherCity = useSelector(state => state.weather.city);
   const weatherCountry = useSelector(state => state.weather.country);
   const weatherTemperatureUnits = useSelector(state => state.weather.temperatureUnits);
-  const weatherLatitude = useSelector(state => state.weather.latitude);
-  const weatherLongitude = useSelector(state => state.weather.longitude);
 
   const [showWrongLocationTooltip, setShowWrongLocationTooltip] = useState(false);
 
@@ -79,7 +74,7 @@ export const PreviewCurrentWeather = () => {
       <div>Humidity: {weatherData.current.humidity}%</div>
       <div>Cloudiness: {weatherData.current.clouds}%</div>
       <div>Wind degrees arrow pointer Beaufort: {rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}</div>
-      <div className="display-current-weather">
+      <div className="display-more">
         <Link to="/current-weather">
           Show details
         </Link>
