@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import '../../../styles/MinuteForecastWeather.scss';
+import '../../../styles/PreviewMinuteForecastWeather.scss';
 import { WeatherRainGraphScaleLog } from './WeatherRainGraphScaleLogFolder/WeatherRainGraphScaleLog';
 import { Link } from 'react-router-dom';
 
-export const MinuteForecastWeather = () => {
+export const PreviewMinuteForecastWeather = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
   const weatherStatus = useSelector(state => state.weather.statusFetchCityAndLatitudeLongitude);
   const weatherError = useSelector(state => state.weather.errorFetchCityAndLatitudeLongitude);
@@ -16,14 +16,14 @@ export const MinuteForecastWeather = () => {
     // content = <div className="loader"></div>
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
-      <div className="minute-forecast-weather-content">
-        <div className="minute-forecast-weather-graph">
-          <div className="go-back">
-            <Link to="/">
-              {`<< Go back`}
+      <div className="preview-minute-forecast-weather-content">
+        <div className="preview-minute-forecast-weather-graph">
+          <WeatherRainGraphScaleLog />
+          <div className="display-more">
+            <Link to="/minute-forecast-weather">
+              Show details
             </Link>
           </div>
-          <WeatherRainGraphScaleLog />
         </div>
       </div>;
   } else if (weatherStatus === 'failed') {
@@ -31,7 +31,7 @@ export const MinuteForecastWeather = () => {
   }
 
   return (
-    <section className="minute-forecast-weather">
+    <section className="preview-minute-forecast-weather">
       {content}
     </section>
   )

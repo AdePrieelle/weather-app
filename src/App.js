@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCityAndLatitudeLongitude } from './features/weather/weatherSlice'
-import WeatherNavbar from './features/weather/WeatherNavbar';
-import CurrentWeather from './features/weather/CurrentWeather';
+import { WeatherNavbar } from './features/weather/WeatherNavbar';
+import { CurrentWeather } from './features/weather/CurrentWeather';
 import { PreviewCurrentWeather } from './features/weather/PreviewCurrentWeather'
-// import { MinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/MinuteForecastWeather';
+import { MinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/MinuteForecastWeather';
+import { PreviewMinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/PreviewMinuteForecastWeather';
 import { TwoDaysForecastWeather } from './features/weather/TwoDaysForecastWeather';
 import { PreviewTwoDaysForecastWeather } from './features/weather/PreviewTwoDaysForecastWeather';
 import { WeekForecastWeather } from './features/weather/WeekForecastWeather';
 import { PreviewWeekForecastWeather } from './features/weather/PreviewWeekForecastWeather';
-// import { AlertsWeather } from './features/weather/AlertsWeather';
+import { AlertsWeather } from './features/weather/AlertsWeather';
+import { PreviewAlertsWeather } from './features/weather/PreviewAlertsWeather';
 import { Switch, Route } from 'react-router-dom';
 import ScrollToTop from './common/ScrollToTop';
 import './App.scss';
@@ -34,7 +36,9 @@ function App() {
           <Route exact path="/">
             {/* <PreviewCurrentWeather /> */}
             {/* <PreviewTwoDaysForecastWeather /> */}
-            <PreviewWeekForecastWeather />
+            {/* <PreviewWeekForecastWeather /> */}
+            <PreviewAlertsWeather />
+            <PreviewMinuteForecastWeather />
           </Route>
           <Route exact path="/current-weather">
             <CurrentWeather />
@@ -45,8 +49,12 @@ function App() {
           <Route exact path="/week-forecast-weather">
             <WeekForecastWeather />
           </Route>
-          {/* <AlertsWeather /> */}
-          {/* <MinuteForecastWeather /> */}
+          <Route exact path="/alerts-weather">
+            <AlertsWeather />
+          </Route>
+          <Route exact path="/minute-forecast-weather">
+            <MinuteForecastWeather />
+          </Route>
         </Switch>
       </div>
     </div>

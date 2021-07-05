@@ -13,7 +13,7 @@ import {
 import { Link } from 'react-router-dom';
 import '../../styles/CurrentWeather.scss';
 
-const CurrentWeather = () => {
+export const CurrentWeather = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
   const weatherStatus = useSelector(state => state.weather.statusFetchCityAndLatitudeLongitude);
   const weatherError = useSelector(state => state.weather.errorFetchCityAndLatitudeLongitude);
@@ -108,5 +108,3 @@ const CurrentWeather = () => {
     </section>
   )
 }
-
-export default CurrentWeather;

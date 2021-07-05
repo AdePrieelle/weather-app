@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchCityAndLatitudeLongitude, switchTemperatureUnits } from './weatherSlice'
 import '../../styles/WeatherNavbar.scss';
 
-const WeatherNavbar = () => {
+export const WeatherNavbar = () => {
   const [city, setCity] = useState('');
   const dispatch = useDispatch()
   const weatherTemperatureUnits = useSelector(state => state.weather.temperatureUnits);
@@ -60,5 +60,3 @@ const WeatherNavbar = () => {
     </nav>
   )
 }
-
-export default WeatherNavbar;
