@@ -35,10 +35,10 @@ function App() {
         <Switch>
           <Route exact path="/">
             {/* <PreviewCurrentWeather /> */}
-            {/* <PreviewTwoDaysForecastWeather /> */}
+            <PreviewTwoDaysForecastWeather />
             {/* <PreviewWeekForecastWeather /> */}
-            <PreviewAlertsWeather />
-            <PreviewMinuteForecastWeather />
+            {/* <PreviewAlertsWeather /> */}
+            {/* <PreviewMinuteForecastWeather /> */}
           </Route>
           <Route exact path="/current-weather">
             <CurrentWeather />

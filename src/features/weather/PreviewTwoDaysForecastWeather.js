@@ -20,12 +20,35 @@ export const PreviewTwoDaysForecastWeather = () => {
     content = <div className="loading">Loading...</div>
     // content = <div className="loader"></div>
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
+    const nightTime = "03:00";
+    const morningTime = "09:00";
+    const noonTime = "15:00";
+    const eveningTime = "21:00";
+    const weatherDataHourlyFilteredDayParts = weatherData.hourly.filter(hour => (
+         formatLocalTime(hour.dt, weatherData.timezone_offset) === nightTime
+      || formatLocalTime(hour.dt, weatherData.timezone_offset) === morningTime
+      || formatLocalTime(hour.dt, weatherData.timezone_offset) === noonTime
+      || formatLocalTime(hour.dt, weatherData.timezone_offset) === eveningTime
+    ));
+    const weatherDayaHourlyFiltered4DayParts = weatherDataHourlyFilteredDayParts.slice(0, 4);
     content = 
     <div className="preview-two-days-forecast-weather-content">
       {
-        weatherData.hourly.map((hour, id) => (
+        weatherDayaHourlyFiltered4DayParts.map((hour, id) => (
           <div key={id} className="preview-two-days-forecast-weather-content-hour">
-            <div className="time">{formatLocalTime(hour.dt, weatherData.timezone_offset)}</div>
+            <div className="time">
+              {
+                  formatLocalTime(hour.dt, weatherData.timezone_offset) === nightTime 
+                ? 'night'
+                : formatLocalTime(hour.dt, weatherData.timezone_offset) === morningTime 
+                ? 'morning'
+                : formatLocalTime(hour.dt, weatherData.timezone_offset) === noonTime 
+                ? 'noon'
+                : formatLocalTime(hour.dt, weatherData.timezone_offset) === eveningTime 
+                ? 'evening'
+                : null
+              }
+            </div>
             <div className="weather-icon">
               Weather icon: 
               <img src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt="weather-icon"></img>
