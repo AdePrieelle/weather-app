@@ -30,7 +30,12 @@ export const WeatherNavbar = () => {
 
   return (
     <nav className="weather-navbar">
-      <div className="navbar-logo">Logo</div>
+      <div className="navbar-logo">
+        <div className="navbar-logo-svg">
+          <i className="fas fa-sun"></i>
+        </div>
+        <span className="navbar-logo-text">penWeather</span>
+      </div>
       <div className="navbar-input-error-wrapper">
         <input 
           className="navbar-input" 
@@ -46,6 +51,9 @@ export const WeatherNavbar = () => {
             handleCitySearch();
           }
         }}/>
+        <div className="navbar-search-icon" onClick={() => {handleCitySearch()}}>
+          <i className="fas fa-search"></i>
+        </div>
         { showErrorMessage === 1 
         ? showInputError === 1
         ? <div className="weather-navbar-error">{noInputErrorMessage}</div>
@@ -55,8 +63,22 @@ export const WeatherNavbar = () => {
         : null
         }
       </div>
-      <button className="navbar-search-button" onClick={() => {handleCitySearch()}}>Search</button>
-      <button className="navbar-temp-button" onClick={() => {dispatch(switchTemperatureUnits())}}>{weatherTemperatureUnits === 'Celcius' ? 'display °F' : 'display °C'}</button>
+      {/* <button className="navbar-search-button" onClick={() => {handleCitySearch()}}>Search</button> */}
+      <button className="navbar-temp-button" onClick={() => {dispatch(switchTemperatureUnits())}}>
+        <div className="navbar-temp-button-span">
+          {
+              weatherTemperatureUnits === 'Celcius' 
+            ? <div className="navbar-temp-button-span-metric-units">
+                <div className="navbar-temp-button-active">°C</div>
+                / °F
+              </div>
+            : <div className="navbar-temp-button-span-metric-units">
+                <div className="navbar-temp-button-active">°F</div>
+                / °C
+              </div>
+          }
+        </div>
+        </button>
     </nav>
   )
 }

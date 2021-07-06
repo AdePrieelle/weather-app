@@ -34,11 +34,11 @@ function App() {
         <ScrollToTop />
         <Switch>
           <Route exact path="/">
-            {/* <PreviewCurrentWeather /> */}
+            <PreviewCurrentWeather />
             <PreviewTwoDaysForecastWeather />
-            {/* <PreviewWeekForecastWeather /> */}
-            {/* <PreviewAlertsWeather /> */}
-            {/* <PreviewMinuteForecastWeather /> */}
+            <PreviewMinuteForecastWeather />
+            <PreviewWeekForecastWeather />
+            <PreviewAlertsWeather />
           </Route>
           <Route exact path="/current-weather">
             <CurrentWeather />

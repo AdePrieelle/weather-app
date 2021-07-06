@@ -2,7 +2,8 @@
 
 .weather-navbar {
   position: fixed;
-  background-color: white;
+  // background-color: white;
+  background-color: $navbar-primary-color;
   top: 0;
   z-index: 999;
   // display: flex;
@@ -10,19 +11,43 @@
   // align-items: center;
   width: 100%;
   height: $nav-height;
-  border: 2px solid red;
+  // border: 2px solid red;
   // padding: 0 30px;
   display: flex;
   align-items: center;
+  color: white;
+  .navbar-logo {
+    display: flex;
+    align-items: baseline;
+    .navbar-logo-svg {
+      font-size: 22px;
+      // color: rgb(255, 208, 0);
+      color: rgb(255, 208, 0);
+    }
+    .navbar-logo-text {
+      font-weight: 500;
+    }
+  }
   .navbar-input-error-wrapper {
     position: relative;
+    margin: 0 5px;
     .navbar-input {
+      position: relative;
       padding: 5px;
       border-radius: 4px;
-      border: 2px solid grey;
+      // border: 2px solid grey;
+      border: none;
       &:focus {
         outline: none;
       }
+    }
+    .navbar-search-icon {
+      position: absolute;
+      right: 2px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: $navbar-primary-color;
+      cursor: pointer;
     }
     .weather-navbar-error {
       position: absolute;
@@ -57,6 +82,33 @@
       border-style: solid;
       // border-color: transparent transparent rgba(49, 49, 49, 0.801) transparent;
       border-color: transparent transparent rgba(255, 0, 0, 0.9) transparent;
+    }
+  }
+  .navbar-temp-button {
+    border: none;
+    padding: 3px 0;
+    width: 60px;
+    height: 29px;
+    border-radius: 4px;
+    font-weight: 500;
+    background-color: white;
+    // color: rgb(255, 255, 255);
+    border: 2px solid white;
+    // background-color: $navbar-primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .navbar-temp-button-span-metric-units {
+      display: flex;
+      align-items: baseline;
+      // justify-content: center;
+      font-size: 10px;
+      color: rgb(116, 116, 116);
+      .navbar-temp-button-active {
+        font-size: 20px;
+        color: $navbar-primary-color;
+        margin-right: 10px;
+      }
     }
   }
 }
