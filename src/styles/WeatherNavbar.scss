@@ -18,7 +18,7 @@
   color: white;
   .navbar-logo {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     .navbar-logo-svg {
       font-size: 22px;
       // color: rgb(255, 208, 0);
@@ -86,28 +86,31 @@
   }
   .navbar-temp-button {
     border: none;
-    padding: 3px 0;
-    width: 60px;
     height: 29px;
+    padding: 0;
     border-radius: 4px;
-    font-weight: 500;
     background-color: white;
-    // color: rgb(255, 255, 255);
-    border: 2px solid white;
-    // background-color: $navbar-primary-color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .navbar-temp-button-span-metric-units {
+    .navbar-temp-button-metric-units {
       display: flex;
       align-items: baseline;
-      // justify-content: center;
+      justify-content: space-between;
       font-size: 10px;
-      color: rgb(116, 116, 116);
-      .navbar-temp-button-active {
+      .navbar-temp-button-metric-units-active {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 6px;
         font-size: 20px;
         color: $navbar-primary-color;
-        margin-right: 10px;
+        width: 28px;
+      }
+      .navbar-temp-button-metric-units-inactive {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 0px;
+        padding-right: 6px;
+        font-size: 10px;
+        width: 24px;
+        color: rgb(116, 116, 116);
       }
     }
   }
