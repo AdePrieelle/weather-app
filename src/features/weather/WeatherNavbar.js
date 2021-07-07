@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchCityAndLatitudeLongitude, switchTemperatureUnits } from './weatherSlice'
+import { Link } from 'react-router-dom';
 import '../../styles/WeatherNavbar.scss';
 
 export const WeatherNavbar = () => {
@@ -31,12 +32,14 @@ export const WeatherNavbar = () => {
   return (
     <nav className="weather-navbar">
       <div className="weather-navbar-content">
-        <div className="navbar-logo">
-          <div className="navbar-logo-svg">
-            <i className="fas fa-sun"></i>
+        <Link to="/">
+          <div className="navbar-logo">
+            <div className="navbar-logo-svg">
+              <i className="fas fa-sun"></i>
+            </div>
+            <div className="navbar-logo-text">penWeather</div>
           </div>
-          <div className="navbar-logo-text">penWeather</div>
-        </div>
+        </Link>
         <div className="navbar-input-temp-wrapper">
           <div className="navbar-input-error-wrapper">
             <input 

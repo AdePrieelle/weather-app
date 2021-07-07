@@ -1,9 +1,12 @@
 $nav-height: 65px;
 
 // WeatherNavbar
-$navbar-primary-color: #0282eb;
+$navbar-primary-bg-color: #0282eb;
+$navbar-error-bg-color: rgba(255, 58, 58, 0.9);
 
-// // Media queries
+// Media queries
+$media-query-small-screen: 420px;
+
 // $media-query-xxsmall-screen: 380px;
 // $media-query-xsmall-screen: 420px;
 // $media-query-small-screen: 480px;
@@ -11,19 +14,3 @@ $navbar-primary-color: #0282eb;
 // $media-query-large-screen: 900px;
 // $media-query-xlarge-screen: 1200px;
 // $media-query-xxlarge-screen: 1440px;
-
-// // Navbar.scss
-// $add-to-bag-color: rgb(250, 70, 22);
-// $nav-height: 65px;
-
-// // ShopDetails.scss
-// $border-radius-img-margin-title: 0.5rem;
-
-// // Cart.scss
-// $cart-items-amount-height: 110px;
-
-// // CartOrderItems.scss
-// $divide-line-bg-color-white: #e9e9e9;
-
-// // CartOrderSummary.scss
-// $divide-line-bg-color-black: #333;
