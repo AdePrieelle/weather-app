@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCityAndLatitudeLongitude } from './features/weather/weatherSlice'
-import { WeatherNavbar } from './features/weather/WeatherNavbar';
+import { Navbar } from './features/weather/Navbar/Navbar';
 import { CurrentWeather } from './features/weather/CurrentWeather';
 import { PreviewCurrentWeather } from './features/weather/PreviewCurrentWeather'
 import { MinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/MinuteForecastWeather';
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <WeatherNavbar />
+      <Navbar />
       <div className="weather-contents">
         <ScrollToTop />
         <Switch>

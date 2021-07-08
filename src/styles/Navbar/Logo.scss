@@ -1,0 +1,20 @@
+@import "../partials/variables";
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+  .logo-svg-wrapper {
+    font-size: 22px;
+    color: rgb(255, 208, 0);
+  }
+  .logo-text {
+    display: none;
+    color: white;
+    text-decoration: none;
+    @media screen and (min-width: $media-query-small-screen) {
+      display: block;
+    }
+    font-weight: 500;
+  }
+}

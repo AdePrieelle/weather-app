@@ -1,0 +1,32 @@
+@import "../partials/variables";
+
+.navbar-temp-button {
+  padding: 0;
+  height: 29px;
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  .navbar-temp-button-metric-units {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 10px;
+    .navbar-temp-button-metric-units-active {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 6px;
+      width: 28px;
+      font-size: 20px;
+      color: $navbar-primary-bg-color;
+    }
+    .navbar-temp-button-metric-units-inactive {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 0px;
+      padding-right: 6px;
+      width: 24px;
+      font-size: 10px;
+      color: rgb(116, 116, 116);
+    }
+  }
+}

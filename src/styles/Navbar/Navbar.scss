@@ -1,0 +1,71 @@
+@import "../partials/variables";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  @media screen and (min-width: $media-query-small-screen) {
+    padding: 0 20px;
+  }
+  width: 100%;
+  height: $nav-height;
+  color: white;
+  background-color: $navbar-primary-bg-color;
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .navbar-input-temp-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-grow: 1;
+      .navbar-input-error-wrapper {
+        position: relative;
+        flex-grow: 1;
+        margin: 0 10px;
+        max-width: 320px;
+      }
+    }
+  }
+}
+
+@keyframes showTooltip {
+  0% {
+    opacity: 0;
+    scale: 0.1;
+    transform: translateY(24px);
+  }
+
+  60% {
+    transform: translateY(38px);
+    scale: 1;
+  }
+
+  70% {
+    transform: translateY(26px);
+  }
+
+  80% {
+    transform: translateY(34px);
+  }
+
+  90% {
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(32px);
+  }
+}
