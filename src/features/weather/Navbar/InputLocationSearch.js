@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCityAndLatitudeLongitude } from '../weatherSlice';
-import '../../../styles/Navbar/InputLocationSearch.scss';
+import './InputLocationSearch.scss';
 
 export const InputLocationSearch = ({
   showErrorMessage,

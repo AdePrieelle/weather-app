@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCityAndLatitudeLongitude } from './features/weather/weatherSlice'
 import { Navbar } from './features/weather/Navbar/Navbar';
-import { CurrentWeather } from './features/weather/CurrentWeather';
-import { PreviewCurrentWeather } from './features/weather/PreviewCurrentWeather'
+import { CurrentWeather } from './features/weather/CurrentWeather/CurrentWeather';
+import { PreviewCurrentWeather } from './features/weather/CurrentWeather/PreviewCurrentWeather'
 import { MinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/MinuteForecastWeather';
 import { PreviewMinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/PreviewMinuteForecastWeather';
 import { TwoDaysForecastWeather } from './features/weather/TwoDaysForecastWeather';
@@ -30,15 +30,18 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      {/* Scroll to top on route change */}
+      <ScrollToTop />
       <div className="weather-contents">
-        <ScrollToTop />
         <Switch>
           <Route exact path="/">
-            <PreviewCurrentWeather />
-            <PreviewTwoDaysForecastWeather />
-            <PreviewMinuteForecastWeather />
-            <PreviewWeekForecastWeather />
-            <PreviewAlertsWeather />
+            <div className="weather-contents-preview">
+              <PreviewCurrentWeather />
+              <PreviewTwoDaysForecastWeather />
+              <PreviewMinuteForecastWeather />
+              <PreviewWeekForecastWeather />
+              <PreviewAlertsWeather />
+            </div>
           </Route>
           <Route exact path="/current-weather">
             <CurrentWeather />

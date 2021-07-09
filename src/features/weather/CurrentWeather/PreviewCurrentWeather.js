@@ -8,7 +8,8 @@ import {
   rotateWindArrowBeaufort
 } from '../../../common/helpers';
 import { Link } from 'react-router-dom';
-import '../../../styles/PreviewCurrentWeather.scss';
+import { WrongLocationTooltip } from './WrongLocationTooltip';
+import './PreviewCurrentWeather.scss';
 
 export const PreviewCurrentWeather = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -20,15 +21,11 @@ export const PreviewCurrentWeather = () => {
 
   const [showWrongLocationTooltip, setShowWrongLocationTooltip] = useState(false);
 
-  const displayWrongLocationTooltip = () => {
-    setShowWrongLocationTooltip(true);
+  const ToggleWrongLocationTooltip = () => {
+    setShowWrongLocationTooltip(!showWrongLocationTooltip);
   }
 
-  const hideWrongLocationTooltip = () => {
-    setShowWrongLocationTooltip(false);
-  }
-
-  let content
+  let content;
 
   if (weatherStatus === 'loading') {
     content = <div className="loading">Loading...</div>
@@ -36,33 +33,23 @@ export const PreviewCurrentWeather = () => {
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
     <div className="preview-current-weather-content">
-      <div className={
-          showWrongLocationTooltip 
-        ? "wrong-location-tooltip wrong-location-tooltip-active"
-        : "wrong-location-tooltip"
-      }>
-        <div className="wrong-location-tooltip-content">
-          <div>Hint: if you can't find your city try to add the countrycode (and statecode) in the ISO3166 format.</div> 
-          <div>Format: <code>city, countrycode</code> or <code>city, statecode, countrycode</code></div>
-          <div>Example: <code>London,uk</code> or <code>London,GB-LND,uk</code></div>
-          <div className="close-button-wrapper">
-            <button className="wrong-location-tooltip-close" onClick={() => {hideWrongLocationTooltip()}}>Got it!</button>
-          </div>
-        </div>
-      </div>
-      <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
+      <WrongLocationTooltip 
+        showWrongLocationTooltip={showWrongLocationTooltip}
+        ToggleWrongLocationTooltip={ToggleWrongLocationTooltip}
+      />
       <div className="location">
-        {weatherCity}, {weatherCountry} {" "}
-        <span className="wrong-location-text" onClick={() => {
-        displayWrongLocationTooltip();
+        <div className="location-text">{weatherCity}, {weatherCountry}</div>
+        <div className="wrong-location-text" onClick={() => {
+          ToggleWrongLocationTooltip();
         }}>
-          Wrong location?
-        </span>
+          <i className="fas fa-info-circle info-icon"></i>
+        </div>
       </div>  
       <div className="time-gmt-difference-wrapper">
         <div className="time">{formatLocalDateNow(weatherData.current.dt, weatherData.timezone_offset)}</div>
         <div className="gmt-difference">({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
       </div>
+      <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
       <div className="weather-icon">
         <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>
       </div>

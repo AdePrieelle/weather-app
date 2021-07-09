@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import '../../../styles/PreviewMinuteForecastWeather.scss';
+import './PreviewMinuteForecastWeather.scss';
 import { WeatherRainGraphScaleLog } from './WeatherRainGraphScaleLogFolder/WeatherRainGraphScaleLog';
 import { Link } from 'react-router-dom';
 

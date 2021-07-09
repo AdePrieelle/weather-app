@@ -4,7 +4,7 @@ import { Logo } from './Logo';
 import { InputLocationSearch } from './InputLocationSearch';
 import { InputErrorMessage } from './InputErrorMessage';
 import { ToggleMetricUnitsButton } from './ToggleMetricUnitsButton';
-import '../../../styles/Navbar/Navbar.scss';
+import './Navbar.scss';
 
 export const Navbar = () => {
   const [showInputError, setShowInputError] = useState(0);

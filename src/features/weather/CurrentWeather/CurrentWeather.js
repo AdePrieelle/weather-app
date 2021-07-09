@@ -9,9 +9,9 @@ import {
   convertWindDegrees, 
   rotateWindArrow,
   rotateWindArrowBeaufort
-} from '../../common/helpers'
+} from '../../../common/helpers';
 import { Link } from 'react-router-dom';
-import '../../styles/CurrentWeather.scss';
+import './CurrentWeather.scss';
 
 export const CurrentWeather = () => {
   const weatherData = useSelector(state => state.weather.weatherData);

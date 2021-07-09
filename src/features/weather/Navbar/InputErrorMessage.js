@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import '../../../styles/Navbar/InputErrorMessage.scss';
+import './InputErrorMessage.scss';
 
 export const InputErrorMessage = ({
   showErrorMessage,

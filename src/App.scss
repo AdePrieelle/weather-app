@@ -2,6 +2,13 @@
 
 .weather-contents {
   margin-top: $nav-height;
+  .weather-contents-preview {
+    display: grid;
+    grid-template-columns: 1fr;
+    @media screen and (min-width: $media-query-large-screen) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
   .loader {
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */

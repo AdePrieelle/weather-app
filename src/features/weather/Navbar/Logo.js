@@ -1,4 +1,4 @@
-import '../../../styles/Navbar/Logo.scss';
+import './Logo.scss';
 
 export const Logo = () => {
   return (

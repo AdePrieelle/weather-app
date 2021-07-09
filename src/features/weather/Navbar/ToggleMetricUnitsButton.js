@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { switchTemperatureUnits } from '../weatherSlice';
-import '../../../styles/Navbar/ToggleMetricUnitsButton.scss';
+import './ToggleMetricUnitsButton.scss';
 
 export const ToggleMetricUnitsButton = () => {
   const dispatch = useDispatch();
