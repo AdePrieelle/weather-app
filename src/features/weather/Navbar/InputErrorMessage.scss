@@ -10,7 +10,7 @@
   height: 100%;
   font-size: 12px;
   color: white;
-  background-color: $navbar-error-bg-color;
+  background-color: $error-bg-color;
   border-radius: 4px;
   transform-origin: bottom left;
   animation: showTooltip 350ms ease-in-out;
@@ -23,6 +23,6 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent $navbar-error-bg-color transparent;
+    border-color: transparent transparent $error-bg-color transparent;
   }
 }

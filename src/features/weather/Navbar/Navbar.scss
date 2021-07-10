@@ -13,14 +13,13 @@
   }
   width: 100%;
   height: $nav-height;
-  color: white;
-  background-color: $navbar-primary-bg-color;
+  background-color: $primary-bg-color;
   .navbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: $media-query-xlarge-screen;
     a {
       text-decoration: none;
       cursor: pointer;

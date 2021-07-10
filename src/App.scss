@@ -1,10 +1,18 @@
 @import "./styles/partials/variables";
 
+.App {
+  display: flex;
+  justify-content: center;
+}
 .weather-contents {
   margin-top: $nav-height;
+  background-color: $secondary-bg-color;
+  width: 100%;
+  max-width: $media-query-xlarge-screen;
   .weather-contents-preview {
     display: grid;
     grid-template-columns: 1fr;
+    grid-gap: 20px;
     @media screen and (min-width: $media-query-large-screen) {
       grid-template-columns: 1fr 1fr;
     }

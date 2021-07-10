@@ -1,14 +1,32 @@
 @import "../../../styles/partials//variables";
 
 .preview-current-weather {
+  margin: 20px 0;
   .preview-current-weather-content {
     position: relative;
-    margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: $primary-text-color;
+    background-color: $section-bg-color;
+    // color: white;
+    // color: $primary-bg-color;
+    // background-color: $logo-color;
+    // new
+    // background-image: url("../../../images/aacurrentweatherbgpic.webp");
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    // box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     .temp {
       font-size: 32px;
+      font-weight: 500;
     }
     .location {
       position: relative;

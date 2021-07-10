@@ -1,16 +1,20 @@
+@import "../../../styles/partials/variables";
+
 .wrong-location-tooltip {
   position: absolute;
   z-index: 99;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: rgba(1, 136, 247, 0.8);
+  background: $wrong-location-tooltip-color;
   color: white;
-  width: calc(100% + 40px);
-  top: -20px;
+  width: calc(100%);
+  top: 0px;
   padding: 10px;
-  transform: translateY(-100%);
+  transform: translateY(-200%);
   opacity: 0;
+  border-radius: 8px;
+  // height: 100%;
   transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
   .wrong-location-tooltip-content {
     code {

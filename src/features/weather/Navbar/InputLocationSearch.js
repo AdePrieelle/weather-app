@@ -4,14 +4,11 @@ import { fetchCityAndLatitudeLongitude } from '../weatherSlice';
 import './InputLocationSearch.scss';
 
 export const InputLocationSearch = ({
-  showErrorMessage,
   setShowErrorMessage,
-  showInputError,
   setShowInputError,
 }) => {
   const [city, setCity] = useState('');
   const dispatch = useDispatch();
-  const weatherError = useSelector(state => state.weather.errorFetchCityAndLatitudeLongitude);
 
   const updateFormCity = (e) => {
     setCity(e.target.value);
@@ -33,7 +30,6 @@ export const InputLocationSearch = ({
     <>
       <input 
         className="navbar-input" 
-        style={{borderColor: (showErrorMessage === 0) ? "grey" : (weatherError === null && showInputError === 0) ? "grey" : "red"}}
         value={city} 
         type="text" 
         placeholder="Search location..." 
