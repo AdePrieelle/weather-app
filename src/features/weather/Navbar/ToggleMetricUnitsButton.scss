@@ -5,6 +5,7 @@
   height: 29px;
   background-color: white;
   border: none;
+  border: 1px solid rgb(230, 232, 235);
   border-radius: 4px;
   cursor: pointer;
   .navbar-temp-button-metric-units {
@@ -18,7 +19,7 @@
       padding-left: 6px;
       width: 28px;
       font-size: 20px;
-      color: $primary-bg-color;
+      color: $secondary-text-color;
     }
     .navbar-temp-button-metric-units-inactive {
       display: flex;

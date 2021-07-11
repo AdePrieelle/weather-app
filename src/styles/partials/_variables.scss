@@ -3,13 +3,20 @@ $nav-height: 65px;
 // WeatherNavbar
 $logo-color: rgb(255, 208, 0);
 $primary-bg-color: #0282eb;
+// $primary-bg-color: #0282eb;
+$primary-bg-color: white;
 // $primary-bg-color: #03030a;
 $secondary-bg-color: white;
 $section-bg-color: white;
+// $section-bg-color: #4359f5;
+// $section-bg-color: #21dfb6;
+$section-bg-color: #0282eb;
+// $section-bg-color: #4be2e3;
+// $section-bg-color: white;
 $wrong-location-tooltip-color: rgba(1, 136, 247, 0.8);
-$primary-text-color: black;
-$secondary-text-color: white;
-$error-bg-color: rgba(255, 58, 58, 0.9);
+$primary-text-color: white;
+$secondary-text-color: black;
+$error-bg-color: rgba(10, 6, 6, 0.9);
 
 // Media queries
 $media-query-small-screen: 420px;

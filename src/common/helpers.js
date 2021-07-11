@@ -34,7 +34,7 @@ export const formatLocalDateNow = (timestamp, timezoneOffset) => {
   const minutes = currentTime.getUTCMinutes();
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  return `${days[day]} ${date} ${months[month]} ${year} ${hours < 10 ? "0" : ""}${hours}:${minutes < 10 ? "0" : ""}${minutes}`;
+  return `${days[day]}, ${date} ${months[month]} ${year}`;
 }
 
 export const formatLocalDateDay = (timestamp, timezoneOffset) => {
