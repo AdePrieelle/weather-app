@@ -38,25 +38,34 @@ export const PreviewCurrentWeather = () => {
         showWrongLocationTooltip={showWrongLocationTooltip}
         ToggleWrongLocationTooltip={ToggleWrongLocationTooltip}
       />
-      <div className="location">
-        <div className="location-text">{weatherCity}, {weatherCountry}</div>
-        <div className="wrong-location-text" onClick={() => {
-          ToggleWrongLocationTooltip();
-        }}>
-          <i className="fas fa-info-circle info-icon"></i>
-        </div>
-      </div>  
-      <div className="date">{formatLocalDateNow(weatherData.current.dt, weatherData.timezone_offset)}</div>
-      <div className="gmt-difference">{formatLocalTime(weatherData.current.dt, weatherData.timezone_offset)} ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
-      <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
-      <div className="temp-feels-like">Feels like: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.feels_like)}</div>
+
       <div className="weather-icon">
         <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>
       </div>
+      <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
+      <div className="location">
+        <div className="location-text">{weatherCity}, {weatherCountry}
+          <div className="wrong-location-text" onClick={() => {
+            ToggleWrongLocationTooltip();
+          }}>
+            <i className="fas fa-info-circle info-icon"></i>
+          </div>
+        </div>
+      </div>  
+      <div className="date">{formatLocalDateNow(weatherData.current.dt, weatherData.timezone_offset)}</div>
+      <div className="time-gmt">{formatLocalTime(weatherData.current.dt, weatherData.timezone_offset)} ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
+      <div className="temp-feels-like">Feels like: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.feels_like)}</div>
       <div className="weather-description">{weatherData.current.weather[0].description}</div>
-      <div className="humidity">Humidity: {weatherData.current.humidity}%</div>
-      <div className="cloudiness">Cloudiness: {weatherData.current.clouds}%</div>
-      <div className="wind-direction-beaufort">{rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}</div>
+      <div className="wind-cloudiness-humidity-wrapper">
+          <div className="wind-direction-beaufort-title">wind</div>
+          <div className="wind-direction-beaufort-value">
+            {rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}
+          </div>
+          <div className="cloudiness-title">cloudiness</div>
+          <div className="cloudiness-value">{weatherData.current.clouds}%</div>
+          <div className="humidity-title">humidity</div>
+          <div className="humidity-value">{weatherData.current.humidity}%</div>
+      </div>
       <div className="display-more">
         <Link to="/current-weather">
           Show details -->

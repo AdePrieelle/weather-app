@@ -7,9 +7,19 @@
   }
   .preview-current-weather-content {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    display: grid;
+    // grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "weather-icon weather-icon weather-icon weather-icon temp temp"
+      "weather-description weather-description weather-description weather-description temp-feels-like temp-feels-like"
+      "location location location location location location"
+      "date date date date date date"
+      "time-gmt time-gmt time-gmt time-gmt time-gmt time-gmt"
+      "wind-cloudiness-humidity wind-cloudiness-humidity wind-cloudiness-humidity wind-cloudiness-humidity wind-cloudiness-humidity wind-cloudiness-humidity"
+      "display-more display-more display-more display-more display-more display-more";
     color: $primary-text-color;
     background-color: $section-bg-color;
     // color: white;
@@ -21,61 +31,139 @@
     // background-size: cover;
     // background-repeat: no-repeat;
 
-    padding: 40px;
-    border-radius: 24px;
+    padding: $section-border-radius;
+    border-radius: $section-border-radius;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     // box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     //   rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     // box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    .weather-icon {
+      grid-area: weather-icon;
+      justify-self: flex-start;
+    }
     .temp {
+      grid-area: temp;
+      justify-self: flex-start;
       margin-top: 20px;
-      font-size: 40px;
+      font-size: 48px;
       font-weight: 700;
     }
-    .location {
-      position: relative;
-      display: flex;
-      flex-direction: column;
+    .weather-description {
+      grid-area: weather-description;
+      margin-bottom: 10px;
+    }
+    .temp-feels-like {
+      grid-area: temp-feels-like;
+    }
+    .date {
+      grid-area: date;
+      margin-bottom: 10px;
+    }
+    .time-gmt {
+      grid-area: time-gmt;
+      margin-bottom: 20px;
+    }
+    .wind-cloudiness-humidity-wrapper {
+      grid-area: wind-cloudiness-humidity;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      background-color: white;
+      border-radius: 12px;
+      color: rgb(3, 3, 3);
       align-items: center;
-      // align-items: baseline;
-      .location-text {
-        font-size: 24px;
+      // padding: 4px;
+      padding-top: 10px;
+      .wind-direction-beaufort-title {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        justify-self: center;
       }
-      .wrong-location-text {
-        position: absolute;
-        right: -20px;
-        top: -10px;
-        font-size: 14px;
-        padding: 4px;
-        cursor: pointer;
+      .wind-direction-beaufort-value {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        justify-self: center;
+        // display: flex;
+        // align-items: center;
+        .wind-arrow-wrapper {
+          position: relative;
+          // grid-area: wind-arrow;
+          // margin-left: 20px;
+          width: 40px;
+          height: 40px;
+          background-color: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: black;
+          .wind-arrow {
+            font-size: 26px;
+            color: $wind-arrow-color;
+          }
+          .wind-speed-beaufort {
+            position: absolute;
+            font-size: 14px;
+            background-color: $wind-arrow-circle-bg-color;
+            border: 1px solid $wind-arrow-color;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $wind-arrow-circle-text-color;
+          }
+        }
+      }
+      .humidity-title {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        justify-self: center;
+      }
+      .humidity-value {
+        grid-column: 3/4;
+        grid-row: 2/3;
+        justify-self: center;
+      }
+      .cloudiness-title {
+        grid-column: 2/3;
+        justify-self: center;
+      }
+      .cloudiness-value {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        justify-self: center;
       }
     }
-    .windArrow {
-      position: relative;
-      margin-left: 20px;
-      width: 40px;
-      height: 40px;
-      background-color: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: black;
-      .wind-arrow {
-        font-size: 26px;
-        color: #797d80;
+    .display-more {
+      grid-area: display-more;
+      justify-self: flex-end;
+      margin-top: 20px;
+      margin-bottom: 4px;
+      a {
+        color: white;
+        text-decoration: none;
       }
-      .wind-speed-beaufort {
-        position: absolute;
-        font-size: 14px;
-        background-color: white;
-        border: 1px solid #797d80;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #18191a;
+    }
+    .location {
+      // position: relative;
+      grid-area: location;
+      margin-bottom: 20px;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      // align-items: baseline;
+      .location-text {
+        position: relative;
+        display: inline-block;
+        font-size: 24px;
+        .wrong-location-text {
+          position: absolute;
+          right: -20px;
+          top: -10px;
+          font-size: 14px;
+          padding: 4px;
+          cursor: pointer;
+        }
       }
     }
   }

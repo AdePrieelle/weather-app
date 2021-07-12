@@ -15,7 +15,7 @@ $nav-height: 65px;
 $logo-color: rgb(255, 208, 0);
 $logo-text-color: #0282eb;
 // $logo-text-color: #4359f5;
-$error-bg-color: rgba(10, 6, 6, 0.9);
+$error-bg-color: rgba(255, 58, 58, 0.9);
 $navbar-text-color: #0282eb;
 // $navbar-text-color: #4359f5;
 // $navbar-text-color: black;
@@ -27,10 +27,19 @@ $navbar-input-height: 38px;
 $wrong-location-tooltip-color: rgba(1, 136, 247, 0.8);
 $section-bg-color: orange;
 $section-bg-color: #4359f5;
+$section-border-radius: 24px;
 // $section-bg-color: #21dfb6;
 // $section-bg-color: #0282eb;
 // $section-bg-color: #4be2e3;
 // $section-bg-color: white;
+
+// wind-arrow
+// $wind-arrow-color: #797d80;
+$wind-arrow-color: rgb(168, 168, 168);
+// $wind-arrow-circle-bg-color: white;
+$wind-arrow-circle-bg-color: white;
+// $wind-arrow-circle-color: #18191a;
+$wind-arrow-circle-text-color: #18191a;
 
 // Media queries
 $media-query-small-screen: 420px;

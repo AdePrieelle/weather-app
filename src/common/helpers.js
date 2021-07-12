@@ -130,7 +130,7 @@ export const rotateWindArrow = (windDegrees) => {
   const arr = [0, 45, 90, 135, 180, 225, 270, 315];
   const amountToRotate = arr[val % 8];
   return (
-    <div className="windArrow">
+    <div className="wind-arrow-wrapper">
       {/* compensate for 45 degrees because the icon is angled at 45 degrees by default 
       and add 180 degrees to point towards the direction that the wind is going */}
       {/* <i className="fas fa-location-arrow" style={{rotate: `${(amountToRotate-45)+180}deg`}}></i> */}
@@ -147,7 +147,7 @@ export const rotateWindArrowBeaufort = (windDegrees, windSpeedBeaufort) => {
   const translateXWindArrow = '-2px';
   const translateYWindArrow = '2px';
   return (
-    <div className="windArrow">
+    <div className="wind-arrow-wrapper">
       {/* compensate for 45 degrees because the icon is angled at 45 degrees by default 
       and add 180 degrees to point towards the direction that the wind is going */}
       <i className="fas fa-location-arrow wind-arrow" style={{transform: `translate(${translateXWindArrow}, ${translateYWindArrow})`, rotate: `${(amountToRotate-45)+180}deg`}}></i>
