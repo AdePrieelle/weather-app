@@ -2,10 +2,10 @@
 
 .navbar-temp-button {
   padding: 0;
-  height: 29px;
+  height: $navbar-input-height;
   background-color: white;
   border: none;
-  border: 1px solid rgb(230, 232, 235);
+  border: 1px solid $navbar-border-color;
   border-radius: 4px;
   cursor: pointer;
   .navbar-temp-button-metric-units {
@@ -19,7 +19,7 @@
       padding-left: 6px;
       width: 28px;
       font-size: 20px;
-      color: $secondary-text-color;
+      color: $navbar-text-color;
     }
     .navbar-temp-button-metric-units-inactive {
       display: flex;

@@ -10,7 +10,7 @@
   }
   .logo-text {
     display: none;
-    color: $secondary-text-color;
+    color: $logo-text-color;
     text-decoration: none;
     @media screen and (min-width: $media-query-small-screen) {
       display: block;

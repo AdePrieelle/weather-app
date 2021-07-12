@@ -1,22 +1,36 @@
-$nav-height: 65px;
-
-// WeatherNavbar
-$logo-color: rgb(255, 208, 0);
+// general
 $primary-bg-color: #0282eb;
 // $primary-bg-color: #0282eb;
+// $primary-bg-color: #fdfcf3;
 $primary-bg-color: white;
 // $primary-bg-color: #03030a;
 $secondary-bg-color: white;
-$section-bg-color: white;
-// $section-bg-color: #4359f5;
-// $section-bg-color: #21dfb6;
-$section-bg-color: #0282eb;
-// $section-bg-color: #4be2e3;
-// $section-bg-color: white;
-$wrong-location-tooltip-color: rgba(1, 136, 247, 0.8);
+// $secondary-bg-color: #fdfcf3;
 $primary-text-color: white;
 $secondary-text-color: black;
+// $secondary-text-color: #0282eb;
+
+// WeatherNavbar
+$nav-height: 65px;
+$logo-color: rgb(255, 208, 0);
+$logo-text-color: #0282eb;
+// $logo-text-color: #4359f5;
 $error-bg-color: rgba(10, 6, 6, 0.9);
+$navbar-text-color: #0282eb;
+// $navbar-text-color: #4359f5;
+// $navbar-text-color: black;
+// $navbar-border-color: rgb(230, 232, 235);
+$navbar-border-color: #dfe1e5;
+$navbar-input-height: 38px;
+
+// PreviewCurrentWeather
+$wrong-location-tooltip-color: rgba(1, 136, 247, 0.8);
+$section-bg-color: orange;
+$section-bg-color: #4359f5;
+// $section-bg-color: #21dfb6;
+// $section-bg-color: #0282eb;
+// $section-bg-color: #4be2e3;
+// $section-bg-color: white;
 
 // Media queries
 $media-query-small-screen: 420px;
