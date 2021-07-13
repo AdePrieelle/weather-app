@@ -42,7 +42,10 @@ export const PreviewCurrentWeather = () => {
       <div className="weather-icon">
         <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>
       </div>
-      <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
+      <div className="temp-temp-feels-like-wrapper">
+        <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
+        <div className="temp-feels-like">Feels like: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.feels_like)}</div>
+      </div>
       <div className="location">
         <div className="location-text">{weatherCity}, {weatherCountry}
           <div className="wrong-location-text" onClick={() => {
@@ -54,16 +57,15 @@ export const PreviewCurrentWeather = () => {
       </div>  
       <div className="date">{formatLocalDateNow(weatherData.current.dt, weatherData.timezone_offset)}</div>
       <div className="time-gmt">{formatLocalTime(weatherData.current.dt, weatherData.timezone_offset)} ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
-      <div className="temp-feels-like">Feels like: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.feels_like)}</div>
       <div className="weather-description">{weatherData.current.weather[0].description}</div>
       <div className="wind-cloudiness-humidity-wrapper">
-          <div className="wind-direction-beaufort-title">wind</div>
+          <div className="wind-direction-beaufort-title">Wind</div>
           <div className="wind-direction-beaufort-value">
             {rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}
           </div>
-          <div className="cloudiness-title">cloudiness</div>
+          <div className="cloudiness-title">Cloudiness</div>
           <div className="cloudiness-value">{weatherData.current.clouds}%</div>
-          <div className="humidity-title">humidity</div>
+          <div className="humidity-title">Humidity</div>
           <div className="humidity-value">{weatherData.current.humidity}%</div>
       </div>
       <div className="display-more">
