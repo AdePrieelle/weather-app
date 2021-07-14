@@ -39,12 +39,10 @@ export const PreviewCurrentWeather = () => {
         ToggleWrongLocationTooltip={ToggleWrongLocationTooltip}
       />
 
-      <div className="weather-icon-description-wrapper">
-        <div className="weather-icon">
-          <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>
-        </div>
-        <div className="weather-description">{weatherData.current.weather[0].description}</div>
+      <div className="weather-icon">
+        <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>
       </div>
+      <div className="weather-description">{weatherData.current.weather[0].description}</div>
       <div className="temp-temp-feels-like-wrapper">
         <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
         <div className="temp-feels-like">Feels like: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.feels_like)}</div>
@@ -63,14 +61,14 @@ export const PreviewCurrentWeather = () => {
         <div className="time-gmt">{formatLocalTime(weatherData.current.dt, weatherData.timezone_offset)} ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
       </div>
       <div className="wind-cloudiness-humidity-wrapper">
-          <div className="wind-direction-beaufort-title">Wind</div>
-          <div className="wind-direction-beaufort-value">
-            {rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}
-          </div>
-          <div className="cloudiness-title">Cloudiness</div>
-          <div className="cloudiness-value">{weatherData.current.clouds} %</div>
-          <div className="humidity-title">Humidity</div>
-          <div className="humidity-value">{weatherData.current.humidity} %</div>
+        <div className="wind-direction-beaufort-title">Wind</div>
+        <div className="wind-direction-beaufort-value">
+          {rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}
+        </div>
+        <div className="cloudiness-title">Cloudiness</div>
+        <div className="cloudiness-value">{weatherData.current.clouds} %</div>
+        <div className="humidity-title">Humidity</div>
+        <div className="humidity-value">{weatherData.current.humidity} %</div>
       </div>
       <div className="display-more">
         <Link to="/current-weather">
