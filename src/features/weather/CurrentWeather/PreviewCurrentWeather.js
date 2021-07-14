@@ -62,12 +62,12 @@ export const PreviewCurrentWeather = () => {
       </div>
       <div className="wind-cloudiness-humidity-wrapper">
         <div className="wind-direction-beaufort-title">Wind</div>
+        <div className="cloudiness-title">Cloudiness</div>
+        <div className="humidity-title">Humidity</div>
         <div className="wind-direction-beaufort-value">
           {rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}
         </div>
-        <div className="cloudiness-title">Cloudiness</div>
         <div className="cloudiness-value">{weatherData.current.clouds} %</div>
-        <div className="humidity-title">Humidity</div>
         <div className="humidity-value">{weatherData.current.humidity} %</div>
       </div>
       <div className="display-more">
