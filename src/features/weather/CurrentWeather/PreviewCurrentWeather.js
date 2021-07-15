@@ -6,8 +6,8 @@ import {
   formatLocalTime,
   secondsToGmtHoursAndMinutes,
   convertWindSpeedToBeaufort, 
-  rotateWindArrowBeaufort
 } from '../../../common/helpers';
+import { WindArrowBeaufort } from '../../../common/WindArrowBeaufort';
 import { Link } from 'react-router-dom';
 import { WrongLocationTooltip } from './WrongLocationTooltip';
 import './PreviewCurrentWeather.scss';
@@ -61,14 +61,17 @@ export const PreviewCurrentWeather = () => {
         <div className="time-gmt">{formatLocalTime(weatherData.current.dt, weatherData.timezone_offset)} ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
       </div>
       <div className="wind-cloudiness-humidity-wrapper">
-        <div className="wind-direction-beaufort-title">Wind</div>
-        <div className="cloudiness-title">Cloudiness</div>
-        <div className="humidity-title">Humidity</div>
-        <div className="wind-direction-beaufort-value">
-          {rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}
+        <div className="title">Wind</div>
+        <div className="title">Cloudiness</div>
+        <div className="title">Humidity</div>
+        <div className="value">
+          <WindArrowBeaufort
+            windDegrees={weatherData.current.wind_deg}
+            windSpeedBeaufort={convertWindSpeedToBeaufort(weatherData.current.wind_speed)}
+          />
         </div>
-        <div className="cloudiness-value">{weatherData.current.clouds}%</div>
-        <div className="humidity-value">{weatherData.current.humidity}%</div>
+        <div className="value">{weatherData.current.clouds}%</div>
+        <div className="value">{weatherData.current.humidity}%</div>
         {/* <div className="card-effect card-effect-1"></div> */}
         {/* <div className="card-effect card-effect-2"></div> */}
       </div>

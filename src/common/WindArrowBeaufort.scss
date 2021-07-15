@@ -1,0 +1,29 @@
+@import "../styles/partials/variables";
+
+.wind-arrow-beaufort-wrapper {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .wind-arrow {
+    font-size: 24px;
+    color: $wind-arrow-color;
+  }
+  .wind-speed-beaufort {
+    position: absolute;
+    font-size: 14px;
+    background-color: $wind-arrow-circle-bg-color;
+    border: 1px solid $wind-arrow-color;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $wind-arrow-circle-text-color;
+    font-weight: 500;
+  }
+}

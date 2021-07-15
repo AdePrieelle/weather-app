@@ -30,8 +30,8 @@ export const formatLocalDateNow = (timestamp, timezoneOffset) => {
   const date = currentTime.getUTCDate();
   const month = currentTime.getUTCMonth();
   const year = currentTime.getUTCFullYear();
-  const hours = currentTime.getUTCHours();
-  const minutes = currentTime.getUTCMinutes();
+  // const hours = currentTime.getUTCHours();
+  // const minutes = currentTime.getUTCMinutes();
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   return `${days[day]}, ${date} ${months[month]} ${year}`;
@@ -147,11 +147,13 @@ export const rotateWindArrowBeaufort = (windDegrees, windSpeedBeaufort) => {
   const translateXWindArrow = '-2px';
   const translateYWindArrow = '2px';
   return (
-    <div className="wind-arrow-wrapper">
+    <div className="wind-arrow-beaufort-wrapper">
       {/* compensate for 45 degrees because the icon is angled at 45 degrees by default 
       and add 180 degrees to point towards the direction that the wind is going */}
       <i className="fas fa-location-arrow wind-arrow" style={{transform: `translate(${translateXWindArrow}, ${translateYWindArrow})`, rotate: `${(amountToRotate-45)+180}deg`}}></i>
-      <div className="wind-speed-beaufort">{windSpeedBeaufort}</div>
+      <div className="wind-speed-beaufort">
+        {windSpeedBeaufort}
+      </div>
     </div>
   )
 }

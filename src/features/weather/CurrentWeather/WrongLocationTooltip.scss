@@ -9,14 +9,15 @@
   background: $wrong-location-tooltip-color;
   color: #313131;
   width: calc(100% + 2px);
-  top: 0px;
+  top: -1px;
   left: -1px;
   padding: $section-border-radius;
-  transform: translateY(-200%);
+  transform: translateY(-100%);
   opacity: 0;
   border-radius: $section-border-radius;
-  height: 100%;
+  height: calc(100% + 2px);
   transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
+  pointer-events: none;
   .wrong-location-tooltip-content {
     code {
       background-color: white;
@@ -48,4 +49,5 @@
 .wrong-location-tooltip-active {
   opacity: 1;
   transform: translateY(0);
+  pointer-events: all;
 }
