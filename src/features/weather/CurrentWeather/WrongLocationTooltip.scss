@@ -7,14 +7,15 @@
   align-items: center;
   flex-direction: column;
   background: $wrong-location-tooltip-color;
-  color: white;
-  width: calc(100%);
+  color: #313131;
+  width: calc(100% + 2px);
   top: 0px;
-  padding: 10px;
+  left: -1px;
+  padding: $section-border-radius;
   transform: translateY(-200%);
   opacity: 0;
   border-radius: $section-border-radius;
-  // height: 100%;
+  height: 100%;
   transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
   .wrong-location-tooltip-content {
     code {
@@ -29,7 +30,7 @@
     .close-button-wrapper {
       display: flex;
       justify-content: center;
-      margin-top: 10px;
+      margin-top: 12px;
       .wrong-location-tooltip-close {
         padding: 6px 12px;
         background: black;
