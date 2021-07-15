@@ -69,6 +69,8 @@ export const PreviewCurrentWeather = () => {
         </div>
         <div className="cloudiness-value">{weatherData.current.clouds} %</div>
         <div className="humidity-value">{weatherData.current.humidity} %</div>
+        <div className="card-effect"></div>
+        <div className="card-effect-2"></div>
       </div>
       <div className="display-more">
         <Link to="/current-weather">
