@@ -88,8 +88,8 @@
       align-items: center;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       grid-template-areas:
-        "wind-direction-beaufort-title cloudiness-title humidity-title"
-        "wind-direction-beaufort-value cloudiness-value humidity-value";
+        "title-wind title-cloudiness title-humidity"
+        "value-wind value-cloudiness value-humidity";
       padding-top: 12px;
       background-color: $wind-cloudiness-humidity-wrapper-bg-color;
       color: $wind-cloudiness-humidity-wrapper-color;
@@ -133,6 +133,24 @@
         margin-bottom: $wind-cloudiness-humidity-wrapper-value-margin-bottom;
         font-size: $wind-cloudiness-humidity-wrapper-value-font-size;
         font-weight: 500;
+      }
+      .title-wind {
+        grid-area: title-wind;
+      }
+      .title-cloudiness {
+        grid-area: title-cloudiness;
+      }
+      .title-humidity {
+        grid-area: title-humidity;
+      }
+      .value-wind {
+        grid-area: value-wind;
+      }
+      .value-cloudiness {
+        grid-area: value-cloudiness;
+      }
+      .value-humidity {
+        grid-area: value-humidity;
       }
     }
     .display-more {

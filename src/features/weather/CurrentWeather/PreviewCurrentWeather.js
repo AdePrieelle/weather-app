@@ -61,17 +61,17 @@ export const PreviewCurrentWeather = () => {
         <div className="time-gmt">{formatLocalTime(weatherData.current.dt, weatherData.timezone_offset)} ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
       </div>
       <div className="wind-cloudiness-humidity-wrapper">
-        <div className="title">Wind</div>
-        <div className="title">Cloudiness</div>
-        <div className="title">Humidity</div>
-        <div className="value">
+        <div className="title title-wind">Wind</div>
+        <div className="value value-wind">
           <WindArrowBeaufort
             windDegrees={weatherData.current.wind_deg}
             windSpeedBeaufort={convertWindSpeedToBeaufort(weatherData.current.wind_speed)}
           />
         </div>
-        <div className="value">{weatherData.current.clouds}%</div>
-        <div className="value">{weatherData.current.humidity}%</div>
+        <div className="title title-cloudiness">Cloudiness</div>
+        <div className="value value-cloudiness">{weatherData.current.clouds}%</div>
+        <div className="title title-humidity">Humidity</div>
+        <div className="value value-humidity">{weatherData.current.humidity}%</div>
         {/* <div className="card-effect card-effect-1"></div> */}
         {/* <div className="card-effect card-effect-2"></div> */}
       </div>
