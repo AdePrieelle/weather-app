@@ -152,13 +152,19 @@
       .title {
         color: $wind-cloudiness-humidity-wrapper-title-color;
         font-size: $wind-cloudiness-humidity-wrapper-title-font-size;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: $wind-cloudiness-humidity-wrapper-title-font-size-large;
+        }
         font-weight: $wind-cloudiness-humidity-wrapper-title-font-weight;
         margin-bottom: $wind-cloudiness-humidity-wrapper-title-margin-bottom;
       }
       .value {
         margin-bottom: $wind-cloudiness-humidity-wrapper-value-margin-bottom;
         font-size: $wind-cloudiness-humidity-wrapper-value-font-size;
-        font-weight: 500;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: $wind-cloudiness-humidity-wrapper-value-font-size-large;
+        }
+        font-weight: $wind-cloudiness-humidity-wrapper-value-font-weight;
       }
       .title-wind {
         grid-area: title-wind;
@@ -183,6 +189,10 @@
       grid-area: display-more;
       justify-self: flex-end;
       margin-top: 20px;
+      font-size: 14px;
+      @media screen and (min-width: $media-query-small-screen) {
+        font-size: 16px;
+      }
       a {
         color: $primary-text-color;
         text-decoration: none;

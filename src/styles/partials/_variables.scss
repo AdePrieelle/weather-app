@@ -32,9 +32,12 @@ $navbar-border-color: #dfe1e5;
 $navbar-input-height: 38px;
 
 // PreviewCurrentWeather
-// $wrong-location-tooltip-color: rgba(1, 136, 247, 0.8);
+// $wrong-location-tooltip-bg-color: rgba(1, 136, 247, 0.8);
 $preview-current-weather-secondary-color: rgb(224, 224, 224);
-$wrong-location-tooltip-color: rgb(255, 208, 3);
+// $wrong-location-tooltip-bg-color: rgb(255, 208, 3);
+$wrong-location-tooltip-bg-color: #000000af;
+// $wrong-location-tooltip-color: black;
+$wrong-location-tooltip-color: white;
 $section-bg-color: orange;
 $section-bg-color: #4359f5;
 $section-border-radius: 24px;
@@ -50,8 +53,11 @@ $wind-cloudiness-humidity-wrapper-title-color: rgb(88, 88, 88);
 $wind-cloudiness-humidity-wrapper-title-margin-bottom: 4px;
 $wind-cloudiness-humidity-wrapper-value-margin-bottom: 10px;
 $wind-cloudiness-humidity-wrapper-title-font-size: 12px;
+$wind-cloudiness-humidity-wrapper-title-font-size-large: 14px;
 $wind-cloudiness-humidity-wrapper-title-font-weight: 500;
 $wind-cloudiness-humidity-wrapper-value-font-size: 18px;
+$wind-cloudiness-humidity-wrapper-value-font-size-large: 20px;
+$wind-cloudiness-humidity-wrapper-value-font-weight: 500;
 // $section-bg-color: #21dfb6;
 // $section-bg-color: #0282eb;
 // $section-bg-color: #4be2e3;
