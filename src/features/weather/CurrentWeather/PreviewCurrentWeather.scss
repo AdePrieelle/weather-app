@@ -25,26 +25,41 @@
       img {
         width: 75px;
         height: 75px;
+        @media screen and (min-width: $media-query-small-screen) {
+          width: 100px;
+          height: 100px;
+        }
       }
     }
     .weather-description {
       grid-area: weather-description;
       margin-bottom: 30px;
       font-size: 20px;
+      @media screen and (min-width: $media-query-small-screen) {
+        font-size: 24px;
+      }
       font-weight: 500;
       text-transform: capitalize;
     }
     .temp-temp-feels-like-wrapper {
       grid-area: temp-temp-feels-like-wrapper;
       justify-self: flex-end;
+      align-self: center;
       .temp {
-        margin-top: 20px;
         margin-bottom: 4px;
         font-size: 32px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 40px;
+        }
         font-weight: 700;
       }
       .temp-feels-like {
         font-size: 12px;
+        color: $preview-current-weather-secondary-color;
+        // font-weight: 300;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 14px;
+        }
       }
     }
     .location-date-time-wrapper {
@@ -52,15 +67,23 @@
       .location {
         margin-bottom: 10px;
         font-size: 16px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 18px;
+        }
         font-weight: 700;
         .location-text {
           position: relative;
           display: inline;
           .wrong-location-text {
             position: absolute;
-            right: -20px;
-            top: -10px;
-            font-size: 14px;
+            top: -8px;
+            right: -18px;
+            font-size: 12px;
+            @media screen and (min-width: $media-query-small-screen) {
+              top: -10px;
+              right: -20px;
+              font-size: 14px;
+            }
             padding: 4px;
             cursor: pointer;
           }
@@ -69,18 +92,21 @@
       .date {
         margin-bottom: 6px;
         font-size: 12px;
-        font-weight: 400;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 14px;
+        }
       }
       .time-gmt {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         font-size: 12px;
-        font-weight: 400;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 14px;
+        }
       }
     }
     .wind-cloudiness-humidity-wrapper {
       position: relative;
       grid-area: wind-cloudiness-humidity-wrapper;
-      margin-top: 20px;
       margin-left: -$section-border-radius;
       margin-right: -$section-border-radius;
       display: grid;

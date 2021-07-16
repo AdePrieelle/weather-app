@@ -1,3 +1,11 @@
+// Media queries
+$media-query-xxsmall-screen: 320px;
+$media-query-xsmall-screen: 360px;
+$media-query-small-screen: 420px;
+$media-query-medium-screen: 700px;
+$media-query-large-screen: 900px;
+$media-query-xlarge-screen: 1200px;
+
 // general
 $primary-bg-color: #0282eb;
 // $primary-bg-color: #0282eb;
@@ -25,6 +33,7 @@ $navbar-input-height: 38px;
 
 // PreviewCurrentWeather
 // $wrong-location-tooltip-color: rgba(1, 136, 247, 0.8);
+$preview-current-weather-secondary-color: rgb(224, 224, 224);
 $wrong-location-tooltip-color: rgb(255, 208, 3);
 $section-bg-color: orange;
 $section-bg-color: #4359f5;
@@ -57,11 +66,6 @@ $wind-arrow-color: black;
 $wind-arrow-circle-bg-color: white;
 // $wind-arrow-circle-color: #18191a;
 $wind-arrow-circle-text-color: black;
-
-// Media queries
-$media-query-small-screen: 420px;
-$media-query-large-screen: 900px;
-$media-query-xlarge-screen: 1200px;
 
 // $media-query-xxsmall-screen: 380px;
 // $media-query-xsmall-screen: 420px;
