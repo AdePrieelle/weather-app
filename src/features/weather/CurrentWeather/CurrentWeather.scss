@@ -1,80 +1,280 @@
+@import "../../../styles/partials//variables";
+
 .current-weather {
+  padding: 20px;
+  @media screen and (min-width: $media-query-xlarge-screen) {
+    padding: 20px 0;
+  }
   .current-weather-content {
     position: relative;
-    .wrong-location-tooltip {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      background: rgba(1, 136, 247, 0.8);
-      color: white;
-      width: 100%;
-      top: 0;
-      padding: 10px;
-      transform: translateY(-100%);
-      opacity: 0;
-      transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
-      .wrong-location-tooltip-content {
-        code {
-          background-color: white;
-          color: rgb(100, 100, 100);
-          border: 1px solid rgb(173, 173, 173);
-          margin-top: 6px;
-          padding: 8px;
-          border-radius: 4px;
-          display: inline-block;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "weather-icon temp-temp-feels-like-wrapper"
+      "weather-description ."
+      "location-date-time-wrapper ."
+      "wind-cloudiness-humidity-wrapper wind-cloudiness-humidity-wrapper"
+      "display-more display-more";
+    color: $primary-text-color;
+    background-color: $section-bg-color;
+    padding: $section-border-radius;
+    border-radius: $section-border-radius;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    .weather-icon {
+      grid-area: weather-icon;
+      img {
+        width: 75px;
+        height: 75px;
+        @media screen and (min-width: $media-query-small-screen) {
+          width: 100px;
+          height: 100px;
         }
-        .close-button-wrapper {
-          display: flex;
-          justify-content: center;
-          margin-top: 10px;
-          .wrong-location-tooltip-close {
-            padding: 6px 12px;
-            background: black;
-            color: white;
-            border: none;
-            font-size: 14px;
-            font-weight: 600;
-            border-radius: 4px;
+      }
+    }
+    .weather-description {
+      grid-area: weather-description;
+      margin-bottom: 30px;
+      font-size: 20px;
+      @media screen and (min-width: $media-query-small-screen) {
+        font-size: 24px;
+      }
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+    .temp-temp-feels-like-wrapper {
+      grid-area: temp-temp-feels-like-wrapper;
+      justify-self: flex-end;
+      align-self: center;
+      .temp {
+        margin-bottom: 4px;
+        font-size: 32px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 40px;
+        }
+        font-weight: 700;
+      }
+      .temp-feels-like {
+        font-size: 12px;
+        color: $preview-current-weather-secondary-color;
+        // font-weight: 300;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 14px;
+        }
+      }
+    }
+    .location-date-time-wrapper {
+      grid-area: location-date-time-wrapper;
+      .location {
+        margin-bottom: 10px;
+        font-size: 16px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 18px;
+        }
+        font-weight: 700;
+        .location-text {
+          position: relative;
+          display: inline;
+          .wrong-location-text {
+            position: absolute;
+            top: -8px;
+            right: -18px;
+            font-size: 12px;
+            @media screen and (min-width: $media-query-small-screen) {
+              top: -10px;
+              right: -20px;
+              font-size: 14px;
+            }
+            padding: 4px;
             cursor: pointer;
           }
         }
       }
-    }
-    .wrong-location-tooltip-active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .wrong-location-text {
-      font-size: 14px;
-      cursor: pointer;
-    }
-    .windArrow {
-      position: relative;
-      margin-left: 20px;
-      width: 40px;
-      height: 40px;
-      background-color: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: black;
-      .wind-arrow {
-        font-size: 26px;
-        color: #797d80;
+      .date {
+        margin-bottom: 6px;
+        font-size: 12px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 14px;
+        }
       }
-      .wind-speed-beaufort {
+      .time-gmt {
+        margin-bottom: 40px;
+        font-size: 12px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 14px;
+        }
+      }
+    }
+    .wind-cloudiness-humidity-wrapper {
+      position: relative;
+      grid-area: wind-cloudiness-humidity-wrapper;
+      margin-left: -$section-border-radius;
+      margin-right: -$section-border-radius;
+      display: grid;
+      justify-items: center;
+      // justify-items: flex-start;
+      // padding-left: $section-border-radius;
+      align-items: center;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas:
+        "title-wind title-windspeed-metre-sec"
+        "value-wind value-windspeed-metre-sec"
+        "title-cloudiness title-humidity"
+        "value-cloudiness value-humidity"
+        "title-uv-index title-dew-point"
+        "value-uv-index value-dew-point"
+        "title-visibility title-pressure"
+        "value-visibility value-pressure"
+        "title-sunrise title-sunset"
+        "value-sunrise value-sunset"
+        "title-longitude title-latitude"
+        "value-longitude value-latitude";
+      @media screen and (min-width: $media-query-medium-screen) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-areas:
+          "title-wind title-windspeed-metre-sec title-visibility"
+          "value-wind value-windspeed-metre-sec value-visibility"
+          "title-cloudiness title-humidity title-dew-point "
+          "value-cloudiness value-humidity value-dew-point "
+          "title-uv-index title-sunrise title-sunset"
+          "value-uv-index value-sunrise value-sunset"
+          "title-pressure title-longitude title-latitude"
+          "value-pressure value-longitude value-latitude";
+      }
+      padding-top: 22px;
+      background-color: $wind-cloudiness-humidity-wrapper-bg-color;
+      color: $wind-cloudiness-humidity-wrapper-color;
+      .card-effect {
         position: absolute;
-        font-size: 14px;
-        background-color: white;
-        border: 1px solid #797d80;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #18191a;
+        top: 0;
+        height: 100%;
+        width: 12px;
+        background-color: $wind-cloudiness-humidity-wrapper-bg-color;
+        &::before {
+          content: " ";
+          position: absolute;
+          right: 0;
+          top: -12px;
+          width: 0;
+          border: 6px solid rgb(212, 139, 3);
+          border-top-color: transparent;
+        }
+      }
+      .card-effect-1 {
+        right: -12px;
+        &::before {
+          content: " ";
+          border-right-color: transparent;
+        }
+      }
+      .card-effect-2 {
+        left: -12px;
+        &::before {
+          content: " ";
+          border-left-color: transparent;
+        }
+      }
+      .title {
+        color: $wind-cloudiness-humidity-wrapper-title-color;
+        font-size: $wind-cloudiness-humidity-wrapper-title-font-size;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: $wind-cloudiness-humidity-wrapper-title-font-size-large;
+        }
+        font-weight: $wind-cloudiness-humidity-wrapper-title-font-weight;
+        margin-bottom: $wind-cloudiness-humidity-wrapper-title-margin-bottom;
+      }
+      .value {
+        margin-bottom: $wind-cloudiness-humidity-wrapper-value-margin-bottom-current-weather;
+        font-size: $wind-cloudiness-humidity-wrapper-value-font-size;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: $wind-cloudiness-humidity-wrapper-value-font-size-large;
+        }
+        font-weight: $wind-cloudiness-humidity-wrapper-value-font-weight;
+        color: $wind-cloudiness-humidity-wrapper-value-color;
+      }
+      .title-wind {
+        grid-area: title-wind;
+      }
+      .value-wind {
+        grid-area: value-wind;
+      }
+      .title-cloudiness {
+        grid-area: title-cloudiness;
+      }
+      .value-cloudiness {
+        grid-area: value-cloudiness;
+      }
+      .title-humidity {
+        grid-area: title-humidity;
+      }
+      .value-humidity {
+        grid-area: value-humidity;
+      }
+      .title-latitude {
+        grid-area: title-latitude;
+      }
+      .value-latitude {
+        grid-area: value-latitude;
+      }
+      .title-longitude {
+        grid-area: title-longitude;
+      }
+      .value-longitude {
+        grid-area: value-longitude;
+      }
+      .title-pressure {
+        grid-area: title-pressure;
+      }
+      .value-pressure {
+        grid-area: value-pressure;
+      }
+      .title-dew-point {
+        grid-area: title-dew-point;
+      }
+      .value-dew-point {
+        grid-area: value-dew-point;
+      }
+      .title-uv-index {
+        grid-area: title-uv-index;
+      }
+      .value-uv-index {
+        grid-area: value-uv-index;
+      }
+      .title-visibility {
+        grid-area: title-visibility;
+      }
+      .value-visibility {
+        grid-area: value-visibility;
+      }
+      .title-windspeed-metre-sec {
+        grid-area: title-windspeed-metre-sec;
+      }
+      .value-windspeed-metre-sec {
+        grid-area: value-windspeed-metre-sec;
+      }
+      .title-sunrise {
+        grid-area: title-sunrise;
+      }
+      .value-sunrise {
+        grid-area: value-sunrise;
+      }
+      .title-sunset {
+        grid-area: title-sunset;
+      }
+      .value-sunset {
+        grid-area: value-sunset;
+      }
+    }
+    .display-more {
+      grid-area: display-more;
+      justify-self: flex-end;
+      margin-top: 20px;
+      font-size: 14px;
+      @media screen and (min-width: $media-query-small-screen) {
+        font-size: 16px;
+      }
+      a {
+        color: $primary-text-color;
+        text-decoration: none;
       }
     }
   }
