@@ -195,8 +195,13 @@
         font-size: 16px;
       }
       a {
+        display: flex;
+        align-items: baseline;
         color: $primary-text-color;
         text-decoration: none;
+        .show-details-arrow {
+          margin-left: 4px;
+        }
       }
     }
   }

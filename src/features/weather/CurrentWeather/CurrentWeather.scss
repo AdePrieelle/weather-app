@@ -128,7 +128,7 @@
         "value-sunrise value-sunset"
         "title-longitude title-latitude"
         "value-longitude value-latitude";
-      @media screen and (min-width: $media-query-medium-screen) {
+      @media screen and (min-width: $media-query-small-screen) {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-areas:
           "title-wind title-windspeed-metre-sec title-visibility"
@@ -266,15 +266,20 @@
     }
     .display-more {
       grid-area: display-more;
-      justify-self: flex-end;
+      justify-self: flex-start;
       margin-top: 20px;
       font-size: 14px;
       @media screen and (min-width: $media-query-small-screen) {
         font-size: 16px;
       }
       a {
+        display: flex;
+        align-items: baseline;
         color: $primary-text-color;
         text-decoration: none;
+        .go-back-arrow {
+          margin-right: 4px;
+        }
       }
     }
   }

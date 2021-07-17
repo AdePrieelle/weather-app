@@ -6,9 +6,6 @@ import {
   formatLocalTime, 
   secondsToGmtHoursAndMinutes,
   convertWindSpeedToBeaufort, 
-  convertWindDegrees, 
-  rotateWindArrow,
-  rotateWindArrowBeaufort,
 } from '../../../common/helpers';
 import { WindArrowBeaufort } from '../../../common/WindArrowBeaufort';
 import { Link } from 'react-router-dom';
@@ -43,11 +40,6 @@ export const CurrentWeather = () => {
         showWrongLocationTooltip={showWrongLocationTooltip}
         ToggleWrongLocationTooltip={ToggleWrongLocationTooltip}
       />
-      {/* <div className="go-back">
-        <Link to="/">
-          {`<< Go back`}
-        </Link>
-      </div> */}
       <div className="weather-icon">
         <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>
       </div>
@@ -109,8 +101,8 @@ export const CurrentWeather = () => {
         {/* <div className="card-effect card-effect-2"></div> */}
       </div>
       <div className="display-more">
-        <Link to="/current-weather">
-          Show details -->
+        <Link to="/">
+          <i className="fas fa-arrow-left go-back-arrow"></i> Go back
         </Link>
       </div>
     </div>
