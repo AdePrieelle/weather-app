@@ -110,10 +110,11 @@
       margin-left: -$section-border-radius;
       margin-right: -$section-border-radius;
       display: grid;
-      justify-items: center;
-      // justify-items: flex-start;
-      // padding-left: $section-border-radius;
+      // justify-items: center;
+      justify-items: flex-start;
       align-items: center;
+      padding-left: $section-border-radius;
+      padding-right: $section-border-radius;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-template-areas:
         "title-wind title-windspeed-metre-sec"
@@ -130,15 +131,31 @@
         "value-longitude value-latitude";
       @media screen and (min-width: $media-query-small-screen) {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: minmax(0, auto) 1fr minmax(0, auto) 1fr minmax(
+            0,
+            auto
+          );
         grid-template-areas:
-          "title-wind title-windspeed-metre-sec title-visibility"
-          "value-wind value-windspeed-metre-sec value-visibility"
-          "title-cloudiness title-humidity title-dew-point "
-          "value-cloudiness value-humidity value-dew-point "
-          "title-uv-index title-sunrise title-sunset"
-          "value-uv-index value-sunrise value-sunset"
-          "title-pressure title-longitude title-latitude"
-          "value-pressure value-longitude value-latitude";
+          "title-wind . title-windspeed-metre-sec . title-visibility"
+          "value-wind . value-windspeed-metre-sec . value-visibility"
+          "title-cloudiness . title-humidity . title-dew-point"
+          "value-cloudiness . value-humidity . value-dew-point"
+          "title-uv-index . title-sunrise . title-sunset"
+          "value-uv-index . value-sunrise . value-sunset"
+          "title-pressure . title-longitude . title-latitude"
+          "value-pressure . value-longitude . value-latitude";
+      }
+      @media screen and (min-width: $media-query-medium-screen) {
+        grid-template-columns:
+          minmax(0, auto)
+          1fr minmax(0, auto) 1fr minmax(0, auto) 1fr minmax(0, auto);
+        grid-template-areas:
+          "title-wind . title-windspeed-metre-sec . title-visibility . title-pressure"
+          "value-wind . value-windspeed-metre-sec . value-visibility . value-pressure"
+          "title-cloudiness . title-humidity . title-uv-index . title-dew-point "
+          "value-cloudiness . value-humidity . value-uv-index . value-dew-point "
+          "title-sunrise . title-sunset . title-longitude . title-latitude"
+          "value-sunrise . value-sunset . value-longitude . value-latitude";
       }
       padding-top: 22px;
       background-color: $wind-cloudiness-humidity-wrapper-bg-color;
