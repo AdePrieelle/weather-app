@@ -3,6 +3,7 @@
 .preview-two-days-forecast-weather {
   border-radius: $section-border-radius;
   background-color: $two-days-forecast-bg-color;
+  // background-color: $section-bg-color;
   padding: $section-border-radius;
   color: $two-days-forecast-color;
   // box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
@@ -11,33 +12,70 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     .preview-two-days-forecast-weather-content-hour {
-      margin-bottom: 40px;
-      .windArrow {
-        position: relative;
-        margin-left: 20px;
-        width: 40px;
-        height: 40px;
-        background-color: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: black;
-        .wind-arrow {
-          font-size: 26px;
-          color: #797d80;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .time {
+        font-weight: 500;
+        font-size: 12px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 16px;
         }
-        .wind-speed-beaufort {
-          position: absolute;
-          font-size: 14px;
-          background-color: white;
-          border: 1px solid #797d80;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: #18191a;
+      }
+      .weather-icon {
+        img {
+          width: 50px;
+          height: 50px;
+          @media screen and (min-width: $media-query-small-screen) {
+            width: 75px;
+            height: 75px;
+          }
+        }
+      }
+      .weather-description {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+      .temp {
+        font-size: 14px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 24px;
+        }
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+      .clouds {
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+      .humidity {
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+      .probability-precipitation {
+        font-weight: 500;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+      .wind-degrees-pointer-beaufort {
+        margin-bottom: 20px;
+      }
+    }
+    .display-more {
+      font-size: 14px;
+      @media screen and (min-width: $media-query-small-screen) {
+        font-size: 16px;
+      }
+      a {
+        display: flex;
+        align-items: baseline;
+        color: $primary-text-color;
+        text-decoration: none;
+        .display-more-text {
+        }
+        .show-details-arrow {
+          margin-left: 4px;
         }
       }
     }

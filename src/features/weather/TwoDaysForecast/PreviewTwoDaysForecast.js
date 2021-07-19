@@ -3,10 +3,11 @@ import {
   formatLocalTime,
   convertTemperatureUnits,
   convertWindSpeedToBeaufort,
-  rotateWindArrowBeaufort
 } from '../../../common/helpers';
 import { Link } from 'react-router-dom';
 import './/PreviewTwoDaysForecast.scss';
+import { WindArrowBeaufort } from '../../../common/WindArrowBeaufort';
+
 
 export const PreviewTwoDaysForecast = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -52,18 +53,26 @@ export const PreviewTwoDaysForecast = () => {
             <div className="weather-icon">
               <img src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt="weather-icon"></img>
             </div>
-            <div className="weather-description">{hour.weather[0].description}</div>
+            {/* <div className="weather-description">{hour.weather[0].description}</div> */}
             <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>
-            <div className="clouds">Cloudiness: {hour.clouds}%</div>
-            <div className="humidity">Humidity: {hour.humidity}%</div>
-            <div className="probability-precipitation">Probability of precipitation: {hour.pop}</div>
-            <div className="wind-degrees-pointer-beaufort">{rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}</div>
+            {/* <div className="clouds">Cloudiness: {hour.clouds}%</div> */}
+            {/* <div className="humidity">Humidity: {hour.humidity}%</div> */}
+            {/* <div className="probability-precipitation">Probability of precipitation: {hour.pop}</div> */}
+            <div className="wind-degrees-pointer-beaufort-preview-two-days-forecast">
+              <WindArrowBeaufort
+                windDegrees={weatherData.current.wind_deg}
+                windSpeedBeaufort={convertWindSpeedToBeaufort(weatherData.current.wind_speed)}
+              />
+            </div>
           </div>
         ))
       }
       <div className="display-more">
         <Link to="/two-days-forecast-weather">
-          Show details
+          <div className="display-more-text">
+            Show details
+          </div>
+          <i className="fas fa-arrow-right show-details-arrow"></i>
         </Link>
       </div>
     </div>
