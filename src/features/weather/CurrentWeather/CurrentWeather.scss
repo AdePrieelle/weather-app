@@ -1,10 +1,10 @@
 @import "../../../styles/partials//variables";
 
 .current-weather {
-  padding: 20px;
-  @media screen and (min-width: $media-query-xlarge-screen) {
-    padding: 20px 0;
-  }
+  // padding: 20px;
+  // @media screen and (min-width: $media-query-xlarge-screen) {
+  //   padding: 20px 0;
+  // }
   .current-weather-content {
     position: relative;
     display: grid;

@@ -4,11 +4,11 @@ import {
   convertTemperatureUnits,
   convertWindSpeedToBeaufort,
   rotateWindArrowBeaufort
-} from '../../common/helpers';
+} from '../../../common/helpers';
 import { Link } from 'react-router-dom';
-import '../../styles/PreviewTwoDaysForecastWeather.scss';
+import './/PreviewTwoDaysForecast.scss';
 
-export const PreviewTwoDaysForecastWeather = () => {
+export const PreviewTwoDaysForecast = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
   const weatherStatus = useSelector(state => state.weather.statusFetchCityAndLatitudeLongitude);
   const weatherError = useSelector(state => state.weather.errorFetchCityAndLatitudeLongitude);
@@ -39,26 +39,25 @@ export const PreviewTwoDaysForecastWeather = () => {
             <div className="time">
               {
                   formatLocalTime(hour.dt, weatherData.timezone_offset) === nightTime 
-                ? 'night'
+                ? 'Night'
                 : formatLocalTime(hour.dt, weatherData.timezone_offset) === morningTime 
-                ? 'morning'
+                ? 'Morning'
                 : formatLocalTime(hour.dt, weatherData.timezone_offset) === noonTime 
-                ? 'noon'
+                ? 'Noon'
                 : formatLocalTime(hour.dt, weatherData.timezone_offset) === eveningTime 
-                ? 'evening'
+                ? 'Evening'
                 : null
               }
             </div>
             <div className="weather-icon">
-              Weather icon: 
               <img src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt="weather-icon"></img>
             </div>
-            <div className="weather-description">Weather description: {hour.weather[0].description}</div>
-            <div className="clouds">Cloudiness: {hour.clouds}%</div>
-            <div className="humidity">humidity: {hour.humidity}%</div>
-            <div className="probability-precipitation">Probability of precipitation: {hour.pop}</div>
+            <div className="weather-description">{hour.weather[0].description}</div>
             <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>
-            <div className="wind-degrees-pointer-beaufort">Wind degrees arrow pointer Beaufort: {rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}</div>
+            <div className="clouds">Cloudiness: {hour.clouds}%</div>
+            <div className="humidity">Humidity: {hour.humidity}%</div>
+            <div className="probability-precipitation">Probability of precipitation: {hour.pop}</div>
+            <div className="wind-degrees-pointer-beaufort">{rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}</div>
           </div>
         ))
       }

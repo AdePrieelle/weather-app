@@ -4,11 +4,11 @@ import {
   convertTemperatureUnits,
   convertWindSpeedToBeaufort,
   rotateWindArrowBeaufort
-} from '../../common/helpers';
+} from '../../../common/helpers';
 import { Link } from 'react-router-dom';
-import '../../styles/TwoDaysForecastWeather.scss';
+import './TwoDaysForecast.scss';
 
-export const TwoDaysForecastWeather = () => {
+export const TwoDaysForecast = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
   const weatherStatus = useSelector(state => state.weather.statusFetchCityAndLatitudeLongitude);
   const weatherError = useSelector(state => state.weather.errorFetchCityAndLatitudeLongitude);

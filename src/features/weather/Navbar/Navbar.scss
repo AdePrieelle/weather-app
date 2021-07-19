@@ -7,10 +7,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
-  @media screen and (min-width: $media-query-small-screen) {
-    padding: 0 20px;
-  }
+  // padding: 0 10px;
+  padding: 0 20px;
+  // @media screen and (min-width: $media-query-small-screen) {
+  //   padding: 0 20px;
+  // }
   width: 100%;
   height: $nav-height;
   background-color: $primary-bg-color;

@@ -9,6 +9,7 @@
   margin-top: $nav-height;
   width: 100%;
   max-width: $media-query-xlarge-screen;
+  margin: calc(20px + #{$nav-height}) 20px 0 20px;
   .weather-contents-preview {
     display: grid;
     grid-template-columns: 1fr;

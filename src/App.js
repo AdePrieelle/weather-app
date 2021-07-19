@@ -6,8 +6,8 @@ import { CurrentWeather } from './features/weather/CurrentWeather/CurrentWeather
 import { PreviewCurrentWeather } from './features/weather/CurrentWeather/PreviewCurrentWeather'
 import { MinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/MinuteForecastWeather';
 import { PreviewMinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/PreviewMinuteForecastWeather';
-import { TwoDaysForecastWeather } from './features/weather/TwoDaysForecastWeather';
-import { PreviewTwoDaysForecastWeather } from './features/weather/PreviewTwoDaysForecastWeather';
+import { TwoDaysForecast } from './features/weather/TwoDaysForecast/TwoDaysForecast';
+import { PreviewTwoDaysForecast } from './features/weather/TwoDaysForecast/PreviewTwoDaysForecast';
 import { WeekForecastWeather } from './features/weather/WeekForecastWeather';
 import { PreviewWeekForecastWeather } from './features/weather/PreviewWeekForecastWeather';
 import { AlertsWeather } from './features/weather/AlertsWeather';
@@ -36,8 +36,8 @@ function App() {
         <Switch>
           <Route exact path="/">
             <div className="weather-contents-preview">
+              <PreviewTwoDaysForecast />
               <PreviewCurrentWeather />
-              <PreviewTwoDaysForecastWeather />
               <PreviewMinuteForecastWeather />
               <PreviewWeekForecastWeather />
               <PreviewAlertsWeather />
@@ -47,7 +47,7 @@ function App() {
             <CurrentWeather />
           </Route>
           <Route exact path="/two-days-forecast-weather">
-            <TwoDaysForecastWeather />
+            <TwoDaysForecast />
           </Route>
           <Route exact path="/week-forecast-weather">
             <WeekForecastWeather />
