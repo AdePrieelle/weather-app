@@ -11,6 +11,7 @@
   .wind-arrow {
     font-size: 24px;
     color: $wind-arrow-color;
+    transform: translate(-2px, -2px);
   }
   .wind-speed-beaufort {
     position: absolute;

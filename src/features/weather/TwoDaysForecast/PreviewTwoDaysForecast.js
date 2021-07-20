@@ -1,3 +1,4 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { 
   formatLocalTime,
@@ -36,8 +37,8 @@ export const PreviewTwoDaysForecast = () => {
     <div className="preview-two-days-forecast-weather-content">
       {
         weatherDayaHourlyFiltered4DayParts.map((hour, id) => (
-          <div key={id} className="preview-two-days-forecast-weather-content-hour">
-            <div className="time">
+          <React.Fragment key={id}>
+            <div className={`time-day-part time-day-part-${id}`}>
               {
                   formatLocalTime(hour.dt, weatherData.timezone_offset) === nightTime 
                 ? 'Night'
@@ -50,29 +51,29 @@ export const PreviewTwoDaysForecast = () => {
                 : null
               }
             </div>
-            <div className="weather-icon">
+            <div className={`weather-icon weather-icon-${id}`}>
               <img src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt="weather-icon"></img>
             </div>
-            {/* <div className="weather-description">{hour.weather[0].description}</div> */}
-            <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>
-            {/* <div className="clouds">Cloudiness: {hour.clouds}%</div> */}
-            {/* <div className="humidity">Humidity: {hour.humidity}%</div> */}
-            {/* <div className="probability-precipitation">Probability of precipitation: {hour.pop}</div> */}
-            <div className="wind-degrees-pointer-beaufort-preview-two-days-forecast">
+            <div className={`weather-description weather-description-${id}`}>{hour.weather[0].description}</div>
+            <div className={`temp temp-${id}`}>{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>
+            <div className={`clouds clouds-${id}`}>{hour.clouds}%</div>
+            <div className={`humidity humidity-${id}`}>{hour.humidity}%</div>
+            <div className={`rain rain-${id}`}>{hour.pop*100}%</div>
+            <div className={`wind wind-${id}`}>
               <WindArrowBeaufort
                 windDegrees={weatherData.current.wind_deg}
                 windSpeedBeaufort={convertWindSpeedToBeaufort(weatherData.current.wind_speed)}
               />
             </div>
-          </div>
+          </React.Fragment>
         ))
       }
+      <div className="clouds-title">Cloudiness</div>
+      <div className="humidity-title">Humidity</div>
+      <div className="rain-title">Rain chance</div>
       <div className="display-more">
         <Link to="/two-days-forecast-weather">
-          <div className="display-more-text">
-            Show details
-          </div>
-          <i className="fas fa-arrow-right show-details-arrow"></i>
+            Show details<i className="fas fa-arrow-right show-details-arrow"></i>
         </Link>
       </div>
     </div>
