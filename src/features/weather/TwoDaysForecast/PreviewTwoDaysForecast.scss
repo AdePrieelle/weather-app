@@ -10,196 +10,82 @@
   // box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
   //   rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   .preview-two-days-forecast-weather-content {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100%;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: auto repeat(4, minmax(0, 1fr));
-    grid-template-areas:
-      ". time-day-part-0 time-day-part-1 time-day-part-2 time-day-part-3"
-      ". weather-icon-0 weather-icon-1 weather-icon-2 weather-icon-3"
-      ". weather-description-0 weather-description-1 weather-description-2 weather-description-3"
-      ". temp-0 temp-1 temp-2 temp-3"
-      "clouds-title clouds-0 clouds-1 clouds-2 clouds-3"
-      "humidity-title humidity-0 humidity-1 humidity-2 humidity-3"
-      "rain-title rain-0 rain-1 rain-2 rain-3"
-      ". wind-0 wind-1 wind-2 wind-3"
-      "display-more display-more display-more display-more display-more";
-    .clouds-title {
-      grid-area: clouds-title;
-      justify-self: flex-start;
-    }
-    .humidity-title {
-      grid-area: humidity-title;
-      justify-self: flex-start;
-    }
-    .rain-title {
-      grid-area: rain-title;
-      justify-self: flex-start;
-    }
-    .time-day-part-0 {
-      grid-area: time-day-part-0;
-    }
-    .weather-icon-0 {
-      grid-area: weather-icon-0;
-    }
-    .weather-description-0 {
-      grid-area: weather-description-0;
-    }
-    .temp-0 {
-      grid-area: temp-0;
-    }
-    .clouds-0 {
-      grid-area: clouds-0;
-    }
-    .humidity-0 {
-      grid-area: humidity-0;
-    }
-    .rain-0 {
-      grid-area: rain-0;
-    }
-    .wind-0 {
-      grid-area: wind-0;
-    }
-    .time-day-part-1 {
-      grid-area: time-day-part-1;
-    }
-    .weather-icon-1 {
-      grid-area: weather-icon-1;
-    }
-    .weather-description-1 {
-      grid-area: weather-description-1;
-    }
-    .temp-1 {
-      grid-area: temp-1;
-    }
-    .clouds-1 {
-      grid-area: clouds-1;
-    }
-    .humidity-1 {
-      grid-area: humidity-1;
-    }
-    .rain-1 {
-      grid-area: rain-1;
-    }
-    .wind-1 {
-      grid-area: wind-1;
-    }
-    .time-day-part-2 {
-      grid-area: time-day-part-2;
-    }
-    .weather-icon-2 {
-      grid-area: weather-icon-2;
-    }
-    .weather-description-2 {
-      grid-area: weather-description-2;
-    }
-    .temp-2 {
-      grid-area: temp-2;
-    }
-    .clouds-2 {
-      grid-area: clouds-2;
-    }
-    .humidity-2 {
-      grid-area: humidity-2;
-    }
-    .rain-2 {
-      grid-area: rain-2;
-    }
-    .wind-2 {
-      grid-area: wind-2;
-    }
-    .time-day-part-3 {
-      grid-area: time-day-part-3;
-    }
-    .weather-icon-3 {
-      grid-area: weather-icon-3;
-    }
-    .weather-description-3 {
-      grid-area: weather-description-3;
-    }
-    .temp-3 {
-      grid-area: temp-3;
-    }
-    .clouds-3 {
-      grid-area: clouds-3;
-    }
-    .humidity-3 {
-      grid-area: humidity-3;
-    }
-    .rain-3 {
-      grid-area: rain-3;
-    }
-    .wind-3 {
-      grid-area: wind-3;
-    }
-
-    .time-day-part {
-      font-weight: 500;
-      font-size: 12px;
-      @media screen and (min-width: $media-query-small-screen) {
-        font-size: 16px;
-      }
-    }
-    .weather-icon {
-      img {
-        width: 50px;
-        height: 50px;
-        @media screen and (min-width: $media-query-small-screen) {
-          width: 75px;
-          height: 75px;
-        }
-      }
-    }
-    .weather-description {
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .temp {
-      font-size: 14px;
-      @media screen and (min-width: $media-query-small-screen) {
-        font-size: 24px;
-      }
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .clouds {
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .humidity {
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .rain {
-      font-weight: 500;
-      margin-bottom: 8px;
-      text-align: center;
-    }
-    .wind {
-      margin-bottom: 20px;
-    }
-    .display-more {
-      grid-area: display-more;
-      justify-self: flex-end;
-      font-size: 14px;
-      @media screen and (min-width: $media-query-small-screen) {
-        font-size: 16px;
-      }
-      a {
+    .preview-two-days-forecast-weather-content-hour-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      .preview-two-days-forecast-weather-content-hour {
         display: flex;
-        align-items: baseline;
-        color: $primary-text-color;
-        text-decoration: none;
-        .display-more-text {
+        flex-direction: column;
+        align-items: center;
+        .time-day-part {
+          font-weight: 500;
+          font-size: 12px;
+          @media screen and (min-width: $media-query-small-screen) {
+            font-size: 16px;
+          }
         }
-        .show-details-arrow {
-          margin-left: 4px;
+        .weather-icon {
+          img {
+            width: 50px;
+            height: 50px;
+            @media screen and (min-width: $media-query-small-screen) {
+              width: 75px;
+              height: 75px;
+            }
+          }
         }
+        .weather-description {
+          font-size: 16px;
+          font-weight: 500;
+          margin-bottom: 8px;
+        }
+        .temp {
+          font-size: 14px;
+          @media screen and (min-width: $media-query-small-screen) {
+            font-size: 24px;
+          }
+          font-weight: 500;
+          margin-bottom: 8px;
+        }
+        .clouds {
+          font-weight: 500;
+          margin-bottom: 8px;
+        }
+        .humidity {
+          font-weight: 500;
+          margin-bottom: 8px;
+        }
+        .rain {
+          font-weight: 500;
+          margin-bottom: 8px;
+          text-align: center;
+        }
+        .wind {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  .display-more {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: 16px;
+    }
+    a {
+      display: flex;
+      align-items: baseline;
+      color: $primary-text-color;
+      text-decoration: none;
+      .display-more-text {
+      }
+      .show-details-arrow {
+        margin-left: 4px;
       }
     }
   }

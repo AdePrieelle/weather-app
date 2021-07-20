@@ -32,45 +32,45 @@ export const PreviewTwoDaysForecast = () => {
       || formatLocalTime(hour.dt, weatherData.timezone_offset) === noonTime
       || formatLocalTime(hour.dt, weatherData.timezone_offset) === eveningTime
     ));
-    const weatherDayaHourlyFiltered4DayParts = weatherDataHourlyFilteredDayParts.slice(0, 4);
+    const weatherDataHourlyFiltered4DayParts = weatherDataHourlyFilteredDayParts.slice(0, 4);
+    const weatherDataHourly = weatherDataHourlyFiltered4DayParts;
     content = 
     <div className="preview-two-days-forecast-weather-content">
-      {
-        weatherDayaHourlyFiltered4DayParts.map((hour, id) => (
-          <React.Fragment key={id}>
-            <div className={`time-day-part time-day-part-${id}`}>
-              {
-                  formatLocalTime(hour.dt, weatherData.timezone_offset) === nightTime 
-                ? 'Night'
-                : formatLocalTime(hour.dt, weatherData.timezone_offset) === morningTime 
-                ? 'Morning'
-                : formatLocalTime(hour.dt, weatherData.timezone_offset) === noonTime 
-                ? 'Noon'
-                : formatLocalTime(hour.dt, weatherData.timezone_offset) === eveningTime 
-                ? 'Evening'
-                : null
-              }
+      <div className="preview-two-days-forecast-weather-content-hour-wrapper">
+        {
+          weatherDataHourly.map((hour, id) => (
+            <div key={id} className="preview-two-days-forecast-weather-content-hour">
+              <div className="time-day-part">
+                {
+                    formatLocalTime(hour.dt, weatherData.timezone_offset) === nightTime 
+                  ? 'Night'
+                  : formatLocalTime(hour.dt, weatherData.timezone_offset) === morningTime 
+                  ? 'Morning'
+                  : formatLocalTime(hour.dt, weatherData.timezone_offset) === noonTime 
+                  ? 'Noon'
+                  : formatLocalTime(hour.dt, weatherData.timezone_offset) === eveningTime 
+                  ? 'Evening'
+                  : null
+                }
+              </div>
+              <div className="weather-icon">
+                <img src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt="weather-icon"></img>
+              </div>
+              <div className="weather-description">{hour.weather[0].description}</div>
+              <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>
+              <div className="clouds">Cloudiness: {hour.clouds}%</div>
+              <div className="humidity">Humidity: {hour.humidity}%</div>
+              <div className="rain">Rain chance: {hour.pop*100}%</div>
+              <div className="wind-degrees-pointer-beaufort-preview-two-days-forecast">
+                <WindArrowBeaufort
+                  windDegrees={weatherData.current.wind_deg}
+                  windSpeedBeaufort={convertWindSpeedToBeaufort(weatherData.current.wind_speed)}
+                />
+              </div>
             </div>
-            <div className={`weather-icon weather-icon-${id}`}>
-              <img src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt="weather-icon"></img>
-            </div>
-            <div className={`weather-description weather-description-${id}`}>{hour.weather[0].description}</div>
-            <div className={`temp temp-${id}`}>{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>
-            <div className={`clouds clouds-${id}`}>{hour.clouds}%</div>
-            <div className={`humidity humidity-${id}`}>{hour.humidity}%</div>
-            <div className={`rain rain-${id}`}>{hour.pop*100}%</div>
-            <div className={`wind wind-${id}`}>
-              <WindArrowBeaufort
-                windDegrees={weatherData.current.wind_deg}
-                windSpeedBeaufort={convertWindSpeedToBeaufort(weatherData.current.wind_speed)}
-              />
-            </div>
-          </React.Fragment>
-        ))
-      }
-      <div className="clouds-title">Cloudiness</div>
-      <div className="humidity-title">Humidity</div>
-      <div className="rain-title">Rain chance</div>
+          ))
+        }
+      </div>
       <div className="display-more">
         <Link to="/two-days-forecast-weather">
             Show details<i className="fas fa-arrow-right show-details-arrow"></i>
