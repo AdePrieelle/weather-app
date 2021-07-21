@@ -36,11 +36,15 @@ export const PreviewTwoDaysForecast = () => {
     const weatherDataHourly = weatherDataHourlyFiltered4DayParts;
     content = 
     <div className="preview-two-days-forecast-weather-content">
-      <div className="preview-two-days-forecast-weather-content-hour-wrapper">
+      <div className="preview-two-days-forecast-weather-content-hour-wrapper" style={{gridTemplateColumns: `auto repeat(${weatherDataHourly.length}, minmax(100px, 1fr))`}}>
         {
           weatherDataHourly.map((hour, id) => (
-            <div key={id} className="preview-two-days-forecast-weather-content-hour">
-              <div className="time-day-part">
+            <React.Fragment key={id}>
+            {/* // <div key={id} className="preview-two-days-forecast-weather-content-hour"> */}
+              <div className="clouds-title" style={{gridColumn: '1 / 2', gridRow:'5 / 6'}}>Cloudiness</div>
+              <div className="humidity-title" style={{gridColumn: '1 / 2', gridRow:'6 / 7'}}>Humidity</div>
+              <div className="rain-title" style={{gridColumn: '1 / 2', gridRow:'7 / 8'}}>Rain chance</div>
+              <div className={`time-day-part time-day-part-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'1 / 2'}}>
                 {
                     formatLocalTime(hour.dt, weatherData.timezone_offset) === nightTime 
                   ? 'Night'
@@ -53,21 +57,22 @@ export const PreviewTwoDaysForecast = () => {
                   : null
                 }
               </div>
-              <div className="weather-icon">
+              <div className={`weather-icon weather-icon-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'2 / 3'}}>
                 <img src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt="weather-icon"></img>
               </div>
-              <div className="weather-description">{hour.weather[0].description}</div>
-              <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>
-              <div className="clouds">Cloudiness: {hour.clouds}%</div>
-              <div className="humidity">Humidity: {hour.humidity}%</div>
-              <div className="rain">Rain chance: {hour.pop*100}%</div>
-              <div className="wind-degrees-pointer-beaufort-preview-two-days-forecast">
+              <div className={`weather-description weather-description-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'3 / 4'}}>{hour.weather[0].description}</div>
+              <div className={`temp temp-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'4 / 5'}}>{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>
+              <div className={`clouds clouds-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'5 / 6'}}>{hour.clouds}%</div>
+              <div className={`humidity humidity-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'6 / 7'}}>{hour.humidity}%</div>
+              <div className={`rain rain-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'7 / 8'}}>{hour.pop*100}%</div>
+              <div className={`wind wind-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'8 / 9'}}>
                 <WindArrowBeaufort
                   windDegrees={weatherData.current.wind_deg}
                   windSpeedBeaufort={convertWindSpeedToBeaufort(weatherData.current.wind_speed)}
                 />
               </div>
-            </div>
+            {/* </div> */}
+            </React.Fragment>
           ))
         }
       </div>
