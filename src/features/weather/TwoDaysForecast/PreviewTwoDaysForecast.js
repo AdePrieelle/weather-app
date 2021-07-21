@@ -41,9 +41,9 @@ export const PreviewTwoDaysForecast = () => {
           weatherDataHourly.map((hour, id) => (
             <React.Fragment key={id}>
             {/* // <div key={id} className="preview-two-days-forecast-weather-content-hour"> */}
-              <div className="clouds-title" style={{gridColumn: '1 / 2', gridRow:'5 / 6'}}>Cloudiness</div>
-              <div className="humidity-title" style={{gridColumn: '1 / 2', gridRow:'6 / 7'}}>Humidity</div>
-              <div className="rain-title" style={{gridColumn: '1 / 2', gridRow:'7 / 8'}}>Rain chance</div>
+              <div className="clouds-title" style={{gridColumn: '1 / 2', gridRow:'6 / 7'}}>Cloudiness</div>
+              <div className="humidity-title" style={{gridColumn: '1 / 2', gridRow:'7 / 8'}}>Humidity</div>
+              <div className="rain-title" style={{gridColumn: '1 / 2', gridRow:'8 / 9'}}>Rain chance</div>
               <div className={`time-day-part time-day-part-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'1 / 2'}}>
                 {
                     formatLocalTime(hour.dt, weatherData.timezone_offset) === nightTime 
@@ -62,10 +62,10 @@ export const PreviewTwoDaysForecast = () => {
               </div>
               <div className={`weather-description weather-description-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'3 / 4'}}>{hour.weather[0].description}</div>
               <div className={`temp temp-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'4 / 5'}}>{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>
-              <div className={`clouds clouds-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'5 / 6'}}>{hour.clouds}%</div>
-              <div className={`humidity humidity-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'6 / 7'}}>{hour.humidity}%</div>
-              <div className={`rain rain-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'7 / 8'}}>{hour.pop*100}%</div>
-              <div className={`wind wind-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'8 / 9'}}>
+              <div className={`clouds clouds-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'6 / 7'}}>{hour.clouds}%</div>
+              <div className={`humidity humidity-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'7 / 8'}}>{hour.humidity}%</div>
+              <div className={`rain rain-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'8 / 9'}}>{Math.round((hour.pop*100))}%</div>
+              <div className={`wind wind-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'5 / 6'}}>
                 <WindArrowBeaufort
                   windDegrees={weatherData.current.wind_deg}
                   windSpeedBeaufort={convertWindSpeedToBeaufort(weatherData.current.wind_speed)}
