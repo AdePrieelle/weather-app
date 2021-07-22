@@ -1,12 +1,14 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { 
   formatLocalTime,
   convertTemperatureUnits,
   convertWindSpeedToBeaufort,
-  rotateWindArrowBeaufort
 } from '../../../common/helpers';
 import { Link } from 'react-router-dom';
 import './TwoDaysForecast.scss';
+import { WindArrowBeaufort } from '../../../common/WindArrowBeaufort';
+
 
 export const TwoDaysForecast = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -20,30 +22,44 @@ export const TwoDaysForecast = () => {
     content = <div className="loading">Loading...</div>
     // content = <div className="loader"></div>
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
+    const weatherDataHourly = weatherData.hourly;
     content = 
     <div className="two-days-forecast-weather-content">
-      <div className="go-back">
+      <div className="two-days-forecast-weather-content-hour-wrapper" style={{gridTemplateColumns: `auto repeat(${weatherDataHourly.length}, minmax(100px, 1fr))`}}>
+        <div className="clouds-title" style={{gridColumn: '1 / 2', gridRow:'6 / 7'}}>Cloudiness</div>
+        <div className="humidity-title" style={{gridColumn: '1 / 2', gridRow:'7 / 8'}}>Humidity</div>
+        <div className="rain-title" style={{gridColumn: '1 / 2', gridRow:'8 / 9'}}>Rain chance</div>
+        {
+          weatherDataHourly.map((hour, id) => (
+            <React.Fragment key={id}>
+            {/* // <div key={id} className="preview-two-days-forecast-weather-content-hour"> */}
+              <div className={`time-day-part time-day-part-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'1 / 2'}}>
+                {formatLocalTime(hour.dt, weatherData.timezone_offset)}
+              </div>
+              <div className={`weather-icon weather-icon-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'2 / 3'}}>
+                <img src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt="weather-icon"></img>
+              </div>
+              <div className={`weather-description weather-description-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'3 / 4'}}>{hour.weather[0].description}</div>
+              <div className={`temp temp-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'4 / 5'}}>{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>
+              <div className={`clouds clouds-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'6 / 7'}}>{hour.clouds}%</div>
+              <div className={`humidity humidity-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'7 / 8'}}>{hour.humidity}%</div>
+              <div className={`rain rain-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'8 / 9'}}>{Math.round((hour.pop*100))}%</div>
+              <div className={`wind wind-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'5 / 6'}}>
+                <WindArrowBeaufort
+                  windDegrees={weatherData.current.wind_deg}
+                  windSpeedBeaufort={convertWindSpeedToBeaufort(weatherData.current.wind_speed)}
+                />
+              </div>
+            {/* </div> */}
+            </React.Fragment>
+          ))
+        }
+      </div>
+      <div className="display-more">
         <Link to="/">
-          {`<< Go back`}
+            <i className="fas fa-arrow-left show-details-arrow"></i>Go back
         </Link>
       </div>
-      {
-        weatherData.hourly.map((hour, id) => (
-          <div key={id} className="two-days-forecast-weather-content-hour">
-            <div className="time">{formatLocalTime(hour.dt, weatherData.timezone_offset)}</div>
-            <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>
-            <div className="clouds">Cloudiness: {hour.clouds}%</div>
-            <div className="humidity">humidity: {hour.humidity}%</div>
-            <div className="probability-precipitation">Probability of precipitation: {hour.pop}</div>
-            <div className="wind-degrees-pointer-beaufort">Wind degrees arrow pointer Beaufort: {rotateWindArrowBeaufort(weatherData.current.wind_deg, convertWindSpeedToBeaufort(weatherData.current.wind_speed))}</div>
-            <div className="weather-description">Weather description: {hour.weather[0].description}</div>
-            <div className="weather-icon">
-              Weather icon: 
-              <img src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt="weather-icon"></img>
-            </div>
-          </div>
-        ))
-      }
     </div>
   } else if (weatherStatus === 'failed') {
     content = <div>{weatherError}</div>

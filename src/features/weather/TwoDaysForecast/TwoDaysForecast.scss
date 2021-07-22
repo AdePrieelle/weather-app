@@ -1,35 +1,121 @@
+@import "../../../styles/partials/variables";
+
 .two-days-forecast-weather {
-  margin-top: 80px;
-  margin-bottom: 20px;
+  border-radius: $section-border-radius;
+  background-color: $two-days-forecast-bg-color;
+  // background-color: $section-bg-color;
+  padding: $section-border-radius;
+  color: $two-days-forecast-color;
+  // height: 100%;
+  overflow-x: auto;
+  // box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+  //   rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   .two-days-forecast-weather-content {
-    .two-days-forecast-weather-content-hour {
-      margin-bottom: 40px;
-      .windArrow {
-        position: relative;
-        margin-left: 20px;
-        width: 40px;
-        height: 40px;
-        background-color: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: black;
-        .wind-arrow {
-          font-size: 26px;
-          color: #797d80;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    // height: 100%;
+    // .preview-two-days-forecast-weather-content-hour-wrapper {
+    //   display: grid;
+    //   grid-template-columns: repeat(4, minmax(0, 1fr));
+    //   .preview-two-days-forecast-weather-content-hour {
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    .two-days-forecast-weather-content-hour-wrapper {
+      display: grid;
+      justify-items: center;
+      // align-items: baseline;
+      overflow-x: auto;
+      .clouds-title,
+      .humidity-title,
+      .rain-title {
+        justify-self: flex-start;
+        font-size: 14px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 16px;
         }
-        .wind-speed-beaufort {
-          position: absolute;
-          font-size: 14px;
-          background-color: white;
-          border: 1px solid #797d80;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: #18191a;
+        padding: 10px 0;
+        border-bottom: 1px solid white;
+        width: 100%;
+      }
+      .rain-title {
+        white-space: nowrap;
+      }
+      .time-day-part {
+        font-weight: 500;
+        font-size: 18px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 20px;
+        }
+      }
+      .weather-icon {
+        img {
+          width: 75px;
+          height: 75px;
+          @media screen and (min-width: $media-query-small-screen) {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+      .weather-description {
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: -16px;
+        margin-bottom: 12px;
+        text-align: center;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 16px;
+        }
+      }
+      .temp {
+        font-size: 24px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 24px;
+          margin-bottom: 16px;
+        }
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+      .clouds,
+      .humidity,
+      .rain {
+        font-weight: 500;
+        padding: 10px 0;
+        font-size: 16px;
+        border-bottom: 1px solid white;
+        width: 100%;
+        text-align: center;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 18px;
+        }
+      }
+      .wind {
+        margin-bottom: 20px;
+      }
+      // }
+      // }
+    }
+    .display-more {
+      font-size: 14px;
+      display: flex;
+      justify-content: flex-start;
+      margin-top: $section-border-radius;
+      @media screen and (min-width: $media-query-small-screen) {
+        font-size: 16px;
+      }
+      a {
+        display: flex;
+        align-items: baseline;
+        color: $primary-text-color;
+        text-decoration: none;
+        .show-details-arrow {
+          margin-right: 4px;
         }
       }
     }

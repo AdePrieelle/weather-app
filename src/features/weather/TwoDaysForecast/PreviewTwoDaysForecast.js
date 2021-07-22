@@ -37,13 +37,13 @@ export const PreviewTwoDaysForecast = () => {
     content = 
     <div className="preview-two-days-forecast-weather-content">
       <div className="preview-two-days-forecast-weather-content-hour-wrapper" style={{gridTemplateColumns: `auto repeat(${weatherDataHourly.length}, minmax(100px, 1fr))`}}>
+        <div className="clouds-title" style={{gridColumn: '1 / 2', gridRow:'6 / 7'}}>Cloudiness</div>
+        <div className="humidity-title" style={{gridColumn: '1 / 2', gridRow:'7 / 8'}}>Humidity</div>
+        <div className="rain-title" style={{gridColumn: '1 / 2', gridRow:'8 / 9'}}>Rain chance</div>
         {
           weatherDataHourly.map((hour, id) => (
             <React.Fragment key={id}>
             {/* // <div key={id} className="preview-two-days-forecast-weather-content-hour"> */}
-              <div className="clouds-title" style={{gridColumn: '1 / 2', gridRow:'6 / 7'}}>Cloudiness</div>
-              <div className="humidity-title" style={{gridColumn: '1 / 2', gridRow:'7 / 8'}}>Humidity</div>
-              <div className="rain-title" style={{gridColumn: '1 / 2', gridRow:'8 / 9'}}>Rain chance</div>
               <div className={`time-day-part time-day-part-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'1 / 2'}}>
                 {
                     formatLocalTime(hour.dt, weatherData.timezone_offset) === nightTime 

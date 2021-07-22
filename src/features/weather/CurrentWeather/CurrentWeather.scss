@@ -284,7 +284,7 @@
     .display-more {
       grid-area: display-more;
       justify-self: flex-start;
-      margin-top: 20px;
+      margin-top: $section-border-radius;
       font-size: 14px;
       @media screen and (min-width: $media-query-small-screen) {
         font-size: 16px;
