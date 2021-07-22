@@ -69,6 +69,15 @@ export const formatLocalDateTimestamp = (timestamp, timezoneOffset) => {
   return `${days[day]} ${date} ${months[month]} ${year} ${hours < 10 ? "0" : ""}${hours}:${minutes < 10 ? "0" : ""}${minutes}`;
 }
 
+export const formatLocalDateTimestampWeekday = (timestamp, timezoneOffset) => {
+  const timeStampDate = new Date(timestamp*1000).getTime();
+  const timeCity = timeStampDate + timezoneOffset*1000;
+  const timeStampTimeLocal = new Date(timeCity);
+  const day = timeStampTimeLocal.getUTCDay();
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return `${days[day]}`;
+}
+
 export const formatLocalTime = (time, timezoneOffset) => {
   const timeDateValue = new Date((time*1000)+(timezoneOffset*1000));
   const hours = timeDateValue.getUTCHours();
