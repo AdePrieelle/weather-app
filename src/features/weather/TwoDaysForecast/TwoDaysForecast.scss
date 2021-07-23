@@ -69,10 +69,10 @@
             width: 75px;
             height: 75px;
           }
-          margin-bottom: 6px;
-          @media screen and (min-width: $media-query-small-screen) {
-            margin-bottom: 0;
-          }
+        }
+        margin-bottom: 6px;
+        @media screen and (min-width: $media-query-small-screen) {
+          margin-bottom: 0;
         }
       }
       .weather-description {
@@ -80,9 +80,9 @@
         // font-weight: 500;
         margin-top: -16px;
         margin-bottom: 12px;
+        padding: 0 6px;
         text-align: center;
         @media screen and (min-width: $media-query-small-screen) {
-          margin-bottom: -2px;
           font-size: 14px;
         }
       }
