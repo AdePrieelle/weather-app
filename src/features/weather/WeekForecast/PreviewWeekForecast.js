@@ -4,11 +4,11 @@ import {
   convertWindSpeedToBeaufort,
   rotateWindArrowBeaufort,
   formatLocalDateDay
-} from '../../common/helpers';
+} from '../../../common/helpers';
 import { Link } from 'react-router-dom';
-import '../../styles/PreviewWeekForecastWeather.scss';
+import './PreviewWeekForecast.scss';
 
-export const PreviewWeekForecastWeather = () => {
+export const PreviewWeekForecast = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
   const weatherStatus = useSelector(state => state.weather.statusFetchCityAndLatitudeLongitude);
   const weatherError = useSelector(state => state.weather.errorFetchCityAndLatitudeLongitude);
@@ -21,10 +21,10 @@ export const PreviewWeekForecastWeather = () => {
     // content = <div className="loader"></div>
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
-    <div className="preview-week-forecast-weather-content">
+    <div className="preview-week-forecast-content">
       {
         weatherData.daily.map((day, id) => (
-          <div key={id} className="preview-week-forecast-weather-content-day">
+          <div key={id} className="preview-week-forecast-content-day">
             <div className="time-weekday">Weekday: {formatLocalDateDay(day.dt, weatherData.timezone_offset).weekday}</div>
             <div className="time-day-month">Date: {formatLocalDateDay(day.dt, weatherData.timezone_offset).day} {formatLocalDateDay(day.dt, weatherData.timezone_offset).month}</div>
             <div className="tempMin">Temp min: {convertTemperatureUnits(weatherTemperatureUnits, day.temp.min)}</div>
@@ -53,7 +53,7 @@ export const PreviewWeekForecastWeather = () => {
   }
 
   return (
-    <section className="preview-week-forecast-weather">
+    <section className="preview-week-forecast">
       {content}
     </section>
   )

@@ -31,6 +31,9 @@
       justify-items: center;
       // align-items: baseline;
       overflow-x: auto;
+      @media screen and (min-width: $media-query-large-screen) {
+        margin-top: 22px;
+      }
       .clouds-title,
       .humidity-title,
       .rain-title {
