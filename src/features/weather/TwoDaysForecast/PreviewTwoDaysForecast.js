@@ -37,7 +37,7 @@ export const PreviewTwoDaysForecast = () => {
     const weatherDataHourly = weatherDataHourlyFiltered4DayParts;
     content = 
     <div className="preview-two-days-forecast-weather-content">
-      <div className="preview-two-days-forecast-weather-content-hour-wrapper" style={{gridTemplateColumns: `auto repeat(${weatherDataHourly.length}, minmax(100px, 1fr))`}}>
+      <div className="preview-two-days-forecast-weather-content-hour-wrapper" style={{gridTemplateColumns: `auto repeat(${weatherDataHourly.length}, minmax(120px, 1fr))`}}>
         <div className="clouds-title" style={{gridColumn: '1 / 2', gridRow:'7 / 8'}}>Cloudiness</div>
         <div className="humidity-title" style={{gridColumn: '1 / 2', gridRow:'8 / 9'}}>Humidity</div>
         <div className="rain-title" style={{gridColumn: '1 / 2', gridRow:'9 / 10'}}>Rain chance</div>

@@ -37,9 +37,9 @@ function App() {
           <Route exact path="/">
             <div className="weather-contents-preview">
               <PreviewCurrentWeather />
+              <PreviewMinuteForecastWeather />
               <PreviewTwoDaysForecast />
               <PreviewWeekForecast />
-              <PreviewMinuteForecastWeather />
               <PreviewAlertsWeather />
             </div>
           </Route>
