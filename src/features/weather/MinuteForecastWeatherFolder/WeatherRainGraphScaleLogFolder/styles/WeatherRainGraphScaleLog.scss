@@ -33,11 +33,11 @@
 // graph area and graph line
 .marks {
   .marks-area {
-    fill: rgba(12, 162, 248, 0.459);
+    fill: $marks-area-fill-color;
   }
   .marks-line {
     fill: none;
-    stroke: #51b5f8;
+    stroke: $marks-line-fill-color;
     stroke-linejoin: round;
     stroke-linecap: butt;
     stroke-width: 1;
@@ -105,12 +105,12 @@
 
 // tooltip rectangle for on hover
 .select-time-overlay-tooltip-rect {
-  fill: rgba(0, 0, 0, 0.8);
+  fill: $select-time-overlay-tooltip-rect-bg-color;
 }
 
 // tooltip wrapper for children elements
 .select-time-overlay-tooltip-text {
-  fill: white;
+  fill: $select-time-overlay-tooltip-text-color;
   font-size: 14px;
 }
 
@@ -141,5 +141,5 @@
 
 // precipitation in mm
 .tspan-precipitation-number {
-  fill: rgb(180, 180, 180);
+  fill: $tspan-precipitation-number-color;
 }

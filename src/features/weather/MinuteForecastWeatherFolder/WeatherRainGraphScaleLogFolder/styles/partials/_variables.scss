@@ -4,10 +4,30 @@ $breakpoint-medium: 700px;
 $breakpoint-large: 900px;
 
 // color onHover vertical select-line and tooltip-circle data point
-$select-line-tooltip-circle-color: black;
+// $select-line-tooltip-circle-color: black;
+$select-line-tooltip-circle-color: white;
 
 // color tick line and axis outer lines
-$tick-line-axis-outer-lines-color: #c0c0bb;
+// $tick-line-axis-outer-lines-color: #c0c0bb;
+$tick-line-axis-outer-lines-color: white;
 
 // color for tick text, text label current time and axis label
-$tick-text-text-label-current-time-axis-label-color: #635f5d;
+// $tick-text-text-label-current-time-axis-label-color: #635f5d;
+$tick-text-text-label-current-time-axis-label-color: white;
+
+// marks-area fill color
+$marks-area-fill-color: rgba(12, 162, 248, 0.459);
+$marks-area-fill-color: rgba(12, 221, 248, 0.459);
+
+// marks-line fill color
+$marks-line-fill-color: #51b5f8;
+$marks-line-fill-color: #7ee1ff;
+
+// select-time-overlay-tooltip-rect bg color
+$select-time-overlay-tooltip-rect-bg-color: rgba(0, 0, 0, 0.8);
+
+// select-time-overlay-tooltip-text text color
+$select-time-overlay-tooltip-text-color: white;
+
+// tspan-precipitation-number text color
+$tspan-precipitation-number-color: rgb(180, 180, 180);

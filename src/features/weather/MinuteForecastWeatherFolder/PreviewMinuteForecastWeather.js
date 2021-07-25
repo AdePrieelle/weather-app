@@ -21,7 +21,7 @@ export const PreviewMinuteForecastWeather = () => {
           <WeatherRainGraphScaleLog />
           <div className="display-more">
             <Link to="/minute-forecast-weather">
-              Show details
+              Show details <i className="fas fa-arrow-right show-details-arrow"></i>
             </Link>
           </div>
         </div>

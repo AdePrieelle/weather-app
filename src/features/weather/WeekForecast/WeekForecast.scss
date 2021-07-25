@@ -1,7 +1,8 @@
 @import "../../../styles/partials/variables";
 
 .week-forecast {
-  border-radius: $section-border-radius;
+  // border-radius: $section-border-radius;
+  border-radius: $section-item-border-radius;
   background-color: $week-forecast-bg-color;
   padding: $section-border-radius;
   color: $two-days-forecast-color;

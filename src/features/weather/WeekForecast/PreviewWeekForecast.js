@@ -24,7 +24,7 @@ export const PreviewWeekForecast = () => {
     content = 
     <div className="preview-week-forecast-content">
       <div className="preview-week-forecast-days-wrapper" style={{gridTemplateColumns: `auto repeat(${weatherData.daily.length}, minmax(120px, 1fr))`}}>
-      <div className="clouds-title" style={{gridColumn: '1 / 2', gridRow:'7 / 8'}}>Cloudiness</div>
+        <div className="clouds-title" style={{gridColumn: '1 / 2', gridRow:'7 / 8'}}>Cloudiness</div>
         <div className="humidity-title" style={{gridColumn: '1 / 2', gridRow:'8 / 9'}}>Humidity</div>
         <div className="rain-title" style={{gridColumn: '1 / 2', gridRow:'9 / 10'}}>Rain chance</div>
         <div className="rain-amount-title" style={{gridColumn: '1 / 2', gridRow:'10 / 11'}}>Rain amount</div>

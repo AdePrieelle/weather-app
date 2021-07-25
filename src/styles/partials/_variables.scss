@@ -79,14 +79,18 @@ $wind-arrow-circle-text-color: black;
 
 // TwoDaysForecast
 $section-bg-color: #0282eb;
+$section-bg-color: #03c78c;
 $section-bg-color: #4359f5;
+$section-item-border-radius: 24px;
 $two-days-forecast-bg-color: #df4b4b;
 $two-days-forecast-bg-color: #03c78c;
 $two-days-forecast-bg-color: rgb(47, 168, 132);
 $two-days-forecast-bg-color: #0282eb;
 $two-days-forecast-bg-color: #4359f5;
 $week-forecast-bg-color: #0282eb;
-$week-forecast-bg-color: rgb(18, 207, 144);
 $week-forecast-bg-color: #4359f5;
 $two-days-forecast-color: black;
 $two-days-forecast-color: white;
+
+// MinuteForecast
+$minute-forecast-bg-color: #4359f5;

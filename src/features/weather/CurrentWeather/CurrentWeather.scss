@@ -18,8 +18,9 @@
     color: $primary-text-color;
     background-color: $section-bg-color;
     padding: $section-border-radius;
-    border-radius: $section-border-radius;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    // border-radius: $section-border-radius;
+    border-radius: $section-item-border-radius;
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     .weather-icon {
       grid-area: weather-icon;
       img {

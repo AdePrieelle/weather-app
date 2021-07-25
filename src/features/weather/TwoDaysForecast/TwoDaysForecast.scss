@@ -1,7 +1,8 @@
 @import "../../../styles/partials/variables";
 
 .two-days-forecast-weather {
-  border-radius: $section-border-radius;
+  // border-radius: $section-border-radius;
+  border-radius: $section-item-border-radius;
   background-color: $two-days-forecast-bg-color;
   // background-color: $section-bg-color;
   padding: $section-border-radius;
