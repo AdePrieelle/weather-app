@@ -56,8 +56,9 @@ export const WeatherRainGraphScaleLog = () => {
     marginLeftSmall
   );
 
-  const innerHeight = height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+  // const innerHeight = innerWidth * 0.5625;
 
   const yValue = d => d.precipitation;
   const xValue = d => d.dt;
