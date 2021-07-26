@@ -7,6 +7,9 @@ export const SelectTimeOverlayTooltipText = ({
   xAxisTickFormat,
   tooltipXInset,
   tooltipYInset,
+  width,
+  widthBreakpointSmall,
+  widthBreakpointMedium
 }) => {
   const getRainIntensityValueFromHoveredPrecipitationValue = (
     hoveredPrecipitationValue, 
@@ -35,18 +38,45 @@ export const SelectTimeOverlayTooltipText = ({
       <tspan className="tspan-precipitation-text" dominantBaseline="hanging"
         x={tooltipXInset}
         y={tooltipYInset}
+        style={{
+          fontSize: `${
+              width >= widthBreakpointMedium
+            ? '16px' 
+            : width >= widthBreakpointSmall
+            ? '14px'
+            : '12px'
+          }`
+        }}
       >
         {precipitationTextValue}
       </tspan>
       <tspan className="tspan-time" textAnchor="end" dominantBaseline="hanging"
         x={tooltipWidth - tooltipXInset} 
         y={tooltipYInset} 
+        style={{
+          fontSize: `${
+              width >= widthBreakpointMedium
+            ? '14px' 
+            : width >= widthBreakpointSmall
+            ? '12px'
+            : '10px'
+          }`
+        }}
       >
         {xAxisTickFormat(hoveredTimeValue)}
       </tspan>
       <tspan className="tspan-precipitation-number"
         x={tooltipXInset}
         y={tooltipHeight - tooltipYInset} 
+        style={{
+          fontSize: `${
+              width >= widthBreakpointMedium
+            ? '14px' 
+            : width >= widthBreakpointSmall
+            ? '12px'
+            : '10px'
+          }`
+        }}
       >
         {parseFloat(hoveredPrecipitationValue.toFixed(2))} mm per hour
       </tspan>

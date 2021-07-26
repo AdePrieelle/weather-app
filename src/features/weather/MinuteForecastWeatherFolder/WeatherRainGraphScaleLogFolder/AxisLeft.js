@@ -3,6 +3,9 @@ import { AxisLeftTick } from './AxisLeftTick';
 export const AxisLeft= ({ 
   yScale, 
   innerWidth, 
+  width,
+  widthBreakpointSmall,
+  widthBreakpointLarge,
   axisLeftTickOffset,
   rainIntensity
  }) => {
@@ -14,6 +17,9 @@ export const AxisLeft= ({
         yScale={yScale}
         rainIntensity={rainIntensity}
         innerWidth={innerWidth}
+        width={width}
+        widthBreakpointSmall={widthBreakpointSmall}
+        widthBreakpointLarge={widthBreakpointLarge}
         axisLeftTickOffset={axisLeftTickOffset}
       />
       <AxisLeftTick 
@@ -21,6 +27,9 @@ export const AxisLeft= ({
         yScale={yScale}
         rainIntensity={rainIntensity}
         innerWidth={innerWidth}
+        width={width}
+        widthBreakpointSmall={widthBreakpointSmall}
+        widthBreakpointLarge={widthBreakpointLarge}
         axisLeftTickOffset={axisLeftTickOffset}
       />
       {(yScale.domain()[1] > rainIntensity['Moderate rain'])
@@ -29,6 +38,9 @@ export const AxisLeft= ({
             yScale={yScale}
             rainIntensity={rainIntensity}
             innerWidth={innerWidth}
+            width={width}
+            widthBreakpointSmall={widthBreakpointSmall}
+            widthBreakpointLarge={widthBreakpointLarge}
             axisLeftTickOffset={axisLeftTickOffset}
           />
         : null
@@ -39,6 +51,9 @@ export const AxisLeft= ({
             yScale={yScale}
             rainIntensity={rainIntensity}
             innerWidth={innerWidth}
+            width={width}
+            widthBreakpointSmall={widthBreakpointSmall}
+            widthBreakpointLarge={widthBreakpointLarge}
             axisLeftTickOffset={axisLeftTickOffset}
           />
         : null

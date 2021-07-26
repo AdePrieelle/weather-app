@@ -56,6 +56,9 @@ export const SelectTimeOverlayTooltip = ({
           xAxisTickFormat={xAxisTickFormat}
           tooltipXInset={tooltipSize.tooltipXInset}
           tooltipYInset={tooltipSize.tooltipYInset}
+          width={width}
+          widthBreakpointSmall={widthBreakpointSmall}
+          widthBreakpointMedium={widthBreakpointMedium}
         />
       </g>
     </g>

@@ -49,6 +49,19 @@ export const AxisBottom = ({
   }, [xScale, innerHeight, ticksAmount, xAxisTickFormat,tickPaddingAmount]);
   
   return (
-    <g className="axis" transform={`translate(0,${innerHeight})`} ref={ref} />
+    <g 
+      className="axis" 
+      transform={`translate(0,${innerHeight})`} 
+      ref={ref} 
+      style={{
+        fontSize: `${
+            width >= widthBreakpointLarge 
+          ? '14px' 
+          : width >= widthBreakpointSmall
+          ? '12px'
+          : '10px'
+        }`
+      }} 
+    />
   );
 };

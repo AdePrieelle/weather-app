@@ -20,13 +20,13 @@
   }
   text {
     fill: $tick-text-text-label-current-time-axis-label-color;
-    font-size: 10px;
-    @media screen and (min-width: $breakpoint-small) {
-      font-size: 12px;
-    }
-    @media screen and (min-width: $breakpoint-large) {
-      font-size: 14px;
-    }
+    // font-size: 10px;
+    // @media screen and (min-width: $breakpoint-small) {
+    //   font-size: 12px;
+    // }
+    // @media screen and (min-width: $breakpoint-large) {
+    //   font-size: 14px;
+    // }
   }
 }
 
@@ -40,13 +40,13 @@
     stroke: $marks-line-fill-color;
     stroke-linejoin: round;
     stroke-linecap: butt;
-    stroke-width: 1;
-    @media screen and (min-width: $breakpoint-small) {
-      stroke-width: 2;
-    }
-    @media screen and (min-width: $breakpoint-large) {
-      stroke-width: 3;
-    }
+    // stroke-width: 2;
+    // @media screen and (min-width: $breakpoint-small) {
+    //   stroke-width: 3;
+    // }
+    // @media screen and (min-width: $breakpoint-large) {
+    //   stroke-width: 4;
+    // }
   }
 }
 
@@ -64,13 +64,13 @@
 // label to indicate the current time (Now)
 .text-label-current-time {
   fill: $tick-text-text-label-current-time-axis-label-color;
-  font-size: 12px;
-  @media screen and (min-width: $breakpoint-small) {
-    font-size: 14px;
-  }
-  @media screen and (min-width: $breakpoint-large) {
-    font-size: 16px;
-  }
+  // font-size: 12px;
+  // @media screen and (min-width: $breakpoint-small) {
+  //   font-size: 14px;
+  // }
+  // @media screen and (min-width: $breakpoint-large) {
+  //   font-size: 16px;
+  // }
 }
 
 // axis labels for xAxis and yAxis, not used in this weatherRain graph
@@ -82,13 +82,13 @@
 // vertical line to indicate selected time on hover
 .select-time-overlay-line {
   stroke: $select-line-tooltip-circle-color;
-  stroke-width: 2;
-  @media screen and (min-width: $breakpoint-small) {
-    stroke-width: 3;
-  }
-  @media screen and (min-width: $breakpoint-medium) {
-    stroke-width: 4;
-  }
+  // stroke-width: 3;
+  // @media screen and (min-width: $breakpoint-small) {
+  //   stroke-width: 4;
+  // }
+  // @media screen and (min-width: $breakpoint-medium) {
+  //   stroke-width: 5;
+  // }
 }
 
 // invisible rectangle that enables on hover coordinates functionality
@@ -117,27 +117,26 @@
 // tooltip rain intensity text
 .tspan-precipitation-text {
   font-weight: 700;
-  font-size: 12px;
-  @media screen and (min-width: $breakpoint-small) {
-    font-size: 14px;
-  }
-
-  @media screen and (min-width: $breakpoint-medium) {
-    font-size: 16px;
-  }
+  // font-size: 12px;
+  // @media screen and (min-width: $breakpoint-small) {
+  //   font-size: 14px;
+  // }
+  // @media screen and (min-width: $breakpoint-medium) {
+  //   font-size: 16px;
+  // }
 }
 
 // tooltip time and precipitation in mm
-.tspan-time,
-.tspan-precipitation-number {
-  font-size: 10px;
-  @media screen and (min-width: $breakpoint-small) {
-    font-size: 12px;
-  }
-  @media screen and (min-width: $breakpoint-medium) {
-    font-size: 14px;
-  }
-}
+// .tspan-time,
+// .tspan-precipitation-number {
+//   font-size: 10px;
+//   @media screen and (min-width: $breakpoint-small) {
+//     font-size: 12px;
+//   }
+//   @media screen and (min-width: $breakpoint-medium) {
+//     font-size: 14px;
+//   }
+// }
 
 // precipitation in mm
 .tspan-precipitation-number {

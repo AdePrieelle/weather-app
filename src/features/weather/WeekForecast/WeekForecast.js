@@ -50,7 +50,7 @@ export const WeekForecast = () => {
               <div className={`clouds clouds-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'7 / 8'}}>{day.clouds}%</div>
               <div className={`humidity humidity-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'8 / 9'}}>{day.humidity}%</div>
               <div className={`rain rain-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'9 / 10'}}>{Math.round((day.pop*100))}%</div>
-              <div className={`rain-amount rain-amount-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'10 / 11'}}>{day.rain.toFixed(1)} mm</div>
+              <div className={`rain-amount rain-amount-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'10 / 11'}}>{day.rain ? `${day.rain.toFixed(1)} mm` : 'unkown'}</div>
             </React.Fragment>
           ))
         }

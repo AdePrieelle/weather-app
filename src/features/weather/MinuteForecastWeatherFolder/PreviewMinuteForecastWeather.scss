@@ -15,10 +15,11 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      // .svg-wrapper {
-      //   margin-left: -$section-border-radius;
-      //   margin-right: -$section-border-radius;
-      // }
+      .svg-wrapper {
+        margin-left: calc(-#{$section-border-radius} + 10px);
+        margin-left: calc(-#{$section-border-radius});
+        margin-right: calc(-#{$section-border-radius} + 5px);
+      }
       .display-more {
         // grid-area: display-more;
         display: flex;

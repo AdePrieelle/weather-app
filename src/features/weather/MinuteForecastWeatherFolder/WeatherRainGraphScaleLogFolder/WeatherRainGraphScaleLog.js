@@ -91,6 +91,9 @@ export const WeatherRainGraphScaleLog = () => {
             axisCurrentTimeLabelXOffset={axisCurrentTimeLabelXOffset}
             axisCurrentTimeLabelYOffset={axisCurrentTimeLabelYOffset}
             axisCurrentTimeTextLabel={axisCurrentTimeTextLabel}
+            width={width}
+            widthBreakpointSmall={widthBreakpointSmall}
+            widthBreakpointLarge={widthBreakpointLarge}
           />
           <AxisBottom 
             width={width}
@@ -109,6 +112,9 @@ export const WeatherRainGraphScaleLog = () => {
           <AxisLeft 
             yScale={yScale} 
             innerWidth={innerWidth} 
+            width={width}
+            widthBreakpointSmall={widthBreakpointSmall}
+            widthBreakpointLarge={widthBreakpointLarge}
             axisLeftTickOffset={axisLeftTickOffset}
             rainIntensity={rainIntensity}
           />
@@ -119,6 +125,9 @@ export const WeatherRainGraphScaleLog = () => {
             xValue={xValue}
             yValue={yValue}
             innerHeight={innerHeight}
+            width={width}
+            widthBreakpointSmall={widthBreakpointSmall}
+            widthBreakpointLarge={widthBreakpointLarge}
           />
           <SelectTimeOverlay 
             data={data}

@@ -47,6 +47,9 @@ export const SelectTimeOverlay = ({
             xScale={xScale}
             hoveredTimeValue={hoveredTimeValue}
             innerHeight={innerHeight}
+            width={width}
+            widthBreakpointSmall={widthBreakpointSmall}
+            widthBreakpointMedium={widthBreakpointMedium}
           />
         }
 

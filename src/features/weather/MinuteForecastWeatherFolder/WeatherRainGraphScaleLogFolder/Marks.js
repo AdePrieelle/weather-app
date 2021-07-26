@@ -6,7 +6,10 @@ export const Marks = ({
   yScale, 
   xValue, 
   yValue, 
-  innerHeight
+  innerHeight,
+  width,
+  widthBreakpointSmall,
+  widthBreakpointLarge
 }) => {
   return (
     <g className="marks">
@@ -26,6 +29,15 @@ export const Marks = ({
           .y(d => yScale(yValue(d)))
           .curve(d3.curveMonotoneX)
           (data)}
+        style={{
+          strokeWidth: `${
+              width >= widthBreakpointLarge
+            ? '4px' 
+            : width >= widthBreakpointSmall
+            ? '3px'
+            : '2px'
+          }`
+        }} 
       />
     </g>
   )
