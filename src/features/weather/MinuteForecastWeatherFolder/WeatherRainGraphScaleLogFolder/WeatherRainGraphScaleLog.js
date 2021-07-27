@@ -16,7 +16,7 @@ import {
 import './styles/WeatherRainGraphScaleLog.scss';
 
 // svg graph size parameters
-const margin = { top: 30, right: 20, bottom: 40, left: 80 };
+const margin = { top: 35, right: 20, bottom: 25, left: 80 };
 const marginLeftLarge = 110;
 const marginLeftMedium = 100;
 const marginLeftSmall = 80;
@@ -58,7 +58,6 @@ export const WeatherRainGraphScaleLog = () => {
 
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
-  // const innerHeight = innerWidth * 0.5625;
 
   const yValue = d => d.precipitation;
   const xValue = d => d.dt;

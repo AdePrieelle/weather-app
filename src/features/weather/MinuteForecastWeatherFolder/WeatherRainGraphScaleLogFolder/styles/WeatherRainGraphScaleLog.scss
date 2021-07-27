@@ -3,7 +3,14 @@
 // wrapper to maintain aspect ratio on resizing
 .svg-wrapper {
   position: relative;
-  padding-bottom: 56.25%;
+  flex: 1;
+  padding-bottom: 100%;
+  @media screen and (min-width: $breakpoint-small) {
+    padding-bottom: 56.25%;
+  }
+  @media screen and (min-width: $breakpoint-large) {
+    padding-bottom: 0;
+  }
   .svg-graph {
     position: absolute;
     top: 0;
