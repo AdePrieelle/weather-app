@@ -24,6 +24,8 @@ const axisCurrentTimeLabelXOffset = 0;
 const axisCurrentTimeLabelYOffset = 10;
 const axisCurrentTimeTextLabel = "Now";
 const selectTimeOverLayRectRightPadding = 14;
+const selectTimeOverlayTooltipSvgWrapperWidthBreakpoint = 306;
+const selectTimeOverlayTooltipSvgWrapperWidthBreakpointXOffset = 28;
 const axisLeftTickOffset = 10;
 const widthBreakpointSmall = 480;
 const widthBreakpointMedium = 700;
@@ -141,6 +143,8 @@ export const WeatherRainGraphScaleLog = () => {
             selectTimeOverLayRectRightPadding={selectTimeOverLayRectRightPadding}
             widthBreakpointSmall={widthBreakpointSmall}
             widthBreakpointMedium={widthBreakpointMedium}
+            selectTimeOverlayTooltipSvgWrapperWidthBreakpoint={selectTimeOverlayTooltipSvgWrapperWidthBreakpoint}
+            selectTimeOverlayTooltipSvgWrapperWidthBreakpointXOffset={selectTimeOverlayTooltipSvgWrapperWidthBreakpointXOffset}
           />
         </g>
       </svg>

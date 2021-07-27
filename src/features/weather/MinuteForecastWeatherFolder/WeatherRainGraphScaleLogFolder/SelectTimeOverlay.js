@@ -15,7 +15,9 @@ export const SelectTimeOverlay = ({
   xAxisTickFormat,
   selectTimeOverLayRectRightPadding,
   widthBreakpointSmall,
-  widthBreakpointMedium
+  widthBreakpointMedium,
+  selectTimeOverlayTooltipSvgWrapperWidthBreakpoint,
+  selectTimeOverlayTooltipSvgWrapperWidthBreakpointXOffset
 }) => {
   const [xCoord, setXCoord] = useState(null);
   const hoveredMinuteXCoord = xScale.invert(xCoord);
@@ -39,6 +41,8 @@ export const SelectTimeOverlay = ({
             xAxisTickFormat={xAxisTickFormat}
             widthBreakpointSmall={widthBreakpointSmall}
             widthBreakpointMedium={widthBreakpointMedium}
+            selectTimeOverlayTooltipSvgWrapperWidthBreakpoint={selectTimeOverlayTooltipSvgWrapperWidthBreakpoint}
+            selectTimeOverlayTooltipSvgWrapperWidthBreakpointXOffset={selectTimeOverlayTooltipSvgWrapperWidthBreakpointXOffset}
           />
         }
 

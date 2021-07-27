@@ -36,8 +36,8 @@ function App() {
         <Switch>
           <Route exact path="/">
             <div className="weather-contents-preview">
-              <PreviewMinuteForecastWeather />
               <PreviewCurrentWeather />
+              <PreviewMinuteForecastWeather />
               <PreviewTwoDaysForecast />
               <PreviewWeekForecast />
               <PreviewAlertsWeather />

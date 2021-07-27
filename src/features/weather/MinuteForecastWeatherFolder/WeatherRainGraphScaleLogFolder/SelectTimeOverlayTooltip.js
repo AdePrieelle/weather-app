@@ -14,7 +14,9 @@ export const SelectTimeOverlayTooltip = ({
   rainIntensity,
   xAxisTickFormat,
   widthBreakpointSmall,
-  widthBreakpointMedium
+  widthBreakpointMedium,
+  selectTimeOverlayTooltipSvgWrapperWidthBreakpoint,
+  selectTimeOverlayTooltipSvgWrapperWidthBreakpointXOffset
 }) => {
   const tooltipSize = useCalculateTooltipSize(
     width, 
@@ -32,7 +34,7 @@ export const SelectTimeOverlayTooltip = ({
         hoveredPrecipitationValue={hoveredPrecipitationValue}
       />
       <g transform={`translate(
-        ${xScale(hoveredTimeValue) < (innerWidth / 2)
+        ${xScale(hoveredTimeValue) < ((innerWidth / 2) - (width >= selectTimeOverlayTooltipSvgWrapperWidthBreakpoint ? 0 : selectTimeOverlayTooltipSvgWrapperWidthBreakpointXOffset))
           ? (xScale(hoveredTimeValue) + (tooltipSize.tooltipXOffset))
           : (xScale(hoveredTimeValue) - (tooltipSize.tooltipWidth + tooltipSize.tooltipXOffset))
         },
