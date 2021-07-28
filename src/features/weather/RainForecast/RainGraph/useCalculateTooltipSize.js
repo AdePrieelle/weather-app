@@ -11,10 +11,10 @@ export const useCalculateTooltipSize = (
     radius: 6,
     xBorderRadius: 6,
     yBorderRadius: 6,
-    tooltipXOffset: 6,
-    tooltipYOffset: 6,
-    tooltipXInset: 8,
-    tooltipYInset: 8
+    tooltipXOffset: 4,
+    tooltipYOffset: 4,
+    tooltipXInset: 6,
+    tooltipYInset: 6
   }
 
   const tooltipSizeBreakpointMedium = {
