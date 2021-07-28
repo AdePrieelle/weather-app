@@ -79,7 +79,7 @@ export const PreviewTwoDaysForecast = () => {
         }
       </div>
       <div className="display-more">
-        <Link to="/two-days-forecast-weather">
+        <Link to="/two-days-forecast">
             Show details<i className="fas fa-arrow-right show-details-arrow"></i>
         </Link>
       </div>

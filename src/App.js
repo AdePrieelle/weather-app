@@ -4,8 +4,8 @@ import { fetchCityAndLatitudeLongitude } from './features/weather/weatherSlice'
 import { Navbar } from './features/weather/Navbar/Navbar';
 import { PreviewCurrentWeather } from './features/weather/CurrentWeather/PreviewCurrentWeather'
 import { CurrentWeather } from './features/weather/CurrentWeather/CurrentWeather';
-import { PreviewMinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/PreviewMinuteForecastWeather';
-import { MinuteForecastWeather } from './features/weather/MinuteForecastWeatherFolder/MinuteForecastWeather';
+import { PreviewRainForecast } from './features/weather/RainForecast/PreviewRainForecast';
+import { RainForecast } from './features/weather/RainForecast/RainForecast';
 import { PreviewTwoDaysForecast } from './features/weather/TwoDaysForecast/PreviewTwoDaysForecast';
 import { TwoDaysForecast } from './features/weather/TwoDaysForecast/TwoDaysForecast';
 import { PreviewWeekForecast } from './features/weather/WeekForecast/PreviewWeekForecast';
@@ -37,7 +37,7 @@ function App() {
           <Route exact path="/">
             <div className="weather-contents-preview">
               <PreviewCurrentWeather />
-              <PreviewMinuteForecastWeather />
+              <PreviewRainForecast />
               <PreviewTwoDaysForecast />
               <PreviewWeekForecast />
               <PreviewAlertsWeather />
@@ -46,17 +46,17 @@ function App() {
           <Route exact path="/current-weather">
             <CurrentWeather />
           </Route>
-          <Route exact path="/two-days-forecast-weather">
+          <Route exact path="/rain-forecast">
+            <RainForecast />
+          </Route>
+          <Route exact path="/two-days-forecast">
             <TwoDaysForecast />
           </Route>
-          <Route exact path="/week-forecast-weather">
+          <Route exact path="/week-forecast">
             <WeekForecast />
           </Route>
           <Route exact path="/alerts-weather">
             <AlertsWeather />
-          </Route>
-          <Route exact path="/minute-forecast-weather">
-            <MinuteForecastWeather />
           </Route>
         </Switch>
       </div>

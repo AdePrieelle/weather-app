@@ -14,7 +14,7 @@ import {
   rainIntensityLevels,
   calculateMaxYScaleDomain
 } from './common/helpers';
-import './styles/WeatherRainGraphScaleLog.scss';
+import './styles/RainGraph.scss';
 
 // svg graph size parameters
 const margin = { top: 25, right: 30, bottom: 30, left: 130 };
@@ -42,7 +42,7 @@ const axisBottomTickPaddingMedium = 12;
 const axisBottomTickPaddingSmall = 10;
 const xAxisTickFormat = d3.utcFormat("%H:%M");
 
-export const WeatherRainGraphScaleLog = () => {
+export const RainGraph = () => {
   const weatherRainData = useSelector(state => state.weather.weatherData.minutely);
   const timezoneOffset = useSelector(state => state.weather.weatherData.timezone_offset);
 
