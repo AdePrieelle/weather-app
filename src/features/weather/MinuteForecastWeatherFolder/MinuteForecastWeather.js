@@ -18,12 +18,12 @@ export const MinuteForecastWeather = () => {
     content = 
       <div className="minute-forecast-weather-content">
         <div className="minute-forecast-weather-graph">
-          <div className="go-back">
+          <WeatherRainGraphScaleLog />
+          <div className="display-more">
             <Link to="/">
-              {`<< Go back`}
+              <i className="fas fa-arrow-left show-details-arrow"></i>Go back
             </Link>
           </div>
-          <WeatherRainGraphScaleLog />
         </div>
       </div>;
   } else if (weatherStatus === 'failed') {

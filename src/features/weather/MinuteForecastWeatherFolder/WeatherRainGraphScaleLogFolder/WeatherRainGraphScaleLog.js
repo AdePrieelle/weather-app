@@ -9,17 +9,22 @@ import { SelectTimeOverlay } from './SelectTimeOverlay';
 import { useSvgWrapperSize } from './useSvgWrapperSize';
 import { 
   dataTimezoneOffsetInMilliseconds,
-  calculateBreakpointSizeMarginLeft,
+  // calculateBreakpointSizeMarginLeft,
+  calculateBreakpointSizeMargin,
   rainIntensityLevels,
   calculateMaxYScaleDomain
 } from './common/helpers';
 import './styles/WeatherRainGraphScaleLog.scss';
 
 // svg graph size parameters
-const margin = { top: 35, right: 20, bottom: 25, left: 80 };
-const marginLeftLarge = 110;
-const marginLeftMedium = 100;
-const marginLeftSmall = 80;
+const margin = { top: 25, right: 30, bottom: 30, left: 130 };
+const marginTopValues = {small: 20, medium: 20, large: 25}
+const marginRightValues = {small: 20, medium: 20, large: 20}
+const marginBottomValues = {small: 20, medium: 25, large: 30}
+const marginLeftValues = {small: 80, medium: 100, large: 110}
+// const marginLeftLarge = 130;
+// const marginLeftMedium = 110;
+// const marginLeftSmall = 90;
 const axisCurrentTimeLabelXOffset = 0;
 const axisCurrentTimeLabelYOffset = 10;
 const axisCurrentTimeTextLabel = "Now";
@@ -49,14 +54,29 @@ export const WeatherRainGraphScaleLog = () => {
 
   const data = dataTimezoneOffsetInMilliseconds(weatherRainData, timezoneOffset);
 
-  margin.left = calculateBreakpointSizeMarginLeft(
+  // margin.left = calculateBreakpointSizeMarginLeft(
+  //   width,
+  //   widthBreakpointLarge,
+  //   widthBreakpointSmall,
+  //   marginLeftLarge,
+  //   marginLeftMedium,
+  //   marginLeftSmall
+  // );
+
+  const calculatedMarginValues = calculateBreakpointSizeMargin(
     width,
     widthBreakpointLarge,
     widthBreakpointSmall,
-    marginLeftLarge,
-    marginLeftMedium,
-    marginLeftSmall
+    marginTopValues,
+    marginRightValues,
+    marginBottomValues,
+    marginLeftValues
   );
+
+  margin.top = calculatedMarginValues.top;
+  margin.right = calculatedMarginValues.right;
+  margin.bottom = calculatedMarginValues.bottom;
+  margin.left = calculatedMarginValues.left;
 
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;

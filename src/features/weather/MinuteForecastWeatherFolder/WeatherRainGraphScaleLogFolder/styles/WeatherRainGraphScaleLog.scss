@@ -8,9 +8,9 @@
   @media screen and (min-width: $breakpoint-small) {
     padding-bottom: 56.25%;
   }
-  @media screen and (min-width: $breakpoint-large) {
-    padding-bottom: 0;
-  }
+  // @media screen and (min-width: $breakpoint-large) {
+  //   padding-bottom: 56.25%;
+  // }
   .svg-graph {
     position: absolute;
     top: 0;

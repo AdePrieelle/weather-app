@@ -1,4 +1,4 @@
-@import "../../../styles/partials//variables";
+@import "../../../styles/partials/variables";
 
 .preview-minute-forecast-weather {
   padding: $section-border-radius;
@@ -10,6 +10,9 @@
   .preview-minute-forecast-weather-content {
     height: 100%;
     // padding-top: 22px;
+    @media screen and (min-width: $media-query-large-screen) {
+      padding-top: 15px;
+    }
     .preview-minute-forecast-weather-graph {
       height: 100%;
       display: flex;

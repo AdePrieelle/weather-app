@@ -1,8 +1,47 @@
+@import "../../../styles/partials/variables";
+
 .minute-forecast-weather {
+  padding: $section-border-radius;
+  color: $primary-text-color;
+  background-color: $minute-forecast-bg-color;
+  // border-radius: $section-border-radius;
+  border-radius: $section-item-border-radius;
+  height: 100%;
   .minute-forecast-weather-content {
-    margin-top: 20px;
+    height: 100%;
+    // padding-top: 22px;
+    @media screen and (min-width: $media-query-large-screen) {
+      padding-top: 15px;
+    }
     .minute-forecast-weather-graph {
-      margin-bottom: 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .svg-wrapper {
+        margin-left: calc(-#{$section-border-radius} + 10px);
+        margin-left: calc(-#{$section-border-radius});
+        margin-right: calc(-#{$section-border-radius} + 5px);
+      }
+      .display-more {
+        // grid-area: display-more;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: $section-border-radius;
+        font-size: 14px;
+        @media screen and (min-width: $media-query-small-screen) {
+          font-size: 16px;
+        }
+        a {
+          display: flex;
+          align-items: baseline;
+          color: $primary-text-color;
+          text-decoration: none;
+          .show-details-arrow {
+            margin-right: 4px;
+          }
+        }
+      }
     }
   }
 }

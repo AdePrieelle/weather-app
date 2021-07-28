@@ -26,6 +26,39 @@ export const calculateBreakpointSizeMarginLeft = (
   }
 };
 
+export const calculateBreakpointSizeMargin = (
+  width,
+  widthBreakpointLarge,
+  widthBreakpointSmall,
+  marginTopValues,
+  marginRightValues,
+  marginBottomValues,
+  marginLeftValues
+) => {
+  if (width >= widthBreakpointLarge) {
+    return ({
+      top: marginTopValues.large,
+      right: marginRightValues.large,
+      bottom: marginBottomValues.large,
+      left: marginLeftValues.large
+    });
+  } else if (width >= widthBreakpointSmall) {
+    return ({
+      top: marginTopValues.medium,
+      right: marginRightValues.medium,
+      bottom: marginBottomValues.medium,
+      left: marginLeftValues.medium
+    });
+  } else {
+    return ({
+      top: marginTopValues.small,
+      right: marginRightValues.small,
+      bottom: marginBottomValues.small,
+      left: marginLeftValues.small
+    });
+  }
+};
+
 export const rainIntensityLevels = {
   "No rain": 0,
   "Light rain": 0,
