@@ -18,7 +18,7 @@
   padding: $section-border-radius;
   transform: scale(0.1);
   opacity: 0;
-  border-radius: $section-border-radius;
+  border-radius: $section-item-border-radius;
   // height: calc(100% + 2px);
   height: 100%;
   transition: transform 350ms ease-in-out, opacity 400ms ease-in-out;
