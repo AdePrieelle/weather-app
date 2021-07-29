@@ -5,6 +5,7 @@
   z-index: 99;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   background: $wrong-location-tooltip-bg-color;
   color: $wrong-location-tooltip-color;
@@ -23,6 +24,9 @@
   transition: transform 350ms ease-in-out, opacity 400ms ease-in-out;
   pointer-events: none;
   .wrong-location-tooltip-content {
+    .wrong-location-tooltip-content-text {
+      margin-bottom: 20px;
+    }
     code {
       background-color: white;
       color: rgb(100, 100, 100);
@@ -35,7 +39,7 @@
     .close-button-wrapper {
       display: flex;
       justify-content: center;
-      margin-top: 12px;
+      margin-top: 20px;
       .wrong-location-tooltip-close {
         padding: 6px 12px;
         background-color: $logo-color;
