@@ -14,7 +14,7 @@ export const PreviewAlerts = () => {
 
   if (weatherStatus === 'loading') {
     content = 
-      <section className="preview-alerts-weather">
+      <section className="preview-alerts">
         <div className="loading">Loading...</div>
       </section>;
     // content = <div className="loader"></div>
@@ -22,8 +22,8 @@ export const PreviewAlerts = () => {
 
     content = 
     weatherData.alerts 
-    ? <section className="preview-alerts-weather">
-        <div className="preview-alerts-weather-content">
+    ? <section className="preview-alerts">
+        <div className="preview-alerts-content">
           {
             weatherData.alerts.map((alert, id) => (
               <div key={id} className="alert">
@@ -35,7 +35,8 @@ export const PreviewAlerts = () => {
                 <div className="alert-value alert-start-value">{alert.start ? formatLocalDateTimestamp(alert.start, weatherData.timezone_offset) : 'Unkown'}</div>
                 <div className="alert-title alert-end-title">End:</div>
                 <div className="alert-value alert-end-value">{alert.end ? formatLocalDateTimestamp(alert.end, weatherData.timezone_offset) : 'Unkown'}</div>
-                {/* <div className="alert-description">Description: {alert.description ? alert.description : 'unkown'}</div> */}
+                {/* <div className="alert-title alert-description-title">Description:</div> */}
+                {/* <div className="alert-value alert-description-value">{alert.description ? alert.description : 'Unkown'}</div> */}
               </div>
             ))
           }
@@ -49,7 +50,7 @@ export const PreviewAlerts = () => {
     : null
   } else if (weatherStatus === 'failed') {
     content = 
-      <section className="preview-alerts-weather">
+      <section className="preview-alerts">
         <div>{weatherError}</div>
       </section>;
   }

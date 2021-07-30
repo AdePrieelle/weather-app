@@ -1,6 +1,6 @@
 @import "../../../styles/partials//variables";
 
-.preview-alerts-weather {
+.preview-alerts {
   @media screen and (min-width: $media-query-large-screen) {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
@@ -9,26 +9,33 @@
   color: $primary-text-color;
   background-color: $alerts-bg-color;
   border-radius: $section-item-border-radius;
-  .preview-alerts-weather-content {
+  .preview-alerts-content {
     display: grid;
     grid-template-columns: minmax(0px, 1fr);
-    grid-gap: 30px;
+    grid-gap: 20px;
     @media screen and (min-width: $media-query-medium-screen) {
       grid-template-columns: repeat(2, minmax(0px, 1fr));
-      grid-gap: calc(40px + #{$section-border-radius});
+      grid-column-gap: calc(40px + #{$section-border-radius});
+      // grid-row-gap: 20;
     }
     .alert {
       display: grid;
       grid-template-columns: repeat(2, auto) minmax(0, 1fr);
+      grid-template-rows: repeat(4, auto) minmax(0, 1fr);
       grid-template-areas:
         "alert-sender-title alert-sender-value ."
         "alert-event-title alert-event-value ."
         "alert-start-title alert-start-value ."
         "alert-end-title alert-end-value .";
       grid-row-gap: 4px;
+      padding-bottom: 20px;
       font-size: 14px;
       @media screen and (min-width: $media-query-small-screen) {
         font-size: 16px;
+      }
+      border-bottom: 1px solid white;
+      @media screen and (min-width: $media-query-medium-screen) {
+        // border: none;
       }
       .alert-title {
         margin-right: 10px;

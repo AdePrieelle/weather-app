@@ -14,37 +14,42 @@ export const Alerts = () => {
 
   if (weatherStatus === 'loading') {
     content = 
-      <section className="alerts-weather">
+      <section className="alerts">
         <div className="loading">Loading...</div>
       </section>;
     // content = <div className="loader"></div>
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
     weatherData.alerts 
-    ? <section className="alerts-weather">
-        <div className="go-back">
-          <Link to="/">
-            {`<< Go back`}
-          </Link>
-        </div>
-        <div className="alerts-weather-content">
+    ? <section className="alerts">
+        <div className="alerts-content">
             {
             weatherData.alerts.map((alert, id) => (
               <div key={id} className="alert">
-                <div className="alert-sender-name">Sender name: {alert.sender_name ? alert.sender_name : 'unkown'}</div>
-                <div className="alert-event">Event: {alert.event ? alert.event : 'unkown'}</div>
-                <div className="alert-start">Start: {alert.start ? formatLocalDateTimestamp(alert.start, weatherData.timezone_offset) : 'unkown'}</div>
-                <div className="alert-start">End: {alert.end ? formatLocalDateTimestamp(alert.end, weatherData.timezone_offset) : 'unkown'}</div>
-                <div className="alert-description">Description: {alert.description ? alert.description : 'unkown'}</div>
+                <div className="alert-title alert-sender-title">Sender:</div>
+                <div className="alert-value alert-sender-value">{alert.sender_name ? alert.sender_name : 'Unkown'}</div>
+                <div className="alert-title alert-event-title">Event:</div>
+                <div className="alert-value alert-event-value">{alert.event ? alert.event : 'Unkown'}</div>
+                <div className="alert-title alert-start-title">Start:</div>
+                <div className="alert-value alert-start-value">{alert.start ? formatLocalDateTimestamp(alert.start, weatherData.timezone_offset) : 'Unkown'}</div>
+                <div className="alert-title alert-end-title">End:</div>
+                <div className="alert-value alert-end-value">{alert.end ? formatLocalDateTimestamp(alert.end, weatherData.timezone_offset) : 'Unkown'}</div>
+                <div className="alert-title alert-description-title">Description:</div>
+                <div className="alert-value alert-description-value">{alert.description ? alert.description : 'Unkown'}</div>
               </div>
             ))
           }
+        </div>
+        <div className="display-more">
+          <Link to="/">
+              <i className="fas fa-arrow-left show-details-arrow"></i>Go back
+          </Link>
         </div>
       </section>
     : null
   } else if (weatherStatus === 'failed') {
     content = 
-      <section className="alerts-weather">
+      <section className="alerts">
         <div>{weatherError}</div>
       </section>;
   }

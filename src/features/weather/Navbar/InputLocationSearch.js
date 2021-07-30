@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { fetchCityAndLatitudeLongitude } from '../weatherSlice';
 import './InputLocationSearch.scss';
+import { useHistory } from 'react-router-dom';
 
 export const InputLocationSearch = ({
   setShowErrorMessage,
@@ -9,12 +10,14 @@ export const InputLocationSearch = ({
 }) => {
   const [city, setCity] = useState('');
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const updateFormCity = (e) => {
     setCity(e.target.value);
   }
 
   const handleCitySearch = () => {
+    history.push("/");
     setShowErrorMessage(1);
     if (city === "") {
       setShowInputError(1);
