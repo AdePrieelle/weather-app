@@ -8,41 +8,79 @@
   padding: $section-border-radius;
   color: $primary-text-color;
   background-color: $alerts-bg-color;
-  background-color: rgb(240, 26, 18);
   border-radius: $section-item-border-radius;
   .preview-alerts-weather-content {
     display: grid;
-    grid-gap: 20px;
     grid-template-columns: minmax(0px, 1fr);
+    grid-gap: 30px;
     @media screen and (min-width: $media-query-medium-screen) {
       grid-template-columns: repeat(2, minmax(0px, 1fr));
-      grid-gap: 40px;
+      grid-gap: calc(40px + #{$section-border-radius});
     }
     .alert {
-      // padding: 20px;
-      // border: 1px solid black;
-      // border-radius: $section-item-border-radius;
-      // border-radius: 8px;
-      // background-color: rgb(247, 123, 123);
-      // border: 2px solid rgb(219, 219, 219);
-      // border-bottom: 1px solid rgb(219, 219, 219);
-      // border: 1px solid rgb(219, 219, 219);
-      // box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-      //   rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-      // padding: 20px;
-      // margin-bottom: 40px;
-      .alert-sender-name {
-        // font-size: 18px;
-      }
-      .alert-event {
-        // font-size: 18px;
-      }
-      .alert-start {
+      display: grid;
+      grid-template-columns: repeat(2, auto) minmax(0, 1fr);
+      grid-template-areas:
+        "alert-sender-title alert-sender-value ."
+        "alert-event-title alert-event-value ."
+        "alert-start-title alert-start-value ."
+        "alert-end-title alert-end-value .";
+      grid-row-gap: 4px;
+      font-size: 14px;
+      @media screen and (min-width: $media-query-small-screen) {
         font-size: 16px;
       }
-      .alert-end {
-        font-size: 16px;
-        padding-bottom: 10px;
+      .alert-title {
+        margin-right: 10px;
+        font-weight: 400;
+      }
+      .alert-value {
+        font-weight: 400;
+      }
+      .alert-sender-title {
+        grid-area: alert-sender-title;
+      }
+      .alert-sender-value {
+        grid-area: alert-sender-value;
+      }
+      .alert-event-title {
+        grid-area: alert-event-title;
+      }
+      .alert-event-value {
+        grid-area: alert-event-value;
+        font-weight: 700;
+      }
+      .alert-start-title {
+        grid-area: alert-start-title;
+      }
+      .alert-start-value {
+        grid-area: alert-start-value;
+        font-style: italic;
+      }
+      .alert-end-title {
+        grid-area: alert-end-title;
+      }
+      .alert-end-value {
+        grid-area: alert-end-value;
+        font-style: italic;
+      }
+    }
+  }
+  .display-more {
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: $section-border-radius;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: 16px;
+    }
+    a {
+      display: flex;
+      align-items: baseline;
+      color: $primary-text-color;
+      text-decoration: none;
+      .show-details-arrow {
+        margin-left: 4px;
       }
     }
   }

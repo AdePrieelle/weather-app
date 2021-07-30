@@ -34,7 +34,7 @@ export const Alerts = () => {
                 <div className="alert-sender-name">Sender name: {alert.sender_name ? alert.sender_name : 'unkown'}</div>
                 <div className="alert-event">Event: {alert.event ? alert.event : 'unkown'}</div>
                 <div className="alert-start">Start: {alert.start ? formatLocalDateTimestamp(alert.start, weatherData.timezone_offset) : 'unkown'}</div>
-                <div className="alert-end">End: {alert.end ? formatLocalDateTimestamp(alert.end, weatherData.timezone_offset) : 'unkown'}</div>
+                <div className="alert-start">End: {alert.end ? formatLocalDateTimestamp(alert.end, weatherData.timezone_offset) : 'unkown'}</div>
                 <div className="alert-description">Description: {alert.description ? alert.description : 'unkown'}</div>
               </div>
             ))

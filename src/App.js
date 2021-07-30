@@ -43,7 +43,7 @@ function App() {
               <PreviewWeekForecast />
             </div>
           </Route>
-          <Route exact path="/alerts-weather">
+          <Route exact path="/alerts">
             <Alerts />
           </Route>
           <Route exact path="/current-weather">

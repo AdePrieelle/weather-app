@@ -27,18 +27,22 @@ export const PreviewAlerts = () => {
           {
             weatherData.alerts.map((alert, id) => (
               <div key={id} className="alert">
-                <div className="alert-sender-name">Sender: {alert.sender_name ? alert.sender_name : 'unkown'}</div>
-                <div className="alert-event">Event: {alert.event ? alert.event : 'unkown'}</div>
-                <div className="alert-start">Start: {alert.start ? formatLocalDateTimestamp(alert.start, weatherData.timezone_offset) : 'unkown'}</div>
-                <div className="alert-end">End: {alert.end ? formatLocalDateTimestamp(alert.end, weatherData.timezone_offset) : 'unkown'}</div>
+                <div className="alert-title alert-sender-title">Sender:</div>
+                <div className="alert-value alert-sender-value">{alert.sender_name ? alert.sender_name : 'Unkown'}</div>
+                <div className="alert-title alert-event-title">Event:</div>
+                <div className="alert-value alert-event-value">{alert.event ? alert.event : 'Unkown'}</div>
+                <div className="alert-title alert-start-title">Start:</div>
+                <div className="alert-value alert-start-value">{alert.start ? formatLocalDateTimestamp(alert.start, weatherData.timezone_offset) : 'Unkown'}</div>
+                <div className="alert-title alert-end-title">End:</div>
+                <div className="alert-value alert-end-value">{alert.end ? formatLocalDateTimestamp(alert.end, weatherData.timezone_offset) : 'Unkown'}</div>
                 {/* <div className="alert-description">Description: {alert.description ? alert.description : 'unkown'}</div> */}
               </div>
             ))
           }
         </div>
         <div className="display-more">
-          <Link to="/alerts-weather">
-            Show details
+          <Link to="/alerts">
+              Show details<i className="fas fa-arrow-right show-details-arrow"></i>
           </Link>
         </div>
       </section>
