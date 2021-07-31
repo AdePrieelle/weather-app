@@ -21,7 +21,7 @@ export const PreviewRainForecast = () => {
           <RainGraph />
           <div className="display-more">
             <Link to="/rain-forecast">
-              Show details <i className="fas fa-arrow-right show-details-arrow"></i>
+              Rain forecast <i className="fas fa-arrow-right show-details-arrow"></i>
             </Link>
           </div>
         </div>

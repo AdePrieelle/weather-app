@@ -9,13 +9,24 @@
   color: $primary-text-color;
   background-color: $alerts-bg-color;
   border-radius: $section-item-border-radius;
+  h1 {
+    margin-top: -$section-border-radius;
+    margin-left: -$section-border-radius;
+    margin-right: -$section-border-radius;
+    margin-bottom: $section-border-radius;
+    padding: 10px $section-border-radius;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-bottom: 1px solid white;
+  }
   .preview-alerts-content {
     display: grid;
     grid-template-columns: minmax(0px, 1fr);
     grid-gap: 20px;
     @media screen and (min-width: $media-query-medium-screen) {
       grid-template-columns: repeat(2, minmax(0px, 1fr));
-      grid-column-gap: calc(40px + #{$section-border-radius});
+      // grid-column-gap: calc(40px + #{$section-border-radius});
+      // grid-column-gap: $section-border-radius;
       // grid-row-gap: 20;
     }
     .alert {
@@ -28,14 +39,18 @@
         "alert-start-title alert-start-value ."
         "alert-end-title alert-end-value .";
       grid-row-gap: 4px;
-      padding-bottom: 20px;
+      // padding: $section-border-radius;
+      padding: 20px;
+      border-radius: 12px;
       font-size: 14px;
+      // background-color: rgb(240, 120, 120);
+      background-color: rgba(0, 0, 0, 0.15);
       @media screen and (min-width: $media-query-small-screen) {
         font-size: 16px;
       }
-      border-bottom: 1px solid white;
+      // border-bottom: 1px solid white;
       @media screen and (min-width: $media-query-medium-screen) {
-        // border: none;
+        border: none;
       }
       .alert-title {
         margin-right: 10px;

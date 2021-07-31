@@ -80,7 +80,7 @@ export const PreviewCurrentWeather = () => {
       </div>
       <div className="display-more">
         <Link to="/current-weather">
-          Show details <i className="fas fa-arrow-right show-details-arrow"></i>
+          Weather details <i className="fas fa-arrow-right show-details-arrow"></i>
         </Link>
       </div>
     </div>

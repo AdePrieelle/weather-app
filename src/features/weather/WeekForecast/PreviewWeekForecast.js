@@ -57,7 +57,7 @@ export const PreviewWeekForecast = () => {
       </div>
       <div className="display-more">
         <Link to="/week-forecast">
-          Show details<i className="fas fa-arrow-right show-details-arrow"></i>
+          7-days forecast<i className="fas fa-arrow-right show-details-arrow"></i>
         </Link>
       </div>
     </div>
