@@ -9,13 +9,16 @@
   color: $primary-text-color;
   background-color: $alerts-bg-color;
   border-radius: $section-item-border-radius;
-  h1 {
+  .preview-alerts-title {
     margin-top: -$section-border-radius;
     margin-left: -$section-border-radius;
     margin-right: -$section-border-radius;
     margin-bottom: $section-border-radius;
     padding: 10px $section-border-radius;
-    font-size: 1.5em;
+    font-size: 22px;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: 24px;
+    }
     font-weight: 700;
     border-bottom: 1px solid white;
   }
@@ -39,19 +42,14 @@
         "alert-start-title alert-start-value ."
         "alert-end-title alert-end-value .";
       grid-row-gap: 4px;
-      // padding: $section-border-radius;
       padding: 20px;
-      border-radius: 12px;
       font-size: 14px;
-      // background-color: rgb(240, 120, 120);
-      background-color: rgba(0, 0, 0, 0.15);
       @media screen and (min-width: $media-query-small-screen) {
         font-size: 16px;
       }
-      // border-bottom: 1px solid white;
-      @media screen and (min-width: $media-query-medium-screen) {
-        border: none;
-      }
+      background-color: rgba(0, 0, 0, 0.15);
+      border-radius: $alert-border-radius;
+      word-break: break-word;
       .alert-title {
         margin-right: 10px;
         font-weight: 400;

@@ -9,14 +9,28 @@
   color: $primary-text-color;
   background-color: $alerts-bg-color;
   border-radius: $section-item-border-radius;
+  .alerts-title {
+    margin-top: -$section-border-radius;
+    margin-left: -$section-border-radius;
+    margin-right: -$section-border-radius;
+    margin-bottom: $section-border-radius;
+    padding: 10px $section-border-radius;
+    font-size: 22px;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: 24px;
+    }
+    font-weight: 700;
+    border-bottom: 1px solid white;
+  }
   .alerts-content {
     display: grid;
     grid-template-columns: minmax(0px, 1fr);
     grid-gap: 20px;
     @media screen and (min-width: $media-query-medium-screen) {
       grid-template-columns: repeat(2, minmax(0px, 1fr));
-      grid-column-gap: calc(40px + #{$section-border-radius});
-      // grid-row-gap: 20px;
+      // grid-column-gap: calc(40px + #{$section-border-radius});
+      // grid-column-gap: $section-border-radius;
+      // grid-row-gap: 20;
     }
     .alert {
       display: grid;
@@ -29,15 +43,14 @@
         "alert-end-title alert-end-value ."
         "alert-description-title alert-description-value .";
       grid-row-gap: 4px;
-      padding-bottom: 20px;
+      padding: 20px;
       font-size: 14px;
       @media screen and (min-width: $media-query-small-screen) {
         font-size: 16px;
       }
-      border-bottom: 1px solid white;
-      @media screen and (min-width: $media-query-medium-screen) {
-        // border: none;
-      }
+      background-color: rgba(0, 0, 0, 0.15);
+      border-radius: $alert-border-radius;
+      word-break: break-word;
       .alert-title {
         margin-right: 10px;
         font-weight: 400;
@@ -77,24 +90,6 @@
       }
       .alert-description-value {
         grid-area: alert-description-value;
-      }
-    }
-  }
-  .display-more {
-    font-size: 14px;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: $section-border-radius;
-    @media screen and (min-width: $media-query-small-screen) {
-      font-size: 16px;
-    }
-    a {
-      display: flex;
-      align-items: baseline;
-      color: $primary-text-color;
-      text-decoration: none;
-      .show-details-arrow {
-        margin-left: 4px;
       }
     }
   }
