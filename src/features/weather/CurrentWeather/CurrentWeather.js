@@ -90,7 +90,7 @@ export const CurrentWeather = () => {
             ? `${weatherData.current.visibility/1000} km` 
             : `${weatherData.current.visibility} m`
           }
-          </div>
+        </div>
         <div className="title title-windspeed-metre-sec">Windspeed</div>
         <div className="value value-windspeed-metre-sec">{(weatherData.current.wind_speed*3.6).toFixed(2)} km/h</div>
         <div className="title title-sunrise">Sunrise</div>
