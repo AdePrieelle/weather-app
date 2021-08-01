@@ -57,7 +57,7 @@ export const PreviewWeekForecast = () => {
       </div>
       <div className="display-more">
         <Link to="/week-forecast">
-          7-days forecast<i className="fas fa-arrow-right show-details-arrow"></i>
+          Show details <i className="fas fa-arrow-right show-details-arrow"></i>
         </Link>
       </div>
     </div>
@@ -67,6 +67,7 @@ export const PreviewWeekForecast = () => {
 
   return (
     <section className="preview-week-forecast">
+      <h1 className="preview-week-forecast-title">7-days forecast</h1>
       {content}
     </section>
   )

@@ -69,6 +69,7 @@ export const TwoDaysForecast = () => {
 
   return (
     <section className="two-days-forecast-weather">
+      <h1 className="two-days-forecast-weather-title">48-hours forecast</h1>
       {content}
     </section>
   )

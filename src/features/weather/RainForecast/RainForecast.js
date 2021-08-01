@@ -32,6 +32,7 @@ export const RainForecast = () => {
 
   return (
     <section className="rain-forecast">
+      <h1 className="rain-forecast-title">Rain forecast</h1>
       {content}
     </section>
   )

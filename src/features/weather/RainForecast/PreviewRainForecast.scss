@@ -7,12 +7,29 @@
   // border-radius: $section-border-radius;
   border-radius: $section-item-border-radius;
   height: 100%;
-  .preview-rain-forecast-content {
-    height: 100%;
-    // padding-top: 22px;
-    @media screen and (min-width: $media-query-large-screen) {
-      padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  .preview-rain-forecast-title {
+    margin-top: -$section-border-radius;
+    margin-left: -$section-border-radius;
+    margin-right: -$section-border-radius;
+    padding: $title-padding-y $title-padding-x;
+    font-size: $title-font-size-small;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: $title-font-size-large;
     }
+    font-weight: 700;
+    border-bottom: 1px solid white;
+    // text-align: center;
+  }
+  .preview-rain-forecast-content {
+    // height: 100%;
+    flex: 1;
+    // padding-top: 22px;
+    margin-top: $section-border-radius;
+    // @media screen and (min-width: $media-query-large-screen) {
+    //   padding-top: 15px;
+    // }
     .preview-rain-forecast-rain-graph {
       height: 100%;
       display: flex;

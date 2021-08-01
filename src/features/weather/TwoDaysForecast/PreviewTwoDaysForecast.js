@@ -80,7 +80,7 @@ export const PreviewTwoDaysForecast = () => {
       </div>
       <div className="display-more">
         <Link to="/two-days-forecast">
-            48-hours forecast<i className="fas fa-arrow-right show-details-arrow"></i>
+            Show details <i className="fas fa-arrow-right show-details-arrow"></i>
         </Link>
       </div>
     </div>
@@ -90,6 +90,7 @@ export const PreviewTwoDaysForecast = () => {
 
   return (
     <section className="preview-two-days-forecast-weather">
+      <h1 className="preview-two-days-forecast-weather-title">48-hours forecast</h1>
       {content}
     </section>
   )

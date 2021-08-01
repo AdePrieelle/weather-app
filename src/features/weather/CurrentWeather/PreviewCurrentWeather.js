@@ -80,7 +80,7 @@ export const PreviewCurrentWeather = () => {
       </div>
       <div className="display-more">
         <Link to="/current-weather">
-          Weather details <i className="fas fa-arrow-right show-details-arrow"></i>
+          Show details <i className="fas fa-arrow-right show-details-arrow"></i>
         </Link>
       </div>
     </div>
@@ -90,6 +90,7 @@ export const PreviewCurrentWeather = () => {
 
   return (
     <section className="preview-current-weather">
+      <h1 className="preview-current-weather-title">Current weather</h1>
       {content}
     </section>
   )

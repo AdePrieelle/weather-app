@@ -67,6 +67,7 @@ export const WeekForecast = () => {
 
   return (
     <section className="week-forecast">
+      <h1 className="week-forecast-title">7-days forecast</h1>
       {content}
     </section>
   )

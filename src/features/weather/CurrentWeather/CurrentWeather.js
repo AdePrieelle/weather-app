@@ -112,6 +112,7 @@ export const CurrentWeather = () => {
 
   return (
     <section className="current-weather">
+      <h1 className="current-weather-title">Current weather</h1>
       {content}
     </section>
   )

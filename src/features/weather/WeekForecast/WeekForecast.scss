@@ -9,16 +9,32 @@
   overflow-x: auto;
   // box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
   //   rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  display: flex;
+  flex-direction: column;
+  .week-forecast-title {
+    margin-top: -$section-border-radius;
+    margin-left: -$section-border-radius;
+    margin-right: -$section-border-radius;
+    padding: $title-padding-y $title-padding-x;
+    font-size: $title-font-size-small;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: $title-font-size-large;
+    }
+    font-weight: 700;
+    border-bottom: 1px solid white;
+    // text-align: center;
+  }
   .week-forecast-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    // height: 100%;
     .week-forecast-days-wrapper {
       display: grid;
       justify-items: center;
       overflow-x: auto;
-      margin-top: 10px;
+      margin-top: $section-border-radius;
       .clouds-title,
       .humidity-title,
       .rain-title,

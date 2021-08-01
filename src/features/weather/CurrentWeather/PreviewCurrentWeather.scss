@@ -12,11 +12,28 @@
   border-radius: $section-item-border-radius;
   position: relative;
   // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  flex-direction: column;
+  .preview-current-weather-title {
+    margin-top: -$section-border-radius;
+    margin-left: -$section-border-radius;
+    margin-right: -$section-border-radius;
+    padding: $title-padding-y $title-padding-x;
+    font-size: $title-font-size-small;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: $title-font-size-large;
+    }
+    font-weight: 700;
+    border-bottom: 1px solid white;
+    // text-align: center;
+  }
   .preview-current-weather-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    margin-top: calc(#{$section-border-radius} - 9px);
+    // height: 100%;
     .preview-current-weather-weather-temp-location-wind-cloudiness-humidity-wrapper {
       .preview-current-weather-weather-temp-location-wrapper {
         display: grid;

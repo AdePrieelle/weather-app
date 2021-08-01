@@ -21,7 +21,7 @@ export const PreviewRainForecast = () => {
           <RainGraph />
           <div className="display-more">
             <Link to="/rain-forecast">
-              Rain forecast <i className="fas fa-arrow-right show-details-arrow"></i>
+              Show details <i className="fas fa-arrow-right show-details-arrow"></i>
             </Link>
           </div>
         </div>
@@ -32,6 +32,7 @@ export const PreviewRainForecast = () => {
 
   return (
     <section className="preview-rain-forecast">
+      <h1 className="preview-rain-forecast-title">Rain forecast</h1>
       {content}
     </section>
   )

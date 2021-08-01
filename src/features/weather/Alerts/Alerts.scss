@@ -13,14 +13,15 @@
     margin-top: -$section-border-radius;
     margin-left: -$section-border-radius;
     margin-right: -$section-border-radius;
-    margin-bottom: $section-border-radius;
-    padding: 10px $section-border-radius;
-    font-size: 22px;
+    // margin-bottom: $section-border-radius;
+    padding: $title-padding-y $title-padding-x;
+    font-size: $title-font-size-small;
     @media screen and (min-width: $media-query-small-screen) {
-      font-size: 24px;
+      font-size: $title-font-size-large;
     }
     font-weight: 700;
     border-bottom: 1px solid white;
+    // text-align: center;
   }
   .alerts-content {
     display: grid;
@@ -32,6 +33,7 @@
       // grid-column-gap: $section-border-radius;
       // grid-row-gap: 20;
     }
+    margin-top: $section-border-radius;
     .alert {
       display: grid;
       grid-template-columns: repeat(2, auto) minmax(0, 1fr);

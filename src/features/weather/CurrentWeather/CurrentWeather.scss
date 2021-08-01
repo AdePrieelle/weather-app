@@ -5,8 +5,27 @@
   // @media screen and (min-width: $media-query-xlarge-screen) {
   //   padding: 20px 0;
   // }
+  padding: $section-border-radius;
+  color: $primary-text-color;
+  background-color: $section-bg-color;
+  // border-radius: $section-border-radius;
+  border-radius: $section-item-border-radius;
+  position: relative;
+  // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  .current-weather-title {
+    margin-top: -$section-border-radius;
+    margin-left: -$section-border-radius;
+    margin-right: -$section-border-radius;
+    padding: $title-padding-y $title-padding-x;
+    font-size: $title-font-size-small;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: $title-font-size-large;
+    }
+    font-weight: 700;
+    border-bottom: 1px solid white;
+    // text-align: center;
+  }
   .current-weather-content {
-    position: relative;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas:
@@ -15,12 +34,7 @@
       "location-date-time-wrapper ."
       "wind-cloudiness-humidity-wrapper wind-cloudiness-humidity-wrapper"
       "display-more display-more";
-    color: $primary-text-color;
-    background-color: $section-bg-color;
-    padding: $section-border-radius;
-    // border-radius: $section-border-radius;
-    border-radius: $section-item-border-radius;
-    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top: calc(#{$section-border-radius} - 9px);
     .weather-icon {
       grid-area: weather-icon;
       img {
