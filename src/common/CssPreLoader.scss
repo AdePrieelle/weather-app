@@ -6,9 +6,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (min-width: $media-query-large-screen) {
-    margin-bottom: $section-border-radius;
-  }
   div {
     border: 8px solid $loader-bg-color;
     border-top: 8px solid $loader-color;
