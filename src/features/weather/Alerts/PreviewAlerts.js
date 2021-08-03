@@ -4,6 +4,7 @@ import {
 } from '../../../common/helpers';
 import { Link } from 'react-router-dom';
 import './PreviewAlerts.scss';
+import { CssPreLoader } from '../../../common/CssPreLoader';
 
 export const PreviewAlerts = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -40,11 +41,12 @@ export const PreviewAlerts = () => {
   // ];
 
   if (weatherStatus === 'loading') {
-    content = 
-      <section className="preview-alerts">
-        <h1 className="preview-alerts-title">Alerts</h1>
-        <div className="loading">Loading...</div>
-      </section>;
+    // content = 
+    //   <section className="preview-alerts">
+    //     <h1 className="preview-alerts-title">Alerts</h1>
+    //     <CssPreLoader />
+    //   </section>;
+    content = null;
     // content = <div className="loader"></div>
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
 

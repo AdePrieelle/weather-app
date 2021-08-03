@@ -11,6 +11,7 @@ import { WindArrowBeaufort } from '../../../common/WindArrowBeaufort';
 import { Link } from 'react-router-dom';
 import { WrongLocationTooltip } from './WrongLocationTooltip';
 import './CurrentWeather.scss';
+import { CssPreLoader } from '../../../common/CssPreLoader';
 
 export const CurrentWeather = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -31,8 +32,8 @@ export const CurrentWeather = () => {
   let content;
 
   if (weatherStatus === 'loading') {
-    content = <div className="loading">Loading...</div>
-    // content = <div className="loader"></div>
+    // content = <div className="loading">Loading...</div>
+    content = <CssPreLoader />
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
     <div className="current-weather-content">

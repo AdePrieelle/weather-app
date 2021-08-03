@@ -9,7 +9,7 @@ import {
 import { Link } from 'react-router-dom';
 import './TwoDaysForecast.scss';
 import { WindArrowBeaufort } from '../../../common/WindArrowBeaufort';
-
+import { CssPreLoader } from '../../../common/CssPreLoader';
 
 export const TwoDaysForecast = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -20,8 +20,9 @@ export const TwoDaysForecast = () => {
   let content;
 
   if (weatherStatus === 'loading') {
-    content = <div className="loading">Loading...</div>
+    // content = <div className="loading">Loading...</div>
     // content = <div className="loader"></div>
+    content = <CssPreLoader />
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     const weatherDataHourly = weatherData.hourly;
     content = 

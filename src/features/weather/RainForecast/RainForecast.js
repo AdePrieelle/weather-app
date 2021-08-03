@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import './RainForecast.scss';
 import { RainGraph } from './RainGraph/RainGraph';
 import { Link } from 'react-router-dom';
+import { CssPreLoader } from '../../../common/CssPreLoader';
 
 export const RainForecast = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -12,8 +13,9 @@ export const RainForecast = () => {
   let content;
 
   if (weatherStatus === 'loading') {
-    content = <div className="loading">Loading...</div>;
+    // content = <div className="loading">Loading...</div>;
     // content = <div className="loader"></div>
+    content = <CssPreLoader />
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
       <div className="rain-forecast-content">

@@ -4,6 +4,7 @@ import {
 } from '../../../common/helpers';
 import { Link } from 'react-router-dom';
 import './Alerts.scss';
+import { CssPreLoader } from '../../../common/CssPreLoader';
 
 export const Alerts = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -40,11 +41,12 @@ export const Alerts = () => {
   // ];
 
   if (weatherStatus === 'loading') {
-    content = 
-      <section className="alerts">
-        <h1 className="alerts-title">Alerts</h1>
-        <div className="loading">Loading...</div>
-      </section>;
+    // content = 
+    //   <section className="alerts">
+    //     <h1 className="alerts-title">Alerts</h1>
+    //     <CssPreLoader />
+    //   </section>;
+    content = null;
     // content = <div className="loader"></div>
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 

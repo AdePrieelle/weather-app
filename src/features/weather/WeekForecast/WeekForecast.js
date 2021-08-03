@@ -8,6 +8,7 @@ import {
 import { Link } from 'react-router-dom';
 import './WeekForecast.scss';
 import { WindArrowBeaufort } from '../../../common/WindArrowBeaufort';
+import { CssPreLoader } from '../../../common/CssPreLoader';
 
 export const WeekForecast = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -18,8 +19,9 @@ export const WeekForecast = () => {
   let content
 
   if (weatherStatus === 'loading') {
-    content = <div className="loading">Loading...</div>
+    // content = <div className="loading">Loading...</div>
     // content = <div className="loader"></div>
+    content = <CssPreLoader />
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
     <div className="week-forecast-content">
