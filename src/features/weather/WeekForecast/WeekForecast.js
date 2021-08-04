@@ -45,8 +45,8 @@ export const WeekForecast = () => {
               </div>
               <div className={`wind wind-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'6 / 7'}}>
                 <WindArrowBeaufort
-                  windDegrees={weatherData.current.wind_deg}
-                  windSpeedBeaufort={convertWindSpeedToBeaufort(weatherData.current.wind_speed)}
+                  windDegrees={day.wind_deg}
+                  windSpeedBeaufort={convertWindSpeedToBeaufort(day.wind_speed)}
                 />
               </div>
               <div className={`clouds clouds-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'7 / 8'}}>{day.clouds}%</div>

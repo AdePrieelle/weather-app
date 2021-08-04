@@ -4,7 +4,7 @@ import {
 } from '../../../common/helpers';
 import { Link } from 'react-router-dom';
 import './Alerts.scss';
-import { CssPreLoader } from '../../../common/CssPreLoader';
+// import { CssPreLoader } from '../../../common/CssPreLoader';
 
 export const Alerts = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
