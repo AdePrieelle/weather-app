@@ -228,6 +228,11 @@
       }
       .value-wind {
         grid-area: value-wind;
+        .wind-arrow-beaufort-wrapper {
+          .wind-arrow {
+            color: $wind-arrow-color-current-weather;
+          }
+        }
       }
       .title-cloudiness {
         grid-area: title-cloudiness;

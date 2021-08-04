@@ -75,10 +75,12 @@ $wind-cloudiness-humidity-wrapper-value-font-weight: 500;
 // wind-arrow
 // $wind-arrow-color: #797d80;
 $wind-arrow-color: rgb(168, 168, 168);
-$wind-arrow-color: white;
 $wind-arrow-color: black;
+$wind-arrow-color: white;
+$wind-arrow-color-current-weather: black;
 // $wind-arrow-circle-bg-color: white;
 $wind-arrow-circle-bg-color: white;
+$wind-arrow-circle-border-color: black;
 // $wind-arrow-circle-color: #18191a;
 $wind-arrow-circle-text-color: black;
 
