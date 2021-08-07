@@ -1,0 +1,60 @@
+@import "../../../styles/partials//variables";
+
+.current-weather-properties {
+  position: relative;
+  margin-left: -$section-border-radius;
+  margin-right: -$section-border-radius;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    "title-wind title-cloudiness title-humidity"
+    "value-wind value-cloudiness value-humidity";
+  padding-top: calc(
+    #{$wind-cloudiness-humidity-wrapper-value-margin-bottom} + 2px
+  );
+  background-color: $wind-cloudiness-humidity-wrapper-bg-color;
+  color: $wind-cloudiness-humidity-wrapper-color;
+  .title {
+    color: $wind-cloudiness-humidity-wrapper-title-color;
+    font-size: $wind-cloudiness-humidity-wrapper-title-font-size;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: $wind-cloudiness-humidity-wrapper-title-font-size-large;
+    }
+    font-weight: $wind-cloudiness-humidity-wrapper-title-font-weight;
+    margin-bottom: $wind-cloudiness-humidity-wrapper-title-margin-bottom;
+  }
+  .value {
+    margin-bottom: $wind-cloudiness-humidity-wrapper-value-margin-bottom;
+    font-size: $wind-cloudiness-humidity-wrapper-value-font-size;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: $wind-cloudiness-humidity-wrapper-value-font-size-large;
+    }
+    font-weight: $wind-cloudiness-humidity-wrapper-value-font-weight;
+    color: $wind-cloudiness-humidity-wrapper-value-color;
+  }
+  .title-wind {
+    grid-area: title-wind;
+  }
+  .title-cloudiness {
+    grid-area: title-cloudiness;
+  }
+  .title-humidity {
+    grid-area: title-humidity;
+  }
+  .value-wind {
+    grid-area: value-wind;
+    .wind-arrow-beaufort-wrapper {
+      .wind-arrow {
+        color: $wind-arrow-color-current-weather;
+      }
+    }
+  }
+  .value-cloudiness {
+    grid-area: value-cloudiness;
+  }
+  .value-humidity {
+    grid-area: value-humidity;
+  }
+}

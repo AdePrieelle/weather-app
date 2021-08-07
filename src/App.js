@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCityAndLatitudeLongitude } from './features/weather/weatherSlice'
 import { Navbar } from './features/weather/Navbar/Navbar';
-import { PreviewCurrentWeather } from './features/weather/CurrentWeather/PreviewCurrentWeather'
 import { CurrentWeather } from './features/weather/CurrentWeather/CurrentWeather';
 import { PreviewRainForecast } from './features/weather/RainForecast/PreviewRainForecast';
 import { RainForecast } from './features/weather/RainForecast/RainForecast';
@@ -37,7 +36,7 @@ function App() {
           <Route exact path="/">
             <div className="weather-contents-preview">
               <PreviewAlerts />
-              <PreviewCurrentWeather />
+              <CurrentWeather />
               <PreviewRainForecast />
               <PreviewTwoDaysForecast />
               <PreviewWeekForecast />

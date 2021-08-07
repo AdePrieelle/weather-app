@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Switch, Route, Link } from 'react-router-dom';
 import { 
   convertTemperatureUnits, 
   formatLocalDateNow, 
   formatLocalTime, 
   secondsToGmtHoursAndMinutes,
-  convertWindSpeedToBeaufort, 
 } from '../../../common/helpers';
-import { WindArrowBeaufort } from '../../../common/WindArrowBeaufort';
-import { Link } from 'react-router-dom';
 import { WrongLocationTooltip } from './WrongLocationTooltip';
 import './CurrentWeather.scss';
 import { CssPreLoader } from '../../../common/CssPreLoader';
+import { CurrentWeatherPropertiesDetailed } from './CurrentWeatherPropertiesDetailed';
+import { CurrentWeatherProperties } from './CurrentWeatherProperties';
 
 export const CurrentWeather = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -20,8 +20,6 @@ export const CurrentWeather = () => {
   const weatherCity = useSelector(state => state.weather.city);
   const weatherCountry = useSelector(state => state.weather.country);
   const weatherTemperatureUnits = useSelector(state => state.weather.temperatureUnits);
-  const weatherLatitude = useSelector(state => state.weather.latitude);
-  const weatherLongitude = useSelector(state => state.weather.longitude);
 
   const [showWrongLocationTooltip, setShowWrongLocationTooltip] = useState(false);
 
@@ -64,48 +62,30 @@ export const CurrentWeather = () => {
           <div className="time-gmt">{formatLocalTime(weatherData.current.dt, weatherData.timezone_offset)} ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
         </div>
       </div>
-      <div className="current-weather-properties-detailed">
-        <div className="title title-wind">Wind</div>
-        <div className="value value-wind">
-          <WindArrowBeaufort
-            windDegrees={weatherData.current.wind_deg}
-            windSpeedBeaufort={convertWindSpeedToBeaufort(weatherData.current.wind_speed)}
-          />
-        </div>
-        <div className="title title-cloudiness">Cloudiness</div>
-        <div className="value value-cloudiness">{weatherData.current.clouds}%</div>
-        <div className="title title-humidity">Humidity</div>
-        <div className="value value-humidity">{weatherData.current.humidity}%</div>
-        <div className="title title-latitude">Latitude</div>
-        <div className="value value-latitude">{weatherLatitude}° W</div>
-        <div className="title title-longitude">Longitude</div>
-        <div className="value value-longitude">{weatherLongitude}° N</div>
-        <div className="title title-pressure">Pressure</div>
-        <div className="value value-pressure">{weatherData.current.pressure} hPa</div>
-        <div className="title title-dew-point">Dew point</div>
-        <div className="value value-dew-point">{convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.dew_point)}</div>
-        <div className="title title-uv-index">Uv index</div>
-        <div className="value value-uv-index">{Math.round(weatherData.current.uvi)}</div>
-        <div className="title title-visibility">Visibility</div>
-        <div className="value value-visibility">
-          {
-              weatherData.current.visibility >= 1000 
-            ? `${weatherData.current.visibility/1000} km` 
-            : `${weatherData.current.visibility} m`
-          }
-        </div>
-        <div className="title title-windspeed-metre-sec">Windspeed</div>
-        <div className="value value-windspeed-metre-sec">{(weatherData.current.wind_speed*3.6).toFixed(2)} km/h</div>
-        <div className="title title-sunrise">Sunrise</div>
-        <div className="value value-sunrise">{formatLocalTime(weatherData.current.sunrise, weatherData.timezone_offset)}</div>
-        <div className="title title-sunset">Sunset</div>
-        <div className="value value-sunset">{formatLocalTime(weatherData.current.sunset, weatherData.timezone_offset)}</div>
-      </div>
-      <div className="display-more">
-        <Link to="/">
-          <i className="fas fa-arrow-left go-back-arrow"></i> Go back
-        </Link>
-      </div>
+      <Switch>
+        <Route exact path="/">
+          <CurrentWeatherProperties />
+        </Route>
+        <Route exact path="/current-weather">
+          <CurrentWeatherPropertiesDetailed />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route exact path="/">
+          <div className="display-more">
+            <Link to="/current-weather">
+              Show details <i className="fas fa-arrow-right show-details-arrow"></i>
+            </Link>
+          </div>
+        </Route>
+        <Route exact path="/current-weather">
+          <div className="go-back">
+            <Link to="/">
+              <i className="fas fa-arrow-left go-back-arrow"></i> Go back
+            </Link>
+          </div>
+        </Route>
+      </Switch>
     </div>
   } else if (weatherStatus === 'failed') {
     content = <div>{weatherError}</div>
