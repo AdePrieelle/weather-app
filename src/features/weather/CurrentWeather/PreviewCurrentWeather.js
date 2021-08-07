@@ -36,7 +36,6 @@ export const PreviewCurrentWeather = () => {
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
     <div className="preview-current-weather-content">
-      <div className="preview-current-weather-weather-temp-location-wind-cloudiness-humidity-wrapper">
         <WrongLocationTooltip 
           showWrongLocationTooltip={showWrongLocationTooltip}
           ToggleWrongLocationTooltip={ToggleWrongLocationTooltip}
@@ -79,7 +78,6 @@ export const PreviewCurrentWeather = () => {
           {/* <div className="card-effect card-effect-1"></div> */}
           {/* <div className="card-effect card-effect-2"></div> */}
         </div>
-      </div>
       <div className="display-more">
         <Link to="/current-weather">
           Show details <i className="fas fa-arrow-right show-details-arrow"></i>

@@ -41,28 +41,30 @@ export const CurrentWeather = () => {
         showWrongLocationTooltip={showWrongLocationTooltip}
         ToggleWrongLocationTooltip={ToggleWrongLocationTooltip}
       />
-      <div className="weather-icon">
-        <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>
-      </div>
-      <div className="weather-description">{weatherData.current.weather[0].description}</div>
-      <div className="temp-temp-feels-like-wrapper">
-        <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
-        <div className="temp-feels-like">Feels like: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.feels_like)}</div>
-      </div>
-      <div className="location-date-time-wrapper">
-        <div className="location">
-          <div className="location-text">{weatherCity}, {weatherCountry}
-            <div className="wrong-location-text" onClick={() => {
-              ToggleWrongLocationTooltip();
-            }}>
-              <i className="fas fa-info-circle info-icon"></i>
+      <div className="current-weather-info">
+        <div className="weather-icon">
+          <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>
+        </div>
+        <div className="weather-description">{weatherData.current.weather[0].description}</div>
+        <div className="temp-temp-feels-like-wrapper">
+          <div className="temp">{convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.temp)}</div>
+          <div className="temp-feels-like">Feels like: {convertTemperatureUnits(weatherTemperatureUnits, weatherData.current.feels_like)}</div>
+        </div>
+        <div className="location-date-time-wrapper">
+          <div className="location">
+            <div className="location-text">{weatherCity}, {weatherCountry}
+              <div className="wrong-location-text" onClick={() => {
+                ToggleWrongLocationTooltip();
+              }}>
+                <i className="fas fa-info-circle info-icon"></i>
+              </div>
             </div>
-          </div>
-        </div>  
-        <div className="date">{formatLocalDateNow(weatherData.current.dt, weatherData.timezone_offset)}</div>
-        <div className="time-gmt">{formatLocalTime(weatherData.current.dt, weatherData.timezone_offset)} ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
+          </div>  
+          <div className="date">{formatLocalDateNow(weatherData.current.dt, weatherData.timezone_offset)}</div>
+          <div className="time-gmt">{formatLocalTime(weatherData.current.dt, weatherData.timezone_offset)} ({secondsToGmtHoursAndMinutes(weatherData.timezone_offset)})</div>
+        </div>
       </div>
-      <div className="wind-cloudiness-humidity-wrapper">
+      <div className="current-weather-properties-detailed">
         <div className="title title-wind">Wind</div>
         <div className="value value-wind">
           <WindArrowBeaufort
@@ -98,8 +100,6 @@ export const CurrentWeather = () => {
         <div className="value value-sunrise">{formatLocalTime(weatherData.current.sunrise, weatherData.timezone_offset)}</div>
         <div className="title title-sunset">Sunset</div>
         <div className="value value-sunset">{formatLocalTime(weatherData.current.sunset, weatherData.timezone_offset)}</div>
-        {/* <div className="card-effect card-effect-1"></div> */}
-        {/* <div className="card-effect card-effect-2"></div> */}
       </div>
       <div className="display-more">
         <Link to="/">
