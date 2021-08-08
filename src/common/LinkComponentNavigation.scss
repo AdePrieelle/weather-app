@@ -1,0 +1,34 @@
+@import "../styles/partials//variables";
+
+.link-component-navigation {
+  display: flex;
+  margin-top: $section-border-radius;
+  font-size: 14px;
+  @media screen and (min-width: $media-query-small-screen) {
+    font-size: 16px;
+  }
+  a {
+    display: flex;
+    align-items: baseline;
+    color: $primary-text-color;
+    text-decoration: none;
+  }
+}
+
+.link-component-navigation-show-details {
+  justify-content: flex-end;
+  a {
+    .show-details-arrow {
+      margin-left: 4px;
+    }
+  }
+}
+
+.link-component-navigation-go-back {
+  justify-content: flex-start;
+  a {
+    .go-back-arrow {
+      margin-right: 4px;
+    }
+  }
+}
