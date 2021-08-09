@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { WrongLocationTooltip } from './WrongLocationTooltip';
+import '../../../styles/WeatherNewsCategory.scss';
 import './CurrentWeather.scss';
 import { CssPreLoader } from '../../../common/CssPreLoader';
 import { CurrentWeatherInfo } from './CurrentWeatherInfo';
 import { CurrentWeatherPropertiesDetailed } from './CurrentWeatherPropertiesDetailed';
 import { CurrentWeatherProperties } from './CurrentWeatherProperties';
 import { LinkComponentNavigation } from '../../../common/LinkComponentNavigation';
+import { WeatherComponentTitle } from '../../../common/WeatherComponentTitle';
 
 export const CurrentWeather = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -26,7 +28,7 @@ export const CurrentWeather = () => {
     content = <CssPreLoader />
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
-    <div className="current-weather-content">
+    <div id="current-weather-content" className="weather-news-category-content">
       <WrongLocationTooltip 
         showWrongLocationTooltip={showWrongLocationTooltip}
         ToggleWrongLocationTooltip={ToggleWrongLocationTooltip}
@@ -51,8 +53,10 @@ export const CurrentWeather = () => {
   }
 
   return (
-    <section className="current-weather">
-      <h1 className="current-weather-title">Current weather</h1>
+    <section id="current-weather" className="weather-news-category">
+      <WeatherComponentTitle>
+        Current weather
+      </WeatherComponentTitle>
       {content}
     </section>
   )

@@ -1,0 +1,14 @@
+@import "./partials/variables";
+
+.weather-news-category {
+  padding: $section-border-radius;
+  color: $primary-text-color;
+  background-color: $section-bg-color;
+  border-radius: $section-item-border-radius;
+  .weather-news-category-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: $section-border-radius;
+  }
+}

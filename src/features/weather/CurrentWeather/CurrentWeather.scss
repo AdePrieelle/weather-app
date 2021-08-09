@@ -1,71 +1,8 @@
-@import "../../../styles/partials//variables";
+@import "../../../styles/partials/variables";
 
-.current-weather {
-  // padding: 20px;
-  // @media screen and (min-width: $media-query-xlarge-screen) {
-  //   padding: 20px 0;
-  // }
-  padding: $section-border-radius;
-  color: $primary-text-color;
-  background-color: $section-bg-color;
-  // border-radius: $section-border-radius;
-  border-radius: $section-item-border-radius;
+#current-weather {
   position: relative;
-  // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  .current-weather-title {
-    margin-top: -$section-border-radius;
-    margin-left: -$section-border-radius;
-    margin-right: -$section-border-radius;
-    padding: $title-padding-y $title-padding-x;
-    font-size: $title-font-size-small;
-    @media screen and (min-width: $media-query-small-screen) {
-      font-size: $title-font-size-large;
-    }
-    font-weight: 700;
-    border-bottom: 1px solid white;
-    // text-align: center;
-  }
-  .current-weather-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  #current-weather-content {
     margin-top: calc(#{$section-border-radius} - 9px);
-    .display-more {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: $section-border-radius;
-      font-size: 14px;
-      @media screen and (min-width: $media-query-small-screen) {
-        font-size: 16px;
-      }
-      a {
-        display: flex;
-        align-items: baseline;
-        color: $primary-text-color;
-        text-decoration: none;
-        .show-details-arrow {
-          margin-left: 4px;
-        }
-      }
-    }
-    .go-back {
-      display: flex;
-      justify-content: flex-start;
-      margin-top: $section-border-radius;
-      font-size: 14px;
-      @media screen and (min-width: $media-query-small-screen) {
-        font-size: 16px;
-      }
-      a {
-        display: flex;
-        align-items: baseline;
-        color: $primary-text-color;
-        text-decoration: none;
-        .go-back-arrow {
-          margin-right: 4px;
-        }
-      }
-    }
   }
 }
