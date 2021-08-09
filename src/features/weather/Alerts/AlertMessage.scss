@@ -1,0 +1,49 @@
+@import "../../../styles/partials/variables";
+
+.alert-message {
+  display: grid;
+  grid-template-columns: repeat(2, auto) minmax(0, 1fr);
+  grid-row-gap: 4px;
+  padding: 20px;
+  font-size: 14px;
+  @media screen and (min-width: $media-query-small-screen) {
+    font-size: 16px;
+  }
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: $alert-border-radius;
+  word-break: break-word;
+  .alert-title {
+    margin-right: 10px;
+    font-weight: 400;
+  }
+  .alert-value {
+    font-weight: 400;
+  }
+  .alert-sender-title {
+    grid-area: alert-sender-title;
+  }
+  .alert-sender-value {
+    grid-area: alert-sender-value;
+  }
+  .alert-event-title {
+    grid-area: alert-event-title;
+  }
+  .alert-event-value {
+    grid-area: alert-event-value;
+    font-weight: 700;
+  }
+  .alert-start-title {
+    grid-area: alert-start-title;
+  }
+  .alert-start-value {
+    grid-area: alert-start-value;
+    font-style: italic;
+  }
+  .alert-end-title {
+    grid-area: alert-end-title;
+  }
+  .alert-end-value {
+    grid-area: alert-end-value;
+    font-style: italic;
+  }
+}

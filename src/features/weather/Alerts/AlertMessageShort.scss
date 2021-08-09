@@ -1,0 +1,10 @@
+@import "../../../styles/partials/variables";
+
+#alert-message-short {
+  grid-template-rows: repeat(4, auto) minmax(0, 1fr);
+  grid-template-areas:
+    "alert-sender-title alert-sender-value ."
+    "alert-event-title alert-event-value ."
+    "alert-start-title alert-start-value ."
+    "alert-end-title alert-end-value .";
+}

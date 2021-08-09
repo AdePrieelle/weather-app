@@ -45,7 +45,7 @@ export const CurrentWeather = () => {
         </Route>
       </Switch>
       <LinkComponentNavigation
-        linkPath="/current-weather"
+        linkPath={"/current-weather"}
       />
     </div>
   } else if (weatherStatus === 'failed') {

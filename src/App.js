@@ -9,7 +9,6 @@ import { PreviewTwoDaysForecast } from './features/weather/TwoDaysForecast/Previ
 import { TwoDaysForecast } from './features/weather/TwoDaysForecast/TwoDaysForecast';
 import { PreviewWeekForecast } from './features/weather/WeekForecast/PreviewWeekForecast';
 import { WeekForecast } from './features/weather/WeekForecast/WeekForecast';
-import { PreviewAlerts } from './features/weather/Alerts/PreviewAlerts';
 import { Alerts } from './features/weather/Alerts/Alerts';
 import { Switch, Route } from 'react-router-dom';
 import ScrollToTop from './common/ScrollToTop';
@@ -35,7 +34,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <div className="weather-contents-preview">
-              <PreviewAlerts />
+              <Alerts />
               <CurrentWeather />
               <PreviewRainForecast />
               <PreviewTwoDaysForecast />

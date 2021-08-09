@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
-import { 
-  formatLocalDateTimestamp
-} from '../../../common/helpers';
-import { Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import '../../../styles/WeatherNewsCategory.scss';
 import './Alerts.scss';
-// import { CssPreLoader } from '../../../common/CssPreLoader';
+import { LinkComponentNavigation } from '../../../common/LinkComponentNavigation';
+import { WeatherComponentTitle } from '../../../common/WeatherComponentTitle';
+import { AlertMessageShort } from './AlertMessageShort';
+import { AlertMessageDetailed } from './AlertMessageDetailed';
 
 export const Alerts = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
@@ -41,48 +42,38 @@ export const Alerts = () => {
   // ];
 
   if (weatherStatus === 'loading') {
-    // content = 
-    //   <section className="alerts">
-    //     <h1 className="alerts-title">Alerts</h1>
-    //     <CssPreLoader />
-    //   </section>;
     content = null;
-    // content = <div className="loader"></div>
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
     weatherData.alerts 
-    ? <section className="alerts">
-        <h1 className="alerts-title">Alerts</h1>
-        <div className="alerts-content">
-            {
-            weatherData.alerts.map((alert, id) => (
-              <div key={id} className="alert">
-                <div className="alert-title alert-sender-title">Sender:</div>
-                <div className="alert-value alert-sender-value">{alert.sender_name ? alert.sender_name : 'Unkown'}</div>
-                <div className="alert-title alert-event-title">Event:</div>
-                <div className="alert-value alert-event-value">{alert.event ? alert.event : 'Unkown'}</div>
-                <div className="alert-title alert-start-title">Start:</div>
-                <div className="alert-value alert-start-value">{alert.start ? formatLocalDateTimestamp(alert.start, weatherData.timezone_offset) : 'Unkown'}</div>
-                <div className="alert-title alert-end-title">End:</div>
-                <div className="alert-value alert-end-value">{alert.end ? formatLocalDateTimestamp(alert.end, weatherData.timezone_offset) : 'Unkown'}</div>
-                <div className="alert-title alert-description-title">Description:</div>
-                <div className="alert-value alert-description-value">{alert.description ? alert.description : 'Unkown'}</div>
-              </div>
-            ))
-          }
+    ? <section id="alerts" className="weather-news-category">
+        <WeatherComponentTitle>
+          Alerts
+        </WeatherComponentTitle>
+        <div id="alerts-content" className="weather-news-category-content">
+          <Switch>
+            <Route exact path="/">
+              <AlertMessageShort />
+            </Route>
+            <Route exact path="/alerts">
+              <AlertMessageDetailed />
+            </Route>
+          </Switch>
         </div>
-        <div className="display-more">
-          <Link to="/">
-              <i className="fas fa-arrow-left show-details-arrow"></i>Go back
-          </Link>
-        </div>
+        <LinkComponentNavigation
+          linkPath={"/alerts"}
+        />
       </section>
     : null
   } else if (weatherStatus === 'failed') {
     content = 
-      <section className="alerts">
-        <h1 className="alerts-title">Alerts</h1>
-        <div>{weatherError}</div>
+      <section id="alerts" className="weather-news-category">
+        <WeatherComponentTitle>
+          Alerts
+        </WeatherComponentTitle>
+        <div id="alerts-content" className="weather-news-category-content">
+          <div>{weatherError}</div>
+        </div>
       </section>;
   }
 
