@@ -2,17 +2,15 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCityAndLatitudeLongitude } from './features/weather/weatherSlice'
 import { Navbar } from './features/weather/Navbar/Navbar';
+import { Alerts } from './features/weather/Alerts/Alerts';
 import { CurrentWeather } from './features/weather/CurrentWeather/CurrentWeather';
 import { RainForecast } from './features/weather/RainForecast/RainForecast';
-import { PreviewTwoDaysForecast } from './features/weather/TwoDaysForecast/PreviewTwoDaysForecast';
 import { TwoDaysForecast } from './features/weather/TwoDaysForecast/TwoDaysForecast';
 import { PreviewWeekForecast } from './features/weather/WeekForecast/PreviewWeekForecast';
 import { WeekForecast } from './features/weather/WeekForecast/WeekForecast';
-import { Alerts } from './features/weather/Alerts/Alerts';
 import { Switch, Route } from 'react-router-dom';
 import ScrollToTop from './common/ScrollToTop';
 import './App.scss';
-
 
 function App() {
   const dispatch = useDispatch();
@@ -36,7 +34,7 @@ function App() {
               <Alerts />
               <CurrentWeather />
               <RainForecast />
-              <PreviewTwoDaysForecast />
+              <TwoDaysForecast />
               <PreviewWeekForecast />
             </div>
           </Route>

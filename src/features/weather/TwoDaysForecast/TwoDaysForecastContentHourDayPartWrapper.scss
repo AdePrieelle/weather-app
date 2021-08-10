@@ -1,0 +1,83 @@
+@import "../../../styles/partials/variables";
+
+.two-days-forecast-content-hour-day-part-wrapper {
+  display: grid;
+  justify-items: center;
+  overflow-x: auto;
+  .clouds-title,
+  .humidity-title,
+  .rain-title {
+    justify-self: flex-start;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 14px;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: 16px;
+    }
+    border-bottom: 1px solid white;
+  }
+  .rain-title {
+    white-space: nowrap;
+  }
+  .time-day-part {
+    margin-bottom: 4px;
+    font-size: 18px;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: 20px;
+    }
+    font-weight: 500;
+  }
+  .weekday {
+    font-size: 12px;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: 14px;
+    }
+    font-weight: 300;
+  }
+  .weather-icon {
+    margin-bottom: 6px;
+    @media screen and (min-width: $media-query-small-screen) {
+      margin-bottom: 0;
+    }
+    img {
+      width: 55px;
+      height: 55px;
+      @media screen and (min-width: $media-query-small-screen) {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+  .weather-description {
+    margin-top: -16px;
+    margin-bottom: 12px;
+    padding: 0 6px;
+    font-size: 12px;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: 14px;
+    }
+    text-align: center;
+  }
+  .temp {
+    margin-bottom: 6px;
+    font-size: 18px;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: 20px;
+    }
+  }
+  .clouds,
+  .humidity,
+  .rain {
+    padding: 10px 0;
+    width: 100%;
+    font-size: 14px;
+    @media screen and (min-width: $media-query-small-screen) {
+      font-size: 16px;
+    }
+    text-align: center;
+    border-bottom: 1px solid white;
+  }
+  .wind {
+    margin-bottom: 6px;
+  }
+}
