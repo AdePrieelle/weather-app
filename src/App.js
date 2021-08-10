@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCityAndLatitudeLongitude } from './features/weather/weatherSlice'
 import { Navbar } from './features/weather/Navbar/Navbar';
 import { CurrentWeather } from './features/weather/CurrentWeather/CurrentWeather';
-import { PreviewRainForecast } from './features/weather/RainForecast/PreviewRainForecast';
 import { RainForecast } from './features/weather/RainForecast/RainForecast';
 import { PreviewTwoDaysForecast } from './features/weather/TwoDaysForecast/PreviewTwoDaysForecast';
 import { TwoDaysForecast } from './features/weather/TwoDaysForecast/TwoDaysForecast';
@@ -36,7 +35,7 @@ function App() {
             <div className="weather-contents-preview">
               <Alerts />
               <CurrentWeather />
-              <PreviewRainForecast />
+              <RainForecast />
               <PreviewTwoDaysForecast />
               <PreviewWeekForecast />
             </div>
