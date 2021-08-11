@@ -6,7 +6,6 @@ import { Alerts } from './features/weather/Alerts/Alerts';
 import { CurrentWeather } from './features/weather/CurrentWeather/CurrentWeather';
 import { RainForecast } from './features/weather/RainForecast/RainForecast';
 import { TwoDaysForecast } from './features/weather/TwoDaysForecast/TwoDaysForecast';
-import { PreviewWeekForecast } from './features/weather/WeekForecast/PreviewWeekForecast';
 import { WeekForecast } from './features/weather/WeekForecast/WeekForecast';
 import { Switch, Route } from 'react-router-dom';
 import ScrollToTop from './common/ScrollToTop';
@@ -35,7 +34,7 @@ function App() {
               <CurrentWeather />
               <RainForecast />
               <TwoDaysForecast />
-              <PreviewWeekForecast />
+              <WeekForecast />
             </div>
           </Route>
           <Route exact path="/alerts">

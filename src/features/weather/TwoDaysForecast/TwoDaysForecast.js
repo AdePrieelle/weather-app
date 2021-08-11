@@ -20,7 +20,7 @@ export const TwoDaysForecast = () => {
     content = <CssPreLoader />
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
-      <div id="two-days-forecast-weather-content" className="weather-news-category-content">
+      <div id="two-days-forecast-content" className="weather-news-category-content">
         <Switch>
           <Route exact path="/">
             <TwoDaysForecastContentHourDayPartWrapper />
@@ -38,7 +38,7 @@ export const TwoDaysForecast = () => {
   }
 
   return (
-    <section id="two-days-forecast-weather" className="weather-news-category">
+    <section id="two-days-forecast" className="weather-news-category">
       <WeatherComponentTitle>
         48-hours forecast
       </WeatherComponentTitle>
