@@ -42,7 +42,7 @@
     }
     .temp-feels-like {
       font-size: 12px;
-      color: $preview-current-weather-secondary-color;
+      color: $temp-feels-like-color;
       // font-weight: 300;
       @media screen and (min-width: $media-query-small-screen) {
         font-size: 14px;

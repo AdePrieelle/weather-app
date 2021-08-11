@@ -6,58 +6,35 @@ $media-query-medium-screen: 700px;
 $media-query-large-screen: 900px;
 $media-query-xlarge-screen: 1200px;
 
-// general
-$primary-bg-color: #0282eb;
-// $primary-bg-color: #0282eb;
-// $primary-bg-color: #fdfcf3;
+// General variables
 $primary-bg-color: white;
-// $primary-bg-color: #03030a;
-$secondary-bg-color: white;
-// $secondary-bg-color: #fdfcf3;
 $primary-text-color: white;
 $secondary-text-color: black;
-// $secondary-text-color: #0282eb;
+$section-bg-color: #4359f5;
+$section-item-border-radius: 24px;
+$section-border-radius: 24px;
 $title-padding-x: 24px;
 $title-padding-y: 18px;
 $title-font-size-small: 22px;
 $title-font-size-large: 24px;
 
-// WeatherNavbar
+// Navbar
 $nav-height: 65px;
 $logo-color: rgb(255, 208, 0);
 $logo-text-color: #0282eb;
-// $logo-text-color: #4359f5;
 $error-bg-color: rgba(255, 58, 58, 0.9);
 $navbar-text-color: #0282eb;
-// $navbar-text-color: #4359f5;
-// $navbar-text-color: black;
-// $navbar-border-color: rgb(230, 232, 235);
 $navbar-border-color: #dfe1e5;
 $navbar-input-height: 38px;
 
-// PreviewCurrentWeather
-// $wrong-location-tooltip-bg-color: rgba(1, 136, 247, 0.8);
-$preview-current-weather-secondary-color: rgb(224, 224, 224);
-// $wrong-location-tooltip-bg-color: rgb(255, 208, 3);
-// $wrong-location-tooltip-bg-color: #00000086;
+// CurrentWeather
+$temp-feels-like-color: rgb(224, 224, 224);
 $wrong-location-tooltip-bg-color: #000000a4;
-// $wrong-location-tooltip-color: black;
 $wrong-location-tooltip-color: white;
-$section-bg-color: orange;
-$section-bg-color: #4359f5;
-$section-border-radius: 24px;
-$wind-cloudiness-humidity-wrapper-color: rgb(255, 255, 255);
 $wind-cloudiness-humidity-wrapper-color: rgb(0, 0, 0);
-$wind-cloudiness-humidity-wrapper-bg-color: rgb(32, 32, 32);
-$wind-cloudiness-humidity-wrapper-bg-color: rgba(255, 255, 255, 0.151);
 $wind-cloudiness-humidity-wrapper-bg-color: rgb(255, 208, 3);
-$wind-cloudiness-humidity-wrapper-border-radius: 12px;
-$wind-cloudiness-humidity-wrapper-title-color: rgb(167, 167, 167);
-$wind-cloudiness-humidity-wrapper-title-color: rgb(190, 190, 190);
 $wind-cloudiness-humidity-wrapper-title-color: rgb(88, 88, 88);
-// $wind-cloudiness-humidity-wrapper-title-color: rgb(109, 109, 109);
 $wind-cloudiness-humidity-wrapper-value-color: black;
-
 $wind-cloudiness-humidity-wrapper-title-margin-bottom: 4px;
 $wind-cloudiness-humidity-wrapper-value-margin-bottom: 10px;
 $wind-cloudiness-humidity-wrapper-value-margin-bottom-current-weather: 20px;
@@ -67,59 +44,18 @@ $wind-cloudiness-humidity-wrapper-title-font-weight: 500;
 $wind-cloudiness-humidity-wrapper-value-font-size: 18px;
 $wind-cloudiness-humidity-wrapper-value-font-size-large: 20px;
 $wind-cloudiness-humidity-wrapper-value-font-weight: 500;
-// $section-bg-color: #21dfb6;
-// $section-bg-color: #0282eb;
-// $section-bg-color: #4be2e3;
-// $section-bg-color: white;
 
-// wind-arrow
-// $wind-arrow-color: #797d80;
-$wind-arrow-color: rgb(168, 168, 168);
-$wind-arrow-color: black;
+// WindArrowBeaufort
 $wind-arrow-color: white;
 $wind-arrow-color-current-weather: black;
-// $wind-arrow-circle-bg-color: white;
 $wind-arrow-circle-bg-color: white;
 $wind-arrow-circle-border-color: black;
-// $wind-arrow-circle-color: #18191a;
 $wind-arrow-circle-text-color: black;
 
-// TwoDaysForecast
-$section-bg-color: #0282eb;
-$section-bg-color: #03c78c;
-$section-bg-color: #4359f5;
-$section-item-border-radius: 24px;
-$two-days-forecast-bg-color: #df4b4b;
-$two-days-forecast-bg-color: #03c78c;
-$two-days-forecast-bg-color: rgb(47, 168, 132);
-$two-days-forecast-bg-color: #0282eb;
-$two-days-forecast-bg-color: #4359f5;
-$week-forecast-bg-color: #0282eb;
-$week-forecast-bg-color: #4359f5;
-$two-days-forecast-color: black;
-$two-days-forecast-color: white;
-
-// MinuteForecast
-$minute-forecast-bg-color: #4359f5;
-
 // Alerts
-// $alerts-bg-color: #4359f5;
-// $alerts-bg-color: #eb4c1c;
 $alerts-bg-color: #f54343;
 $alert-border-radius: 12px;
 
-// All bg-colors
-$section-bg-color: #4359f5;
-$minute-forecast-bg-color: #4359f5;
-$two-days-forecast-bg-color: #4359f5;
-$week-forecast-bg-color: #4359f5;
-
-// all bg-colors tryout
-$section-bg-color: #4359f5;
-$minute-forecast-bg-color: #4359f5;
-$two-days-forecast-bg-color: #4359f5;
-$week-forecast-bg-color: #4359f5;
-
-// loader
+// CssPreLoader
 $loader-color: rgb(41, 150, 252);
 $loader-bg-color: #f3f3f3;
