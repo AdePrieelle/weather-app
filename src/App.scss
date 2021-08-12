@@ -7,21 +7,15 @@
 }
 .weather-contents {
   margin-top: $nav-height;
+  padding: 20px;
   width: 100%;
   max-width: $media-query-xlarge-screen;
-  // padding: calc(20px + #{$nav-height}) 20px 0 20px;
-  padding: 20px;
   .weather-contents-preview {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    grid-gap: 20px;
     @media screen and (min-width: $media-query-large-screen) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    // section {
-    //   > div {
-    //     background-color: $section-bg-color;
-    //   }
-    // }
+    grid-gap: 20px;
   }
 }

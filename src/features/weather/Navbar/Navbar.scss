@@ -7,11 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // padding: 0 10px;
-  // padding: 0 20px;
-  // @media screen and (min-width: $media-query-small-screen) {
-  //   padding: 0 20px;
-  // }
   width: 100%;
   height: $nav-height;
   background-color: $primary-bg-color;
@@ -19,9 +14,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
     width: 100%;
     max-width: $media-query-xlarge-screen;
-    padding: 0 20px;
     a {
       text-decoration: none;
       cursor: pointer;

@@ -17,6 +17,7 @@ function App() {
 
   useEffect(() => {
     if (weatherStatus === 'idle') {
+      // Set default location
       dispatch(fetchCityAndLatitudeLongitude('London'))
     }
   }, [weatherStatus, dispatch]);

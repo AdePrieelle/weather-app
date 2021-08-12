@@ -7,7 +7,9 @@ import { ToggleMetricUnitsButton } from './ToggleMetricUnitsButton';
 import './Navbar.scss';
 
 export const Navbar = () => {
+  // Show error if an empty location search is done
   const [showInputError, setShowInputError] = useState(0);
+  // Show error is the city can't be found
   const [showErrorMessage, setShowErrorMessage] = useState(0);
 
   return (

@@ -17,6 +17,7 @@ export const InputLocationSearch = ({
   }
 
   const handleCitySearch = () => {
+    // Go to home route on new location search
     history.push("/");
     setShowErrorMessage(1);
     if (city === "") {

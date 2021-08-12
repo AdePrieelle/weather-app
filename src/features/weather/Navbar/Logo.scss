@@ -10,11 +10,11 @@
   }
   .logo-text {
     display: none;
-    color: $logo-text-color;
-    text-decoration: none;
     @media screen and (min-width: $media-query-small-screen) {
       display: block;
     }
+    color: $logo-text-color;
     font-weight: 500;
+    text-decoration: none;
   }
 }
