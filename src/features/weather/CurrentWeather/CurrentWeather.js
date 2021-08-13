@@ -28,26 +28,27 @@ export const CurrentWeather = () => {
     content = <CssPreLoader />
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
-    <div id="current-weather-content" className="weather-news-category-content">
-      <WrongLocationTooltip 
-        showWrongLocationTooltip={showWrongLocationTooltip}
-        ToggleWrongLocationTooltip={ToggleWrongLocationTooltip}
-      />
-      <CurrentWeatherInfo 
-        ToggleWrongLocationTooltip={ToggleWrongLocationTooltip}
-      />
-      <Switch>
-        <Route exact path="/">
-          <CurrentWeatherProperties />
-        </Route>
-        <Route exact path="/current-weather">
-          <CurrentWeatherPropertiesDetailed />
-        </Route>
-      </Switch>
-      <LinkComponentNavigation
-        linkPath={"/current-weather"}
-      />
-    </div>
+      <div id="current-weather-content" className="weather-news-category-content">
+        {/* Tooltip with info to search for same named locations in different states or countries more effectively */}
+        <WrongLocationTooltip 
+          showWrongLocationTooltip={showWrongLocationTooltip}
+          ToggleWrongLocationTooltip={ToggleWrongLocationTooltip}
+        />
+        <CurrentWeatherInfo 
+          ToggleWrongLocationTooltip={ToggleWrongLocationTooltip}
+        />
+        <Switch>
+          <Route exact path="/">
+            <CurrentWeatherProperties />
+          </Route>
+          <Route exact path="/current-weather">
+            <CurrentWeatherPropertiesDetailed />
+          </Route>
+        </Switch>
+        <LinkComponentNavigation
+          linkPath={"/current-weather"}
+        />
+      </div>;
   } else if (weatherStatus === 'failed') {
     content = <div>{weatherError}</div>
   }

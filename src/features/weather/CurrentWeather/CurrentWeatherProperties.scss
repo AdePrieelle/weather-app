@@ -2,8 +2,6 @@
 
 .current-weather-properties {
   position: relative;
-  margin-left: -$section-border-radius;
-  margin-right: -$section-border-radius;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -11,19 +9,21 @@
   grid-template-areas:
     "title-wind title-cloudiness title-humidity"
     "value-wind value-cloudiness value-humidity";
+  margin-left: -$section-border-radius;
+  margin-right: -$section-border-radius;
   padding-top: calc(
     #{$wind-cloudiness-humidity-wrapper-value-margin-bottom} + 2px
   );
-  background-color: $wind-cloudiness-humidity-wrapper-bg-color;
   color: $wind-cloudiness-humidity-wrapper-color;
+  background-color: $wind-cloudiness-humidity-wrapper-bg-color;
   .title {
-    color: $wind-cloudiness-humidity-wrapper-title-color;
+    margin-bottom: $wind-cloudiness-humidity-wrapper-title-margin-bottom;
     font-size: $wind-cloudiness-humidity-wrapper-title-font-size;
     @media screen and (min-width: $media-query-small-screen) {
       font-size: $wind-cloudiness-humidity-wrapper-title-font-size-large;
     }
     font-weight: $wind-cloudiness-humidity-wrapper-title-font-weight;
-    margin-bottom: $wind-cloudiness-humidity-wrapper-title-margin-bottom;
+    color: $wind-cloudiness-humidity-wrapper-title-color;
   }
   .value {
     margin-bottom: $wind-cloudiness-humidity-wrapper-value-margin-bottom;

@@ -2,10 +2,7 @@
 
 .current-weather-properties-detailed {
   position: relative;
-  margin-left: -$section-border-radius;
-  margin-right: -$section-border-radius;
   display: grid;
-  // justify-items: center;
   justify-items: flex-start;
   align-items: center;
   padding-left: $section-border-radius;
@@ -52,17 +49,19 @@
       "title-sunrise . title-sunset . title-longitude . title-latitude"
       "value-sunrise . value-sunset . value-longitude . value-latitude";
   }
+  margin-left: -$section-border-radius;
+  margin-right: -$section-border-radius;
   padding-top: $wind-cloudiness-humidity-wrapper-value-margin-bottom-current-weather;
-  background-color: $wind-cloudiness-humidity-wrapper-bg-color;
   color: $wind-cloudiness-humidity-wrapper-color;
+  background-color: $wind-cloudiness-humidity-wrapper-bg-color;
   .title {
-    color: $wind-cloudiness-humidity-wrapper-title-color;
+    margin-bottom: $wind-cloudiness-humidity-wrapper-title-margin-bottom;
     font-size: $wind-cloudiness-humidity-wrapper-title-font-size;
     @media screen and (min-width: $media-query-small-screen) {
       font-size: $wind-cloudiness-humidity-wrapper-title-font-size-large;
     }
     font-weight: $wind-cloudiness-humidity-wrapper-title-font-weight;
-    margin-bottom: $wind-cloudiness-humidity-wrapper-title-margin-bottom;
+    color: $wind-cloudiness-humidity-wrapper-title-color;
   }
   .value {
     margin-bottom: $wind-cloudiness-humidity-wrapper-value-margin-bottom-current-weather;

@@ -3,24 +3,20 @@
 .wrong-location-tooltip {
   position: absolute;
   z-index: 99;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: $wrong-location-tooltip-bg-color;
-  color: $wrong-location-tooltip-color;
-  // width: calc(100% + 2px);
-  width: 100%;
-  // top: -1px;
   top: 0;
   left: 0;
-  // left: -1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: $section-border-radius;
-  transform: scale(0.1);
-  opacity: 0;
-  border-radius: $section-item-border-radius;
-  // height: calc(100% + 2px);
+  width: 100%;
   height: 100%;
+  color: $wrong-location-tooltip-color;
+  background-color: $wrong-location-tooltip-bg-color;
+  border-radius: $section-item-border-radius;
+  opacity: 0;
+  transform: scale(0.1);
   transition: transform 350ms ease-in-out, opacity 400ms ease-in-out;
   pointer-events: none;
   .wrong-location-tooltip-content {
@@ -28,13 +24,13 @@
       margin-bottom: 20px;
     }
     code {
-      background-color: white;
-      color: rgb(100, 100, 100);
-      border: 1px solid rgb(173, 173, 173);
+      display: inline-block;
       margin-top: 6px;
       padding: 8px;
+      color: rgb(100, 100, 100);
+      background-color: white;
+      border: 1px solid rgb(173, 173, 173);
       border-radius: 4px;
-      display: inline-block;
     }
     .close-button-wrapper {
       display: flex;
@@ -42,11 +38,11 @@
       margin-top: 20px;
       .wrong-location-tooltip-close {
         padding: 6px 12px;
-        background-color: $logo-color;
-        color: black;
-        border: none;
         font-size: 14px;
         font-weight: 600;
+        color: black;
+        background-color: $logo-color;
+        border: none;
         border-radius: 4px;
         cursor: pointer;
       }
