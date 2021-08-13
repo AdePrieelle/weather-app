@@ -17,12 +17,12 @@ export const WeekForecast = () => {
     content = <CssPreLoader />
   } else if (weatherStatus === 'succeeded' || weatherData !== null) {
     content = 
-    <div id="week-forecast-content" className="weather-news-category-content">
-      <WeekForecastContentDaysWrapper />
-      <LinkComponentNavigation
-        linkPath={"/week-forecast"}
-      />
-    </div>
+      <div id="week-forecast-content" className="weather-news-category-content">
+        <WeekForecastContentDaysWrapper />
+        <LinkComponentNavigation
+          linkPath={"/week-forecast"}
+        />
+      </div>
   } else if (weatherStatus === 'failed') {
     content = <div>{weatherError}</div>
   }
