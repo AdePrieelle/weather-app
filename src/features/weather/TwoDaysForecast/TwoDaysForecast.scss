@@ -3,6 +3,7 @@
 #two-days-forecast {
   display: flex;
   flex-direction: column;
+  box-shadow: $section-box-shadow;
   #two-days-forecast-content {
     display: flex;
     flex-direction: column;

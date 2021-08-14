@@ -2,6 +2,7 @@
 
 #current-weather {
   position: relative;
+  box-shadow: $section-box-shadow;
   #current-weather-content {
     margin-top: calc(#{$section-border-radius} - 9px);
   }
