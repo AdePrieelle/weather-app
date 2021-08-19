@@ -32,9 +32,12 @@ export const TwoDaysForecast = () => {
         <LinkComponentNavigation
           linkPath={"/two-days-forecast"}
         />
-      </div>
+      </div>;
   } else if (weatherStatus === 'failed') {
-    content = <div>{weatherError}</div>
+    content =
+      <div className="weather-news-category-content">
+        <div>{weatherError}</div>
+      </div>;
   }
 
   return (

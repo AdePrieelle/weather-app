@@ -22,9 +22,12 @@ export const WeekForecast = () => {
         <LinkComponentNavigation
           linkPath={"/week-forecast"}
         />
-      </div>
+      </div>;
   } else if (weatherStatus === 'failed') {
-    content = <div>{weatherError}</div>
+    content =
+      <div className="weather-news-category-content">
+        <div>{weatherError}</div>
+      </div>;
   }
 
   return (
