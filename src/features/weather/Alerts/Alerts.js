@@ -44,7 +44,7 @@ export const Alerts = () => {
         <WeatherComponentTitle>
           Alerts
         </WeatherComponentTitle>
-        <div id="alerts-content" className="weather-news-category-content">
+        <div className="weather-news-category-content">
           <div>{weatherError}</div>
         </div>
       </section>;
