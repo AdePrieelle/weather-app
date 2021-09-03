@@ -7,11 +7,13 @@
   @media screen and (min-width: $media-query-small-screen) {
     font-size: 16px;
   }
-  a {
+  a,
+  .link-component-navigation-go-back-arrow-wrapper {
     display: flex;
     align-items: baseline;
     color: $primary-text-color;
     text-decoration: none;
+    cursor: pointer;
   }
 }
 
@@ -26,7 +28,7 @@
 
 .link-component-navigation-go-back {
   justify-content: flex-start;
-  a {
+  .link-component-navigation-go-back-arrow-wrapper {
     .go-back-arrow {
       margin-right: 4px;
     }

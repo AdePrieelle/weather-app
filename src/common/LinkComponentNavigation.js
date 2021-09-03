@@ -13,9 +13,9 @@ export const LinkComponentNavigation = ({ linkPath }) => {
       </Route>
       <Route path={linkPath}>
         <div className="link-component-navigation link-component-navigation-go-back">
-          <Link to="/">
+          <div className="link-component-navigation-go-back-arrow-wrapper" onClick={() => {window.history.back()}}>
             <i className="fas fa-arrow-left go-back-arrow"></i> Go back
-          </Link>
+          </div>
         </div>
       </Route>
     </Switch>
