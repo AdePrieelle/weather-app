@@ -8,6 +8,8 @@ import { LinkComponentNavigation } from '../../../common/LinkComponentNavigation
 import { WeatherComponentTitle } from '../../../common/WeatherComponentTitle';
 
 export const RainForecast = () => {
+  const weatherCity = useSelector(state => state.weather.city);
+  const weatherCountry = useSelector(state => state.weather.country);
   const weatherData = useSelector(state => state.weather.weatherData);
   const weatherStatus = useSelector(state => state.weather.statusFetchCityAndLatitudeLongitude);
   const weatherError = useSelector(state => state.weather.errorFetchCityAndLatitudeLongitude);
@@ -16,7 +18,7 @@ export const RainForecast = () => {
 
   if (weatherStatus === 'loading') {
     content = <CssPreLoader />
-  } else if (weatherStatus === 'succeeded' || weatherData !== null) {
+  } else if ((weatherStatus === 'succeeded' || weatherData !== null) && weatherData.minutely) {
     content = 
       <div id="rain-forecast-content" className="weather-news-category-content">
         <div className="rain-forecast-rain-graph">
@@ -26,7 +28,14 @@ export const RainForecast = () => {
           linkPath={"/rain-forecast"}
         />
       </div>;
-  } else if (weatherStatus === 'failed') {
+  } else if ((weatherStatus === 'succeeded' || weatherData !== null) && !weatherData.minutely) {
+    content = 
+      <div className="weather-news-category-content">
+        <div>No rain forecast data available for {`${weatherCity}, ${weatherCountry}.`}</div>
+      </div>;
+  }
+  
+  else if (weatherStatus === 'failed') {
     content =
       <div className="weather-news-category-content">
         <div>{weatherError}</div>
