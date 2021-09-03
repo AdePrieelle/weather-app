@@ -29,7 +29,6 @@ export const fetchCity = createAsyncThunk('weather/fetchCity', async(city) => {
 export const fetchLatitudeLongitude = createAsyncThunk('weather/fetchLatitudeLongitude', async({latitude, longitude}) => {
   const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
   const responseData = await response.json();
-  console.log(responseData);
   if (!response.ok) {
     throw new Error(responseData.message);
   }
@@ -43,7 +42,6 @@ export const fetchCityAndLatitudeLongitude = createAsyncThunk('weather/fetchCity
   }
   const latitude = getState().weather.latitude;
   const longitude = getState().weather.longitude;
-  console.log(latitude, longitude);
   await dispatch(fetchLatitudeLongitude({latitude, longitude}));
   if (getState().weather.errorFetchLatitudeLongitude !== null) {
     throw new Error(getState().weather.errorLatitudeLongitude);
