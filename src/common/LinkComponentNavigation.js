@@ -11,7 +11,7 @@ export const LinkComponentNavigation = ({ linkPath }) => {
           </Link>
         </div>
       </Route>
-      <Route exact path={linkPath}>
+      <Route path={linkPath}>
         <div className="link-component-navigation link-component-navigation-go-back">
           <Link to="/">
             <i className="fas fa-arrow-left go-back-arrow"></i> Go back

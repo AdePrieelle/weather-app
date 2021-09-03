@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { 
   formatLocalDateTimestamp
 } from '../../../common/helpers';
@@ -7,13 +8,19 @@ import './AlertMessageDetailed.scss';
 
 export const AlertMessageDetailed = () => {
   const weatherData = useSelector(state => state.weather.weatherData);
+  const { alertId } = useParams();
+
+  const weatherDataAlerts = 
+      alertId 
+    ? weatherData.alerts.slice((+alertId - 1), +alertId)
+    : weatherData.alerts;
 
   return (
     <>
       {
         weatherData.alerts
-      ? weatherData.alerts.map((alert, id) => (
-          <div key={id} id="alert-message-detailed" className="alert-message">
+      ? weatherDataAlerts.map((alert, id) => (
+          <div key={id} className="alert-message alert-message-detailed">
             <div className="alert-title alert-sender-title">Sender:</div>
             <div className="alert-value alert-sender-value">{alert.sender_name ? alert.sender_name : 'Unkown'}</div>
             <div className="alert-title alert-event-title">Event:</div>

@@ -26,9 +26,14 @@ export const Alerts = () => {
         <div id="alerts-content" className="weather-news-category-content">
           <Switch>
             <Route exact path="/">
-              <AlertMessageShort />
+              <AlertMessageShort 
+                linkPath={"/alerts"}
+              />
             </Route>
             <Route exact path="/alerts">
+              <AlertMessageDetailed />
+            </Route>
+            <Route path="/alerts/:alertId">
               <AlertMessageDetailed />
             </Route>
           </Switch>

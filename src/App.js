@@ -38,7 +38,7 @@ function App() {
               <WeekForecast />
             </div>
           </Route>
-          <Route exact path="/alerts">
+          <Route path="/alerts">
             <Alerts />
           </Route>
           <Route exact path="/current-weather">

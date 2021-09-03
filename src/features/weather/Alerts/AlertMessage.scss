@@ -5,6 +5,8 @@
   grid-template-columns: repeat(2, auto) minmax(0, 1fr);
   grid-row-gap: 4px;
   padding: 20px;
+  width: 100%;
+  height: 100%;
   font-size: 14px;
   @media screen and (min-width: $media-query-small-screen) {
     font-size: 16px;
