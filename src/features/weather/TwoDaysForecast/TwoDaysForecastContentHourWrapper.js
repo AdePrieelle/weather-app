@@ -27,7 +27,7 @@ export const TwoDaysForecastContentHourWrapper = () => {
             </div>
             <div className={`weekday weekday-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'2 / 3'}}>{formatLocalDateTimestampWeekday(hour.dt, weatherData.timezone_offset).slice(0, 3)}</div>
             <div className={`weather-icon weather-icon-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'3 / 4'}}>
-              <img src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt="weather-icon"></img>
+              <img src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} alt="weather-icon"></img>
             </div>
             <div className={`weather-description weather-description-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'4 / 5'}}>{hour.weather[0].description}</div>
             <div className={`temp temp-${id}`} style={{gridColumn: `${id+2} / ${id+3}`, gridRow:'5 / 6'}}>{convertTemperatureUnits(weatherTemperatureUnits, hour.temp)}</div>

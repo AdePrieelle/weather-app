@@ -16,7 +16,7 @@ export const CurrentWeatherInfo = ({ ToggleWrongLocationTooltip }) => {
   return (
     <div className="current-weather-info">
       <div className="weather-icon">
-        <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>
+        <img src={`https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`} alt="weather-icon"></img>
       </div>
       <div className="weather-description">{weatherData.current.weather[0].description}</div>
       <div className="temp-temp-feels-like-wrapper">
