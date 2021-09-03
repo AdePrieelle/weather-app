@@ -8,6 +8,9 @@
   border: 1px solid $navbar-border-color;
   border-radius: 4px;
   cursor: pointer;
+  &:focus {
+    outline: none;
+  }
   .navbar-temp-button-metric-units {
     display: flex;
     justify-content: space-between;
