@@ -58,20 +58,32 @@
       }
       font-weight: 700;
       .location-text {
-        position: relative;
-        display: inline;
-        .wrong-location-text {
-          position: absolute;
-          top: -8px;
-          right: -18px;
-          font-size: 12px;
+        .location-text-city {
+          display: inline;
+        }
+        .location-text-country-wrong-location-wrapper {
+          position: relative;
+          display: inline-block;
+          margin-top: 4px;
           @media screen and (min-width: $media-query-small-screen) {
-            top: -10px;
-            right: -20px;
-            font-size: 14px;
+            margin-top: 8px;
           }
-          padding: 4px;
-          cursor: pointer;
+          .location-text-country {
+            display: inline-block;
+          }
+          .wrong-location-text {
+            position: absolute;
+            top: -8px;
+            right: -18px;
+            padding: 4px;
+            font-size: 12px;
+            @media screen and (min-width: $media-query-small-screen) {
+              top: -10px;
+              right: -20px;
+              font-size: 14px;
+            }
+            cursor: pointer;
+          }
         }
       }
     }

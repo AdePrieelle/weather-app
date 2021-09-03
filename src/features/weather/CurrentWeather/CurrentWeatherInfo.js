@@ -25,11 +25,19 @@ export const CurrentWeatherInfo = ({ ToggleWrongLocationTooltip }) => {
       </div>
       <div className="location-date-time-wrapper">
         <div className="location">
-          <div className="location-text">{weatherCity}, {weatherCountry}
-            <div className="wrong-location-text" onClick={() => {
-              ToggleWrongLocationTooltip();
-            }}>
-              <i className="fas fa-info-circle info-icon"></i>
+          <div className="location-text">
+            <div className="location-text-city">
+              {`${weatherCity}, `}
+            </div>
+            <div className="location-text-country-wrong-location-wrapper">
+              <div className="location-text-country">
+                {weatherCountry}
+              </div>
+              <div className="wrong-location-text" onClick={() => {
+                ToggleWrongLocationTooltip();
+              }}>
+                <i className="fas fa-info-circle info-icon"></i>
+              </div>
             </div>
           </div>
         </div>  
