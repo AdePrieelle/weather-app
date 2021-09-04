@@ -1,8 +1,31 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+This project is using weather data from [OpenWeather](https://openweathermap.org/). The [Current Weather Data API](https://openweathermap.org/current) and [One Call API](https://openweathermap.org/api/one-call-api) are being used to display weather details.
+
+View a live demo for this project here: [OpenWeatherSearch](https://openweathersearch.netlify.app/).
+
+### Web technologies
+
+- HTML
+- CSS(SCSS)
+- JavaScript
+- React
+- React Router Dom
+- React Redux
+- D3.js (custom made rain forecast graph)
+- Netlify functions (to secure API requests)
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run netlify dev`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:8888](http://localhost:8888) to view it in the browser.
+
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
 ### `npm start`
 
