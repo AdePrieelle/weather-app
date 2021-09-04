@@ -15,10 +15,12 @@ const initialState = {
   errorFetchCityAndLatitudeLongitude: null
 };
 
-const apiKey = process.env.REACT_APP_API_KEY;
+// apiKey usage without netlify functions is commented out
+// const apiKey = process.env.REACT_APP_API_KEY;
 
 export const fetchCity = createAsyncThunk('weather/fetchCity', async(city) => {
-  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+  // const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+  const response = await fetch(`/.netlify/functions/fetch-city/?city=${city}`);
   const responseData = await response.json();
   if (!response.ok) {
     throw new Error('City not found');
@@ -27,7 +29,8 @@ export const fetchCity = createAsyncThunk('weather/fetchCity', async(city) => {
 })
 
 export const fetchLatitudeLongitude = createAsyncThunk('weather/fetchLatitudeLongitude', async({latitude, longitude}) => {
-  const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
+  // const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
+  const response = await fetch(`/.netlify/functions/fetch-latitude-longitude/?latitude=${latitude}&longitude=${longitude}`);
   const responseData = await response.json();
   if (!response.ok) {
     throw new Error(responseData.message);
